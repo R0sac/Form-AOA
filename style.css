@@ -1,0 +1,28 @@
+body{
+    background-color: #9C8BD9;
+    
+}
+nav{
+    margin-top: 8%;
+    display: inline-block;
+    border: solid 3px;
+    border-color: #251659;
+    margin-left: 20px;
+}
+
+.liEncuestas{
+    font-family: Poppins;
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.liEncuestas:hover{
+    background-color: rgba(3, 2, 13, 0.5);
+    color: white;
+}
+
+
