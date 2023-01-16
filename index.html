@@ -8,14 +8,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <nav class="menuEncuestas">
-            <button class="liEncuestas">Crear Pregunta</button>
-            <button class="liEncuestas">Crear Enquesta</button>
-            <button class="liEncuestas">Llistat de Preguntes</button>
-            <button class="liEncuestas">Llistat de Encquestes</button>         
+    <nav id="panel">
+            <button id="crearPregunta">Crear Pregunta</button>
+            <button id="crearEncuesta">Crear Enquesta</button>
+            <button id="listarPreguntas">Llistat de Preguntes</button>
+            <button id="listarEncuestas">Llistat de Encquestes</button>         
     </nav>
+    
+    <div id="contenido-crearpregunta"></div>
+    <div id="contenido-crearencuesta"></div>
+    <div id="contenido-listarpreguntas"></div>
+    <div id="contenido-listarencuestas"></div>
+    
+
 </body>
 </html>

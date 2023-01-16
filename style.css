@@ -1,26 +1,30 @@
 body{
     background-color: #9C8BD9;
-    
+}
+div{
+    display: flex;
+    justify-content: center;
 }
 nav{
-    margin-top: 8%;
+    margin-top: 10%;
     display: inline-block;
-    border: solid 3px;
-    border-color: #251659;
+    
     margin-left: 20px;
 }
 
-.liEncuestas{
+button{
     font-family: Poppins;
+    border-radius: 10%;
     text-align: center;
     background-color: white;
     padding: 40px;
     display: flex;
+    margin: 20px;
     flex-direction: column;
     width: 100%;
 }
 
-.liEncuestas:hover{
+button:hover{
     background-color: rgba(3, 2, 13, 0.5);
     color: white;
 }
