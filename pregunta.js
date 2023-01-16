@@ -4,49 +4,10 @@ let arrayNameButton= ["Cancelar", "Confirmar"]
 let arrayIdButton= ["cancelar", "confirm"]
 let verSelect= false;
 let verInput= false;
+createQuestion();
 
-
-
-$(document).ready(function() {
-    $('#crearPregunta').click(function() {
-        $("#dash-contenido").removeAttr("style");
-        createQuestion("#dash-contenido");
-    });
-  
-    $('#crearEncuesta').click(function() {
-        $("#dash-contenido").empty();
-    });
-    
-    $('#listarPreguntas').click(function() {
-        $("#dash-contenido").empty();
-        /*
-        $('#itempregunta').empty();
-        for (var i = 0; i < questions.length; i++) {
-        var question = questions[i];
-        var questionItem = $('<li>').text(question.question);
-        var answersList = $('<ul>');
-        for (var j = 0; j < question.answers.length; j++) {
-            var answer = question.answers[j];
-            var answerItem = $('<li>').text(answer);
-            answersList.append(answerItem);
-        }
-        questionItem.append(answersList);
-        $('#itempregunta').append(questionItem);
-        }
-                <ul id="itempregunta"></ul>
-
-        */
-    });
-    $('#listarEncuestas').click(function() {
-        $("#contenido").empty();
-    });
-});
-
-
-//CREAR PREGUNTTA
-function createQuestion(elementDOM){
-    $(elementDOM).empty();
-    $(elementDOM).append("<form class='formQuestion'><p>NOM:</p><input id='nameQuestion'type='text'><p>TIPUS:</p></form>");
+function createQuestion(){
+    $("#contenido-crearpregunta").append("<form><p>NOM:</p><input id='nameQuestion'type='text'><p>TIPUS:</p></form>");
     createTypeQuestion(arrayNameOption,arrayValueOption,"form")
     $("form").append("<div id='buttonConfirm'></div>");
     createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton)
