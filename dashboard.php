@@ -16,14 +16,14 @@
 </head>
 <body>
     <?php
-     create_log_file("mylog.txt", "Entrada en index.php");   
+     create_log_file("mylog.txt", "Entrada en dashboard.php");   
     ?>
     <div class= "dashboard">
         <nav id="panel">
         <button id="crearPregunta" class="btnPanelAdmin" onclick="">Crear Pregunta</button>
         <button id="crearEncuesta" class="btnPanelAdmin">Crear Enquesta</button>
         <button id="listarPreguntas" class="btnPanelAdmin">Llistat de Preguntes</button>
-        <button id="listarEncuestas" class="btnPanelAdmin">Llistat de Encquestes</button>         
+        <button id="listarEncuestas" class="btnPanelAdmin">Llistat d'Enquestes</button>         
         </nav>
         
         <div id="dash-contenido">

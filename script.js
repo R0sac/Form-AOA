@@ -2,51 +2,33 @@ let arrayNameOption= ["Selecciona","Numeric","Text"];
 let arrayValueOption= ["sel","numeric","text"];
 let arrayNameButton= ["Cancelar", "Confirmar"]
 let arrayIdButton= ["cancelar", "confirm"]
+let arrayTextListQuestion= ["PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU","PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU","PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU","PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU"]
+let arrayTextListPoll= ["ENCUESTA SOBRE COLORES", "ENCUESTA SOBRE EL BICHO"]
 let verSelect= false;
 let verInput= false;
 
-
-
 $(document).ready(function() {
+    $("#dash-contenido").removeAttr("style");
     $('#crearPregunta').click(function() {
-        $("#dash-contenido").removeAttr("style");
         createQuestion("#dash-contenido");
     });
   
     $('#crearEncuesta').click(function() {
-        $("#dash-contenido").empty();
+        createPoll("#dash-contenido")
     });
     
     $('#listarPreguntas').click(function() {
-        $("#dash-contenido").empty();
-        /*
-        $('#itempregunta').empty();
-        for (var i = 0; i < questions.length; i++) {
-        var question = questions[i];
-        var questionItem = $('<li>').text(question.question);
-        var answersList = $('<ul>');
-        for (var j = 0; j < question.answers.length; j++) {
-            var answer = question.answers[j];
-            var answerItem = $('<li>').text(answer);
-            answersList.append(answerItem);
-        }
-        questionItem.append(answersList);
-        $('#itempregunta').append(questionItem);
-        }
-                <ul id="itempregunta"></ul>
-
-        */
+        viewListQuestion("#dash-contenido",arrayTextListQuestion)
     });
     $('#listarEncuestas').click(function() {
-        $("#contenido").empty();
+        viewListPoll("#dash-contenido");
     });
 });
 
-
-//CREAR PREGUNTTA
+//CREAR PREGUNTA
 function createQuestion(elementDOM){
     $(elementDOM).empty();
-    $(elementDOM).append("<form class='formQuestion'><p>NOM:</p><input id='nameQuestion'type='text'><p>TIPUS:</p></form>");
+    $(elementDOM).append("<form class='contentRs formQuestion'><p>NOM:</p><input id='nameQuestion'type='text'><p>TIPUS:</p></form>");
     createTypeQuestion(arrayNameOption,arrayValueOption,"form")
     $("form").append("<div id='buttonConfirm'></div>");
     createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton)
@@ -100,4 +82,44 @@ function createButtons(nameButtons, elementDOM, arrayId){
         $(elementDOM).append("<button id='"+ arrayId[i] +"'>" + element + "</button>");
         i++;
     });
+}
+
+// CREATE POLL
+function createPoll(elementDOM){
+    $(elementDOM).empty();
+    createElements(elementDOM, "div","contentRs", true);
+    createElements(".contentRs", "p","pPoll",true,"EN CONSTRUCCIÓ...");
+}
+
+// LLISTAT DE PREGUNTES
+function viewListQuestion(elementDOM,arrayTextListQuestion){
+    $(elementDOM).empty();
+    createElements(elementDOM, "div","contentRs", true);
+    let cont= 0;
+    arrayTextListQuestion.forEach(element => {
+        createElements('.contentRs', "div",`divViewQuestion ${cont}`, true);
+        createElements(`.${cont}`, "li","liViewQuestion", true, element);
+        cont++;
+    });
+}
+// LLISTAT D'ENQUESTES
+function viewListPoll(elementDOM){
+    $(elementDOM).empty();
+    createElements(elementDOM, "div","contentRs", true);
+    let cont= 0;
+    arrayTextListPoll.forEach(element => {
+        createElements('.contentRs', "div",`divViewPoll ${cont}`, true);
+        createElements(`.${cont}`, "li","liViewPoll", true, element);
+        cont++;
+    });
+}
+
+//
+function createElements(parent,elementDOM, classes,cierreForzado,text=''){
+    if (cierreForzado==true){
+        $(parent).append("<"+elementDOM+" class='"+classes+"'>"+text+"</"+elementDOM+">") 
+    }
+    else{
+        $(parent).append("<"+elementDOM+" class="+classes+">") 
+    }
 }
