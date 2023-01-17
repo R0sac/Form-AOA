@@ -7,24 +7,26 @@ let arrayTextListPoll= ["ENCUESTA SOBRE COLORES", "ENCUESTA SOBRE EL BICHO"]
 let verSelect= false;
 let verInput= false;
 
-$(document).ready(function() {
-    //creationDashboard("body");
-    $(".dash-contenido").removeAttr("style");
-    $('#crearPregunta').click(function() {
-        createQuestion(".dash-contenido");
-    });
-  
-    $('#crearEncuesta').click(function() {
-        createPoll(".dash-contenido")
-    });
-    
-    $('#listarPreguntas').click(function() {
-        viewListQuestion(".dash-contenido",arrayTextListQuestion)
-    });
-    $('#listarEncuestas').click(function() {
-        viewListPoll(".dash-contenido");
-    });
+$("#dashAdminEnquestes").click(function(){
+    creationDashboard("body");
 });
+
+$(".dash-contenido").removeAttr("style");
+$('#crearPregunta').click(function() {
+    createQuestion(".dash-contenido");
+});
+
+$('#crearEncuesta').click(function() {
+    createPoll(".dash-contenido")
+});
+
+$('#listarPreguntas').click(function() {
+    viewListQuestion(".dash-contenido",arrayTextListQuestion)
+});
+$('#listarEncuestas').click(function() {
+    viewListPoll(".dash-contenido");
+});
+
 //
 function NewError(tipoMensaje,Texto) {
     var error = $(`<div class="${tipoMensaje}"><ul><li>${Texto}</li><span class="closebtn" onclick="this.parentElement.parentElement.style.display='none';">&times;</span></ul></div>`);7
