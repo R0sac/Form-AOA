@@ -1,13 +1,11 @@
 let arrayNameOption= ["Selecciona","Numeric","Text"];
 let arrayValueOption= ["sel","numeric","text"];
-let arrayNameButton= ["Cancelar", "Confirmar"]
-let arrayIdButton= ["cancelar", "confirm"]
-let arrayTextListQuestion= ["PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU","PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU","PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU","PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA","PREGUNTA SOBRE LA TRILOGIA DE CIXIN LIU"]
+let arrayNameButton= ["Cancelar"]
+let arrayIdButton= ["cancelar"]
+let arrayTextListQuestion= ["PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA"]
 let arrayTextListPoll= ["ENCUESTA SOBRE COLORES", "ENCUESTA SOBRE EL BICHO"]
 let verSelect= false;
 let verInput= false;
-
-
 
 $(".dash-contenido").removeAttr("style");
 $(document).ready(function(){
@@ -26,8 +24,7 @@ $(document).ready(function(){
     });
 });
 
-
-
+//CREA DASHBOARD
 function creationDashboard(elementDOM){
     new limpiarPantalla();
     createElements(elementDOM, "div", "dashboard", true);
@@ -41,20 +38,23 @@ function creationDashboard(elementDOM){
 function limpiarPantalla() {
     $("body").children().remove();
 }
+
 //CREAR PREGUNTA
 function createQuestion(elementDOM){
     $(elementDOM).empty();
-    $(elementDOM).append("<form class='contentRs formQuestion'><p>NOM:</p><input id='nameQuestion'type='text'><p>TIPUS:</p></form>");
+    $(elementDOM).append("<form class='contentRs formQuestion' method='POST'><p>NOM:</p><input id='nameQuestion' type='text' name='inputName'><p>TIPUS:</p></form>");
     createTypeQuestion(arrayNameOption,arrayValueOption,"form")
     $("form").append("<div id='buttonConfirm'></div>");
-    createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton)
+    createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton);
+    $("#buttonConfirm").append("<input type='submit'id='confirm' value='Confirmar'>")
+    
     $("#confirm").attr("disabled","true");
     $("#typeQuestion").on('change',selected)
     $("#nameQuestion").on('input',inputName)
 }
 
 function createTypeQuestion(nameOption,valueOption,elementDOM){
-    $(elementDOM).append("<select id='typeQuestion'></select>")
+    $(elementDOM).append("<select id='typeQuestion' name='selectType'></select>")
     let i= 0;
     nameOption.forEach(elem => {
         $("#typeQuestion").append("<option value='"+ valueOption[i] +"'>"+ elem +"</option>");

@@ -1,7 +1,6 @@
 <?php
     session_start();
     include "log.php";
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
     <title>Dashboard</title>
 </head>
 <body id="bodyDashboard">
