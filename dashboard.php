@@ -1,5 +1,7 @@
 <?php
-    include "log.php"
+    session_start();
+    include "log.php";
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,23 +16,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body id="bodyDashboard">
     <?php
      create_log_file("mylog.txt", "Entrada en dashboard.php");   
     ?>
-    <div class= "dashboard">
-        <nav id="panel">
-        <button id="crearPregunta" class="btnPanelAdmin" onclick="">Crear Pregunta</button>
-        <button id="crearEncuesta" class="btnPanelAdmin">Crear Enquesta</button>
-        <button id="listarPreguntas" class="btnPanelAdmin">Llistat de Preguntes</button>
-        <button id="listarEncuestas" class="btnPanelAdmin">Llistat d'Enquestes</button>         
-        </nav>
-        
-        <div id="dash-contenido">
+    <?php
+        if($_SESSION["usuario"][1] === "profe"){
+            ?>
+            <div id="Dashprofe">
+                <button id="dashProfePerfil" class="BtnDash">Perfil</button>
+                <button id="dashProfeEstats" class="BtnDash">Estadistiques</button>
+            </div>
+            <?php
+        }
+        elseif ($_SESSION["usuario"][1] === "admin") {
+            ?>
+             <div id="DashAdmin">
+                <button id="dashAdminUsuaris" class="BtnDash">Usuaris</button>
+                <button id="dashAdminEnquestes" class="BtnDash">Enquestes</button>
+                <button id="dashAdminEstats" class="BtnDash">Estadistiques</button>
+            </div>
+            <?php
+        }
 
-        </div>
-    </div>
-    
+
+    ?>
+
+    <a href="/login.php">Volver a login</a>
     <script src="script.js"></script>
+
 </body>
 </html>

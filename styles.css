@@ -9,7 +9,7 @@ body{
     grid-template-rows: 1fr;
 }
 /* DASHBOARD-BAR */
-#panel{
+.panel{
     grid-column: 1/1;
     margin-top: 5%;
     display: inline-block;
@@ -36,7 +36,7 @@ body{
 }
 
 /* DASHBOARD-CREATE-QUESTION */
-#dash-contenido{
+.dash-contenido{
      grid-column: 2/2;
      display: flex;
      align-items: center;

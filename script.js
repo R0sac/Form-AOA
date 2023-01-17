@@ -8,22 +8,46 @@ let verSelect= false;
 let verInput= false;
 
 $(document).ready(function() {
-    $("#dash-contenido").removeAttr("style");
+    //creationDashboard("body");
+    $(".dash-contenido").removeAttr("style");
     $('#crearPregunta').click(function() {
-        createQuestion("#dash-contenido");
+        createQuestion(".dash-contenido");
     });
   
     $('#crearEncuesta').click(function() {
-        createPoll("#dash-contenido")
+        createPoll(".dash-contenido")
     });
     
     $('#listarPreguntas').click(function() {
-        viewListQuestion("#dash-contenido",arrayTextListQuestion)
+        viewListQuestion(".dash-contenido",arrayTextListQuestion)
     });
     $('#listarEncuestas').click(function() {
-        viewListPoll("#dash-contenido");
+        viewListPoll(".dash-contenido");
     });
 });
+//
+function NewError(tipoMensaje,Texto) {
+    var error = $(`<div class="${tipoMensaje}"><ul><li>${Texto}</li><span class="closebtn" onclick="this.parentElement.parentElement.style.display='none';">&times;</span></ul></div>`);7
+    console.log(error);
+    $('#mensajes').append(error);
+}
+
+function limpiarPantalla() {
+    $("body").children().remove();
+}
+
+//CREACION DASHBOARD
+function creationDashboard(elementDOM){
+    $(elementDOM).empty();
+    createElements(elementDOM, "div", "dashboard", true);
+    createElements(".dashboard", "nav", "panel", true);
+    createElements(".dashboard", "div", "dash-contenido", true);
+    createElements2(".panel", "button", "btnPanelAdmin", "crearPregunta", true,"Crear Pregunta")
+    createElements2(".panel", "button", "btnPanelAdmin", "crearEncuesta", true, "Crear Enquesta")
+    createElements2(".panel", "button", "btnPanelAdmin", "listarPreguntas", true, "Llistat de Preguntes")
+    createElements2(".panel", "button", "btnPanelAdmin", "listarEncuestas", true, "Llistat d'Enquestes")
+}
+
 
 //CREAR PREGUNTA
 function createQuestion(elementDOM){
@@ -121,5 +145,14 @@ function createElements(parent,elementDOM, classes,cierreForzado,text=''){
     }
     else{
         $(parent).append("<"+elementDOM+" class="+classes+">") 
+    }
+}
+
+function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
+    if (cierreForzado==true){
+        $(parent).append("<"+elementDOM+" id='"+ids+"' class='"+classes+"'>"+text+"</"+elementDOM+">") 
+    }
+    else{
+        $(parent).append("<"+elementDOM+" id='"+ids+"' class="+classes+">") 
     }
 }
