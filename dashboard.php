@@ -18,9 +18,6 @@
 <body id="bodyDashboard">
     <div id="divDash">
     <?php
-     create_log_file("mylog.txt", "Entrada en dashboard.php");   
-    ?>
-    <?php
         if($_SESSION["usuario"][1] === "profe"){
             ?>
             <div id="Dashprofe">

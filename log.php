@@ -1,8 +1,41 @@
 <?php
-function create_log_file($file_name, $log_message) {
-    $file = fopen($file_name, "a");
-    fwrite($file, date("Y-m-d H:i:s") . " - " . $log_message . "\n");
+function createLogFile() {
+    $date = date("Y-m-d");
+    $fileName = "log_" . $date . ".txt";
+
+    if(!file_exists($fileName)) {
+        $file = fopen($fileName, "w");
+    }
+}
+
+function getLogFileName() {
+    $date = date("Y-m-d");
+    $fileName = "log_" . $date . ".txt";
+    return $fileName;
+}
+
+function logButtonClick($button) {
+    $fileName = getLogFileName();
+    $log = "[" . date("Y-m-d H:i:s") . "]"." Button '". $button ."' clicked \n";
+    $file = fopen($fileName, "a+");
+    fwrite($file, $log);
     fclose($file);
 }
-?>
+
+function logUserLogin($username, $password) {
+    $fileName = getLogFileName();
+    $log = "[" . date("Y-m-d H:i:s") . "] User logged in: " . $username . "\n";
+    $file = fopen($fileName, "a+");
+    fwrite($file, $log);
+    fclose($file);
+}
+
+createLogFile();
+
+$button = "miBoton";
+$username = "root";
+$password = "";
+
+logButtonClick($button);
+logUserLogin($username, $password);
 

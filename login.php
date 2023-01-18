@@ -36,7 +36,7 @@
             <input type="email" name ="user" ><br><br>
             <label for="pass"> Contrasenya</label><br>
             <input type="password" name ="pass" ><br><br>
-            <input id="btnLogin" type ="submit" value = "Iniciar Sessió"><br><br>
+            <input id="btnLogin" type ="submit" value = "Iniciar Sessió" name='miBoton'><br><br>
             <a href="">He oblidat la contrasenya</a><br>
             <button type="button" onclick="NewError('error','Login correcto')">Prueba</button>
             <button type="button" onclick="NewError('warning','Login correcto')">Prueba</button>
