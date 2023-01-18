@@ -24,6 +24,10 @@ $(document).ready(function(){
     });
 });
 
+$('#cancelar').click(function(){
+    cancelButton;
+});
+
 //CREA DASHBOARD
 function creationDashboard(elementDOM){
     new limpiarPantalla();
@@ -98,6 +102,11 @@ function createButtons(nameButtons, elementDOM, arrayId){
         $(elementDOM).append("<button id='"+ arrayId[i] +"'>" + element + "</button>");
         i++;
     });
+}
+
+function cancelButton(){
+    console.log(1);
+    createQuestion(".dash-contenido");
 }
 
 // CREATE POLL
