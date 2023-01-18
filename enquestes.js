@@ -1,7 +1,8 @@
 let arrayNameOption= ["Selecciona","Numeric","Text"];
 let arrayValueOption= ["sel","numeric","text"];
-let arrayNameButton= ["Cancelar"]
-let arrayIdButton= ["cancelar"]
+let arrayNameButton= ["Cancelar", "Confirmar"];
+let arrayIdButton= ["cancelar", "confirm"];
+let arrayTypeButton= ['button', 'submit'];
 let arrayTextListQuestion= ["PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA"]
 let arrayTextListPoll= ["ENCUESTA SOBRE COLORES", "ENCUESTA SOBRE EL BICHO"]
 let verSelect= false;
@@ -11,21 +12,19 @@ $(".dash-contenido").removeAttr("style");
 $(document).ready(function(){
     $("#crearPregunta").click(function(){
         createQuestion(".dash-contenido");
+        $('#cancelar').click(cancelButton);
+        $('#confirm').click(confirmButton);
     });
     $('#crearEncuesta').click(function(){
         createPoll(".dash-contenido")
     });
     $('#listarPreguntas').click(function(){
-        viewListQuestion(".dash-contenido",arrayTextListQuestion);
+        viewListQuestion(".dash-contenido",arrayTitolQuestion);
     });
         
     $('#listarEncuestas').click(function(){
         viewListPoll(".dash-contenido")
     });
-});
-
-$('#cancelar').click(function(){
-    cancelButton;
 });
 
 //CREA DASHBOARD
@@ -38,6 +37,9 @@ function creationDashboard(elementDOM){
     createElements2(".panel", "button", "btnPanelAdmin", "crearEncuesta", true, "Crear Enquesta");
     createElements2(".panel", "button", "btnPanelAdmin", "listarPreguntas", true, "Llistat de Preguntes");
     createElements2(".panel", "button", "btnPanelAdmin", "listarEncuestas", true, "Llistat d'Enquestes");
+    createQuestion(".dash-contenido");
+    $('#cancelar').click(cancelButton);
+    $('#confirm').click(confirmButton);
 }
 function limpiarPantalla() {
     $("body").children().remove();
@@ -49,8 +51,8 @@ function createQuestion(elementDOM){
     $(elementDOM).append("<form class='contentRs formQuestion' method='POST'><p>NOM:</p><input id='nameQuestion' type='text' name='inputName'><p>TIPUS:</p></form>");
     createTypeQuestion(arrayNameOption,arrayValueOption,"form")
     $("form").append("<div id='buttonConfirm'></div>");
-    createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton);
-    $("#buttonConfirm").append("<input type='submit'id='confirm' value='Confirmar'>")
+    createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton,arrayTypeButton);
+    //$("#buttonConfirm").append("<input type='submit'id='confirm' value='Confirmar'>")
     
     $("#confirm").attr("disabled","true");
     $("#typeQuestion").on('change',selected)
@@ -96,17 +98,20 @@ function comprovation(){
     }
 }
 
-function createButtons(nameButtons, elementDOM, arrayId){
+function createButtons(nameButtons, elementDOM, arrayId, typeButton){
     let i= 0;
     nameButtons.forEach(element => {
-        $(elementDOM).append("<button id='"+ arrayId[i] +"'>" + element + "</button>");
+        $(elementDOM).append("<button type='"+typeButton[i]+"' id='"+ arrayId[i] +"'>" + element + "</button>");
         i++;
     });
 }
 
 function cancelButton(){
-    console.log(1);
     createQuestion(".dash-contenido");
+}
+
+function confirmButton(){
+    location.reload();
 }
 
 // CREATE POLL
@@ -132,7 +137,7 @@ function viewListPoll(elementDOM){
     $(elementDOM).empty();
     createElements(elementDOM, "div","contentRs", true);
     let cont= 0;
-    arrayTextListPoll.forEach(element => {
+    arrayTitolPoll.forEach(element => {
         createElements('.contentRs', "div",`divViewPoll ${cont}`, true);
         createElements(`.${cont}`, "li","liViewPoll", true, element);
         cont++;

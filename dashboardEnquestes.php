@@ -23,21 +23,38 @@
             echo "Failed to get DB handle: " . $e->getMessage() . "\n";
             exit;
         }
+
+        //ARRAY TITOL QUESTION
+        $arrayTitolQuestion =[];
+        $stmt = $pdo ->prepare("SELECT text FROM pregunta;");            
+        $stmt->execute();
+        $row = $stmt->fetch();
+        while($row){
+            array_push($arrayTitolQuestion, $row['text']);
+            $row = $stmt->fetch();
+        }
+
+        $_SESSION['arrayTitolEnquesta']=[];
+        $stmt = $pdo ->prepare("SELECT titol FROM enquesta;");            
+        $stmt->execute();
+        $row = $stmt->fetch();
+        while($row){
+            array_push($_SESSION['arrayTitolEnquesta'], $row['titol']);
+            $row = $stmt->fetch();
+        }
+
         if(isset($_POST['inputName']) && isset($_POST['selectType'])){
             $name= $_POST['inputName'];
             $type= $_POST['selectType'];
             $idtype= '';
             $user= $_SESSION["usuario"][0];
             $iduser= '';
-            
-            $stmt = $pdo ->prepare("INSERT INTO tipus_pregunta (tipus) VALUES ('$type');");
-            $stmt->execute();
 
-            $stmt = $pdo ->prepare("SELECT MAX(idtipus) as tipus FROM tipus_pregunta;");            
+            $stmt = $pdo ->prepare("SELECT idtipus FROM tipus_pregunta WHERE tipus = '$type' ;");            
             $stmt->execute();
             $row = $stmt->fetch();
             if ($row){
-                $idtype= $row['tipus'];
+                $idtype= $row['idtipus'];
             }
 
             $stmt = $pdo ->prepare("SELECT idusuari FROM usuaris WHERE usuari = '$user' ;");            
@@ -50,6 +67,14 @@
             }
         }
     ?>
+    <?php
+        $json_arrayPoll = json_encode($_SESSION['arrayTitolEnquesta']);
+        $json_arrayQuestion = json_encode($arrayTitolQuestion);
+    ?>
+    <script>
+    var arrayTitolPoll = <?php echo $json_arrayPoll; ?>;
+    var arrayTitolQuestion = <?php echo $json_arrayQuestion; ?>;
+    </script>
     <script src="enquestes.js"></script>
 </body>
 </html>
