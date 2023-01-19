@@ -41,10 +41,10 @@
             <input type="password" name ="pass" ><br><br>
             <input id="btnLogin" type ="submit" value = "Iniciar Sessió" name='miBoton'><br><br>
             <a href="">He oblidat la contrasenya</a><br>
-            <button type="button" onclick="NewError('error','Login correcto')">Prueba</button>
+            <!-- <button type="button" onclick="NewError('error','Login correcto')">Prueba</button>
             <button type="button" onclick="NewError('warning','Login correcto')">Prueba</button>
             <button type="button" onclick="NewError('succes','Login correcto')">Prueba</button>
-            <button type="button" onclick="NewError('info','Login correcto')">Prueba</button>
+            <button type="button" onclick="NewError('info','Login correcto')">Prueba</button> -->
         </form>
     </div>
     </center>
