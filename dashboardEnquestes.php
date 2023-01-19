@@ -13,6 +13,10 @@
 </head>
 <body onload="creationDashboard('body')">
     <?php
+    require_once('template.php');
+    headerTemplate();
+    ?>
+    <?php
         try {
             $hostname = "localhost";
             $dbname = "EnquestaProfessors";
@@ -70,6 +74,10 @@
     <?php
         $json_arrayPoll = json_encode($_SESSION['arrayTitolEnquesta']);
         $json_arrayQuestion = json_encode($arrayTitolQuestion);
+    ?>
+    <?php
+    require_once('template.php');
+    footerTemplate();
     ?>
     <script>
     var arrayTitolPoll = <?php echo $json_arrayPoll; ?>;

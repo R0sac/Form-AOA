@@ -12,6 +12,8 @@ header{
     color: white;
     font-family: Poppins;
     text-align: center;
+    padding: 50px;
+    width: 100%;;
 }
 /* FOOTER*/
 footer{
@@ -41,11 +43,8 @@ footer{
 #bodyLogin{
     height: 937px;
     background-color: #9C8BD9;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 }
+
 #divLogin h1{
     margin-bottom: 10px;
     color:  #251659;
@@ -73,10 +72,12 @@ footer{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top:300px;
+    margin-bottom:100%;
 }
+
 #btnLogin{
     font-family: Poppins;
-    margin-left: 55px;
     padding: 8px;
     border-radius: 5px;
     border: 1PX solid #251659 ;

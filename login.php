@@ -9,12 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="/script.js"></script>
     <title>Login</title>
 </head>
 
 <body id="bodyLogin">
-    
+    <?php
+    require_once('template.php');
+    headerTemplate();
+    ?>
 <div id="mensajes">
 </div>
     <?php
@@ -29,6 +31,7 @@
             exit;
         }
     ?>
+    <center>
     <div id="divLogin">
     <h1>Iniciar Sessió</h1>
         <form method="post">
@@ -43,9 +46,11 @@
             <button type="button" onclick="NewError('succes','Login correcto')">Prueba</button>
             <button type="button" onclick="NewError('info','Login correcto')">Prueba</button>
         </form>
+    </div>
+    </center>
     <div>
     <?php 
-        if(isset($_POST["user"] ) && isset($_POST["pass"])){    
+        if(isset($_POST["user"] ) && isset($_POST["pass"])){
             $stmt = $pdo ->prepare("SELECT * FROM usuaris WHERE usuari = ? AND contrasenya =  sha2(?,512);");            
             $stmt->bindParam(1,htmlspecialchars($_POST['user']));
             $stmt->bindParam(2,htmlspecialchars($_POST['pass']));
@@ -55,10 +60,13 @@
                 $_SESSION["usuario"] = [$row["usuari"],$row["rol"]];
                 header('Location: dashboard.php');
             }
-            else{
-                
-            }
         }
     ?>
+    </div>
+    <?php
+    require_once('template.php');
+    footerTemplate();
+    ?>
+    <script src="/script.js"></script>
 </body>
 </html>

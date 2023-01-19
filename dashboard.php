@@ -16,6 +16,10 @@
     <title>Dashboard</title>
 </head>
 <body id="bodyDashboard">
+<?php
+    require_once('template.php');
+    headerTemplate();
+    ?>
     <div id="divDash">
     <?php
         if($_SESSION["usuario"][1] === "profe"){
@@ -38,6 +42,10 @@
     ?>
     </div>
     <a href="/login.php">Volver a login</a>
+    <?php
+    require_once('template.php');
+    footerTemplate();
+    ?>
     <script src="script.js"></script>
 </body>
 </html>
