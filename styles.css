@@ -1,0 +1,358 @@
+body{
+    background-color: #9C8BD9;
+    font-family: Poppins;
+}
+*{
+    margin:0;
+    padding: 0;
+}
+/* HEADER */
+header{
+    background-color: #251659;
+    color: white;
+    font-family: Poppins;
+    text-align: center;
+    padding: 50px;
+    width: 100%;;
+}
+/* FOOTER*/
+footer{
+    background-color: #251659;
+    font-family: Poppins;
+    text-align: center;
+    color: white;
+    bottom: 0;
+
+}
+/* LANDING PAGE*/
+#bodyLanding{
+    height: 100%;
+    background-color: #9C8BD9;
+}
+
+.landingH1{
+    padding: 30px;
+    background-color:  #251659;
+    color:white;
+    margin-bottom: 30px;
+}
+
+.landingButton{
+    padding: 20px;
+    color:white;
+    background-color: #251659;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#bodyLanding a{
+    text-decoration: none;
+    padding: 20px;
+    margin: 10px;
+    background-color:  #251659;
+    font-family: Poppins;
+}
+#bodyLanding a:hover{
+    background-color:  #7559D9;
+}
+/* LOGIN.PHP */
+#bodyLogin{
+    height: 937px;
+    background-color: #9C8BD9;
+}
+
+#divLogin h1{
+    margin-bottom: 10px;
+    color:  #251659;
+    font-family: Poppins;
+}
+#divLogin label{ 
+    color:  #251659;
+    font-family: Poppins;
+}
+#divLogin a{ 
+    color:  #251659;
+    font-family: Poppins;
+    
+}
+#divLogin a:hover{ 
+    color:  #7559D9;
+}
+#divLogin{
+    height: 300px;
+    width: 400px;
+    border-radius: 35px;
+    border: 2px solid #251659;
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top:300px;
+    margin-bottom:100%;
+}
+
+#btnLogin{
+    font-family: Poppins;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+
+}
+#btnLogin:hover{
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
+}
+/* DASHBOARD.PHP */
+#Dashprofe,#DashAdmin{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#divDash{
+    height: 937px;
+    background-color: #9C8BD9;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.BtnDash{
+    margin: 100px;
+    transition: all 0.6s ease-in-out;
+    font-family: Poppins;
+    margin-left: 55px;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+    font-size: 50px;
+    width: 380px;
+    height: 120px;
+}
+.BtnDash:hover{
+    width: 450px;
+    height: 200px;
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
+}
+/* CSS MESSAGES */
+#mensajes{
+    position: absolute;
+    top: 0;
+}
+
+.error ul{
+    display: flex;
+    flex-direction: row;
+}
+.error{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(255, 76, 76);
+    border-radius: 10px;
+    border: 1px solid rgb(131, 21, 21);
+    color: rgb(131, 21, 21);
+    animation: cascade 1.2s ease-in-out forwards;
+}
+.error ul li{
+    list-style: none;
+}
+
+
+.warning ul{
+    display: flex;
+    flex-direction: row;
+}
+.warning{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    background-color: #F5EB32;
+    border-radius: 10px;
+    border: 1px solid rgb(130, 130, 23);
+    color: rgb(130, 130, 23);
+    animation: cascade 1.2s ease-in-out forwards;
+}
+.warning ul li{
+    list-style: none;
+}
+
+
+.info ul{
+    display: flex;
+    flex-direction: row;
+}
+.info{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(81, 104, 237) ;
+    border-radius: 10px;
+    border: 1px solid blue;
+    color: blue;
+    animation: cascade 1.2s ease-in-out forwards;
+}
+.info ul li{
+    list-style: none;
+}
+
+.succes ul{
+    display: flex;
+    flex-direction: row;
+}
+.succes{
+    height: auto;
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    background-color: #51f36a;
+    border-radius: 10px;
+    border: 1px solid green;
+    color: green;
+    animation: cascade 1.2s ease-in-out forwards;
+}
+.succes ul li{
+    list-style: none;
+}
+
+
+.closebtn {
+    margin-left: 10px;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+}
+
+@keyframes cascade {
+    0% {
+      opacity: 0;
+      transform: translateY(-200%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+/* DASHBOARD */
+.dashboard{
+    display: grid;
+    grid-template-columns: 275px 1fr;
+    grid-template-rows: 1fr;
+}
+/* DASHBOARD-BAR */
+.panel{
+    grid-column: 1/1;
+    margin-top: 5%;
+    display: inline-block;
+    padding: 20px;
+    /* position: fixed; */
+}
+
+.btnPanelAdmin{
+    border-radius: 10px;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 100%;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btnPanelAdmin:hover{
+    background-color: rgba(3, 2, 13, 0.6);
+    color: white;
+}
+
+/* DASHBOARD-CREATE-QUESTION */
+.dash-contenido{
+     grid-column: 2/2;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.contentRs{
+    padding: 30px;
+    border: 2px solid #03020D;
+    border-radius: 10px;
+    background-color: #BF9FBA;
+}
+
+.formQuestion p{
+    font-weight: bolder;
+    color: black;
+}
+
+.formQuestion input{
+    background-color:#251659;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 30px;
+}
+
+#typeQuestion{
+    background-color:#251659;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 40px;
+}
+
+#buttonConfirm{
+    padding-top: 40px;
+}
+
+#buttonConfirm button{
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+}
+
+#buttonConfirm #cancelar{
+    background-color: red;
+    margin-right: 50px;
+}
+
+#buttonConfirm #confirm{
+    background-color: greenyellow;
+}
+
+/* DASHBOARD-VIEW-QUESTION */
+.divViewQuestion{
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #03020D;
+    border-radius: 10px;
+    background-color: #251659;
+    color: white;
+}
+
+/* DASHBOARD-VIEW-POLL */
+
+.divViewPoll{
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #03020D;
+    border-radius: 10px;
+    background-color: #251659;
+    color: white;
+}
+
+/* AÑADIR COLOR A LOS BOTONES CUANDO LE DAMOS UN CLICK, ASI SABEMOS DONDE ESTAMOS */
