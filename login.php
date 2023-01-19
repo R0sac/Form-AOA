@@ -31,24 +31,23 @@
             exit;
         }
     ?>
-    <center>
-    <div id="divLogin">
-    <h1>Iniciar Sessió</h1>
-        <form method="post">
-            <label for="user"> Usuari</label><br>
-            <input type="email" name ="user" ><br><br>
-            <label for="pass"> Contrasenya</label><br>
-            <input type="password" name ="pass" ><br><br>
-            <input id="btnLogin" type ="submit" value = "Iniciar Sessió" name='miBoton'><br><br>
-            <a href="">He oblidat la contrasenya</a><br>
-            <!-- <button type="button" onclick="NewError('error','Login correcto')">Prueba</button>
-            <button type="button" onclick="NewError('warning','Login correcto')">Prueba</button>
-            <button type="button" onclick="NewError('succes','Login correcto')">Prueba</button>
-            <button type="button" onclick="NewError('info','Login correcto')">Prueba</button> -->
-        </form>
+    <div class="autocenter">
+        <div id="divLogin">
+            <h1>Iniciar Sessió</h1>
+                <form method="post">
+                    <label for="user"> Usuari</label><br>
+                    <input type="email" name ="user" ><br><br>
+                    <label for="pass"> Contrasenya</label><br>
+                    <input type="password" name ="pass" ><br><br>
+                    <input id="btnLogin" type ="submit" value = "Iniciar Sessió" name='miBoton'><br><br>
+                    <a href="">He oblidat la contrasenya</a><br>
+                    <!-- <button type="button" onclick="NewError('error','Login correcto')">Prueba</button>
+                    <button type="button" onclick="NewError('warning','Login correcto')">Prueba</button>
+                    <button type="button" onclick="NewError('succes','Login correcto')">Prueba</button>
+                    <button type="button" onclick="NewError('info','Login correcto')">Prueba</button> -->
+                </form>
+        </div>
     </div>
-    </center>
-    <div>
     <?php 
         if(isset($_POST["user"] ) && isset($_POST["pass"])){
             $stmt = $pdo ->prepare("SELECT * FROM usuaris WHERE usuari = ? AND contrasenya =  sha2(?,512);");            
@@ -62,7 +61,6 @@
             }
         }
     ?>
-    </div>
     <?php
     require_once('template.php');
     footerTemplate();
