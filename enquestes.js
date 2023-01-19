@@ -3,8 +3,6 @@ let arrayValueOption= ["sel","numeric","text"];
 let arrayNameButton= ["Cancelar", "Confirmar"];
 let arrayIdButton= ["cancelar", "confirm"];
 let arrayTypeButton= ['button', 'submit'];
-let arrayTextListQuestion= ["PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA"]
-let arrayTextListPoll= ["ENCUESTA SOBRE COLORES", "ENCUESTA SOBRE EL BICHO"]
 let verSelect= false;
 let verInput= false;
 
