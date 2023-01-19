@@ -74,3 +74,5 @@
 [2023-01-19 10:04:17] User logged in: root
 [2023-01-19 14:44:26] Button 'miBoton' clicked 
 [2023-01-19 14:44:26] User logged in: root
+[2023-01-19 15:24:47] Button 'miBoton' clicked 
+[2023-01-19 15:24:47] User logged in: admin

@@ -33,8 +33,8 @@ function logUserLogin($username, $password) {
 createLogFile();
 
 $button = "miBoton";
-$username = "root";
-$password = "";
+$username = "admin";
+$password = "admin123";
 
 logButtonClick($button);
 logUserLogin($username, $password);
