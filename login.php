@@ -1,4 +1,4 @@
-<?php 
+<?php
 $_GET['Titulo'] = 'Log in';
 $_GET['idBody'] = 'bodyLogin';
 ?>
@@ -23,13 +23,13 @@ $_GET['idBody'] = 'bodyLogin';
 </div>
 <?php 
     if(isset($_POST["user"] ) && isset($_POST["pass"])){
-        $stmt = $pdo ->prepare("SELECT * FROM usuaris WHERE usuari = ? AND contrasenya =  sha2(?,512);");            
+        $stmt = $pdo ->prepare("SELECT * FROM user u WHERE u.email = ? AND u.password =  sha2(?,512);");            
         $stmt->bindParam(1,htmlspecialchars($_POST['user']));
         $stmt->bindParam(2,htmlspecialchars($_POST['pass']));
         $stmt->execute();
         $row = $stmt->fetch();
         if ($row){
-            $_SESSION["usuario"] = [$row["usuari"],$row["rol"]];
+            $_SESSION["user"] = [$row["id"],$row["email"],$row["username"],$row["role"]];
             header('Location: dashboard.php');
         }
     }

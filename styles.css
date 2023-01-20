@@ -110,6 +110,13 @@ footer{
 }
 
 /* DASHBOARD.PHP */
+
+.containerPoll{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #Dashprofe,#DashAdmin{
     height: 500px;
     display: flex;
@@ -125,7 +132,6 @@ footer{
     flex-direction: column;
 }
 .BtnDash{
-    margin: 100px;
     margin-top: 170px;
     transition: all 0.6s ease-in-out;
     font-family: Poppins;
@@ -249,27 +255,21 @@ footer{
       transform: translateY(0);
     }
 }
-/* DASHBOARD */
-.dashboard{
-    display: grid;
-    grid-template-columns: 275px 1fr;
-    grid-template-rows: 1fr;
-}
+
 /* POLL-BAR */
 .panel{
-    grid-column: 1/1;
-    margin-top: 5%;
-    display: inline-block;
-    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .btnPanelAdmin{
     border-radius: 10px;
     background-color: white;
-    padding: 40px;
-    display: flex;
+    padding: 40px 0px;
     margin-top: 10px;
-    flex-direction: column;
+    margin-bottom: 50px;
     width: 100%;
     font-size: medium;
     font-weight: bold;
@@ -279,21 +279,28 @@ footer{
 .btnPanelAdmin:hover{
     background-color: rgba(3, 2, 13, 0.6);
     color: white;
+    cursor: pointer;
 }
 
 /* POLL-CREATE-QUESTION */
-.dash-contenido{
-     grid-column: 2/2;
-     display: flex;
-     align-items: center;
-     justify-content: center;
+.pollContent{
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, 1);
+    border: 1px solid #61525f;
+    background-color: #BF9FBA;
+    border-radius: 10px;
+    padding: 15px;
+
 }
 
-.contentRs{
-    padding: 30px;
-    border: 2px solid #03020D;
-    border-radius: 10px;
-    background-color: #BF9FBA;
+.containerQuestions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.divSingleQuestion{
+    width: 100%;
 }
 
 .formQuestion p{

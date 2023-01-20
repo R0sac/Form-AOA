@@ -2,7 +2,7 @@
 function connectionBBDD(){
     try {
         $hostname = "localhost";
-        $dbname = "EnquestaProfessors";
+        $dbname = "creyentes_poll";
         $username = "root";
         $pw = "";
         $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");

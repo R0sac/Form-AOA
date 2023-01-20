@@ -5,7 +5,7 @@ $_GET['idBody'] = 'bodyDashboard';
 <?php include "header.php"; ?>
 <div id="divDash">
 <?php
-    if($_SESSION["usuario"][1] === "profe"){/*id=2*/
+    if($_SESSION["usuario"][3] === '2'){/*id=2*/
         ?>
         <div id="Dashprofe">
             <button id="dashProfePerfil" class="BtnDash">Perfil</button>
@@ -13,7 +13,7 @@ $_GET['idBody'] = 'bodyDashboard';
         </div>
         <?php
     }
-    elseif ($_SESSION["usuario"][1] === "admin") {/*id=1*/
+    elseif ($_SESSION["usuario"][3] === '1') {/*id=1*/
         ?>
             <div id="DashAdmin">
             <button id="dashAdminUsuaris" class="BtnDash">Usuaris</button>
@@ -21,6 +21,9 @@ $_GET['idBody'] = 'bodyDashboard';
             <button id="dashAdminEstats" class="BtnDash">Estadistiques</button>
         </div>
         <?php
+    }
+    else{
+        
     }
 ?>
 </div>
