@@ -28,24 +28,26 @@ footer{
     width: 100%;
 }
 /* LANDING PAGE*/
-#bodyLanding{
-    height: 100%;
-    background-color: #9C8BD9;
+#divLanding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
 }
-
-.landingH1{
-    padding: 30px;
-    background-color:  #251659;
-    color:white;
-    margin-bottom: 30px;
-}
-
-.landingButton{
+.btnLanding{
+    font-family: Poppins;
+    font-size: 20px;
     padding: 20px;
-    color:white;
-    background-color: #251659;
-    border-radius: 10px;
-    margin-bottom: 50px;
+    border-radius: 5px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+
+}
+.btnLanding:hover{
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
 }
 
 #bodyLanding a{
@@ -116,7 +118,6 @@ footer{
     flex-direction: row;
 }
 #divDash{
-    height: 937px;
     background-color: #9C8BD9;
     display:flex;
     align-items: center;
@@ -125,6 +126,7 @@ footer{
 }
 .BtnDash{
     margin: 100px;
+    margin-top: 170px;
     transition: all 0.6s ease-in-out;
     font-family: Poppins;
     margin-left: 55px;
@@ -142,6 +144,7 @@ footer{
     height: 200px;
     border: 1px solid #7559D9 ;
     background-color:  #7559D9 ;
+    cursor: pointer;
 }
 /* CSS MESSAGES */
 #mensajes{
@@ -167,7 +170,6 @@ footer{
 .error ul li{
     list-style: none;
 }
-
 
 .warning ul{
     display: flex;

@@ -26,19 +26,6 @@ $(document).ready(function(){
 });
 
 //CREA DASHBOARD
-function creationDashboard(elementDOM){
-    new limpiarPantalla();
-    createElements(elementDOM, "div", "dashboard", true);
-    createElements(".dashboard", "nav", "panel", true);
-    createElements(".dashboard", "div", "dash-contenido", true);
-    createElements2(".panel", "button", "btnPanelAdmin", "crearPregunta", true,"Crear Pregunta");
-    createElements2(".panel", "button", "btnPanelAdmin", "crearEncuesta", true, "Crear Enquesta");
-    createElements2(".panel", "button", "btnPanelAdmin", "listarPreguntas", true, "Llistat de Preguntes");
-    createElements2(".panel", "button", "btnPanelAdmin", "listarEncuestas", true, "Llistat d'Enquestes");
-    createQuestion(".dash-contenido");
-    $('#cancelar').click(cancelButton);
-    $('#confirm').click(confirmButton);
-}
 function limpiarPantalla() {
     $("body").children().remove();
 }
