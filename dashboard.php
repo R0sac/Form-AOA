@@ -1,6 +1,8 @@
 <?php 
 $_GET['Titulo'] = 'Dashboard';
 $_GET['idBody'] = 'bodyDashboard';
+$_GET['logout'] = '';
+
 ?>
 <?php include "header.php"; ?>
 <div id="divDash">
@@ -8,19 +10,24 @@ $_GET['idBody'] = 'bodyDashboard';
     if($_SESSION["usuario"][1] === "profe"){/*id=2*/
         ?>
         <div id="Dashprofe">
-            <button id="dashProfePerfil" class="BtnDash">Perfil</button>
-            <button id="dashProfeEstats" class="BtnDash">Estadistiques</button>
+            <a href="" id="dashProfePerfil" class="BtnDash">Perfil</a>
+            <a href="" id="dashProfeEstats" class="BtnDash">Estadistiques</a>
         </div>
         <?php
     }
     elseif ($_SESSION["usuario"][1] === "admin") {/*id=1*/
         ?>
             <div id="DashAdmin">
-            <button id="dashAdminUsuaris" class="BtnDash">Usuaris</button>
-            <button id="dashAdminEnquestes" class="BtnDash" onclick="changeLocation('poll')">Enquestes</button>
-            <button id="dashAdminEstats" class="BtnDash">Estadistiques</button>
+            <a href="" id="dashAdminUsuaris" class="BtnDash">Usuaris</a>
+            <a href="" id="dashAdminEnquestes" class="BtnDash">Enquestes</a>
+            <a href="" id="dashAdminEstats" class="BtnDash">Estadistiques</a>
         </div>
         <?php
+    }
+    else{
+        
+        header("Location: login.php");
+
     }
 ?>
 </div>

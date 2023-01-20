@@ -8,10 +8,19 @@ $_GET['idBody'] = 'bodyLogin';
 <?php
     $pdo= connectionBBDD(); 
 ?>
+<?php  
+    if($_SESSION["errors"]){
+        for ($i=0; $i <count($_SESSION["errors"]) ; $i++) {
+            for ($j=0; $j < $_SESSION["errors"][$i]; $j++) {
+                echo "<script>NewError('error','no tens rol per entrar en aquesta pagina');</script>";
+            }
+        }
+    }
+?>
 <div class="autocenter">
     <div id="divLogin">
         <h1>Iniciar Sessió</h1>
-            <form method="post">
+            <form action="checkForm.php" method="post">
                 <label for="user"> Usuari</label><br>
                 <input type="email" name ="user" ><br><br>
                 <label for="pass"> Contrasenya</label><br>
@@ -21,18 +30,6 @@ $_GET['idBody'] = 'bodyLogin';
             </form>
     </div>
 </div>
-<?php 
-    if(isset($_POST["user"] ) && isset($_POST["pass"])){
-        $stmt = $pdo ->prepare("SELECT * FROM usuaris WHERE usuari = ? AND contrasenya =  sha2(?,512);");            
-        $stmt->bindParam(1,htmlspecialchars($_POST['user']));
-        $stmt->bindParam(2,htmlspecialchars($_POST['pass']));
-        $stmt->execute();
-        $row = $stmt->fetch();
-        if ($row){
-            $_SESSION["usuario"] = [$row["usuari"],$row["rol"]];
-            header('Location: dashboard.php');
-        }
-    }
-?>
+
 <?php include "footer.php"; ?>
 

@@ -125,7 +125,12 @@ footer{
     flex-direction: column;
 }
 .BtnDash{
-    margin: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 80px;
     margin-top: 170px;
     transition: all 0.6s ease-in-out;
     font-family: Poppins;
@@ -149,9 +154,9 @@ footer{
 /* CSS MESSAGES */
 #mensajes{
     position: absolute;
-    top: 0;
+    top: 40px;
+    left: 39%;
 }
-
 .error ul{
     display: flex;
     flex-direction: row;
@@ -354,4 +359,45 @@ footer{
     border-radius: 10px;
     background-color: #251659;
     color: white;
+}
+/*LOG OUT*/
+.logout {
+    margin-left: 10px;
+    font-size: 0.8em;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+}
+.containerLogoutBtn{
+    display: flex;
+    width: 100%;
+}
+.buttonLogout i{
+
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+.buttonLogout {
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 16px;
+    padding-left: 10px;
+    margin: 15px;
+    color: #251659;
+    width: 25px;
+    background-color: #7559D9;
+    transition: width .35s;
+    -webkit-transition: width .35s;
+    overflow: hidden;
+}
+.buttonLogout:hover {
+  width: 100px;
+}
+.buttonLogout:hover .logout{
+  opacity: .9;
 }

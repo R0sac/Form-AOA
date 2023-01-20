@@ -4,7 +4,7 @@ function createLogFile() {
     $fileName = "log_" . $date . ".txt";
 
     if(!file_exists($fileName)) {
-        $file = fopen($fileName, "w");
+        $file = fopen("./logs/".$fileName, "w");
     }
 }
 

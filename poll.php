@@ -1,6 +1,7 @@
 <?php 
 $_GET['Titulo'] = 'Poll';
 $_GET['idBody'] = 'bodyPoll';
+$_GET['logout'] = ' ';
 ?>
 <?php include "header.php"; ?>
 <div class="dashboard">
