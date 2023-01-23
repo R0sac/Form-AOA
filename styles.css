@@ -417,13 +417,15 @@ footer{
 }
 
 .pollContent .containerConfirmButtons .btnAcceptar{
-    background-color: green;
+    background-color: #6cff82;
     border-color: rgb(0, 46, 0);
+    font-weight: bold;
 }   
 
 .pollContent .containerConfirmButtons .btnCancelar{
-    background-color: red;
+    background-color: rgb(255, 101, 101);
     border-color: darkred;
+    font-weight: bold;
 }
 
 /* CREATE-POLL */
@@ -461,7 +463,7 @@ footer{
     margin-bottom: 15px;
 }
 
-.pollContent .formPoll .containerTeachers, .containerQuestions{
+.pollContent .formPoll .containerTeachers, .containerQuestions, .containerStudents{
     box-sizing:content-box;
     padding: 10px 30px;
     align-self: center;
@@ -471,11 +473,11 @@ footer{
     justify-content: space-evenly;
 }
 
-.pollContent .formPoll .containerTeachers .containerSingleTeacherSelector{
+.pollContent .formPoll .containerTeachers .containerSingleTeacherSelector, .containerSingleQuestionSelector, .containerSingleStudentSelector{
     width: 40%;
 }
 
-.pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions{
+.pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions, .selectorStudents{
     background-color: #9C8BD9;
     box-shadow: 0 10px 25px rgba(92, 99, 105, 1);
     width: 100%;
@@ -490,8 +492,9 @@ footer{
 .pollContent .formPoll .singleSelector{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
+
 .pollContent .formPoll .singleSelector button{
     border: none;
     background-color: transparent;
@@ -502,17 +505,17 @@ footer{
     transform: scale(1.5);
 }
 
-.pollContent .formPoll .singleSelector button.btnAddTeacher, button.btnAddQuestion{
+.pollContent .formPoll .singleSelector button.btnAddTeacher, button.btnAddQuestion, button.btnAddStudent{
     color: green;
 }
-.pollContent .formPoll  .singleSelector button.btnAddTeacher:hover, button.btnAddQuestion:hover{
+.pollContent .formPoll  .singleSelector button.btnAddTeacher:hover, button.btnAddQuestion:hover, button.btnAddStudent:hover{
     color: rgb(0, 224, 0);
 }
 
-.pollContent .formPoll .singleSelector button.btnRemoveTeacher,  button.btnRemoveQuestion{
+.pollContent .formPoll .singleSelector button.btnRemoveTeacher,  button.btnRemoveQuestion, button.btnRemoveStudent{
     color: red;
 }
-.pollContent .formPoll .singleSelector button.btnRemoveTeacher:hover, button.btnRemoveQuestion:hover{
+.pollContent .formPoll .singleSelector button.btnRemoveTeacher:hover, button.btnRemoveQuestion:hover, button.btnRemoveStudent:hover{
     color: rgb(255, 120, 78);
 }
 

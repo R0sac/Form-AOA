@@ -4,7 +4,7 @@ $_GET['idBody'] = 'bodyPoll';
 ?>
 <?php include "header.php"; ?>
 
-<div class="messages"></div>
+<div id="mensajes"></div>
 
 <script src="./enquestes.js"></script>
 

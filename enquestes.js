@@ -19,7 +19,7 @@ function removeAcceptButton(){
 }
 
 function checkIfAllOptionsFilled(){
-    removeAcceptButton();
+    removeAcceptButton(); 
 
     for (let i = 0; i < $('.textOption').length; i++) {
         if(!$( $('.textOption')[i] ).val()){
@@ -54,6 +54,7 @@ function removeExtraSimpleOption(idNumberDiv){
 
     
     if ($('.containerSingleRadioButtonWithOptions').length <= 2) {
+        NewError("error", "Com a mínim has de tenir 2 opcions");
         return
     }
     
@@ -151,14 +152,106 @@ function addViewOfSelectedTypeQuestion(){
 
 }
 
-function checkPollFilled(){
+function checkQuestionPollFilled(){
+    checkStudentPollFilled();
+
+    if ( $('#selectorSomeQuestion').children().length > 0) {
+
+        if ($(".containerStudents").length) return
+
+        $('#formPoll').append(`
+            <label><strong>Selecció d'Alumnes:</strong></label>
+
+            <div class="containerStudents" >
+
+                <div class="containerSingleStudentSelector">
+                    <label>Alumnes escollits</label>
+                    <div class="selectorStudents" id="selectorSomeStudent" >
+                    </div>
+                </div>
+
+                <div class="containerSingleStudentSelector">
+                    <label>Alumnes disponibles</label>
+                    <div class="selectorStudents" id="selectorAllStudent" >
+                    </div>
+                </div>
+
+            </div>
+
+        `);
+
+    arrayStudents.forEach(student => {
+        $('#selectorAllStudent').append(`
+            <div class="singleSelector" id="divStudent-`+ student.id + `">
+                <button type="button" class="btnAddStudent" id="btnAddStudent-`+student.id+`" ><i class="fa-solid fa-arrow-left-long"></i></button>
+                <p>`+ student.username +`</p>
+            </div>
+        `);
+    
+        $('#btnAddStudent-'+student.id).click(() => {
+            addStudentToPickedList(student);
+        });
+    });
+
+        return;
+    }
+    $($('.containerQuestions')[0]).nextAll().remove();
+}
+
+function checkStudentPollFilled(){
+    removeAcceptButton();
+    if ($('#selectorSomeStudent').children().length > 0) {
+        if ("#btnAccept");
+        addAcceptButton();
+        return
+    }
+}
+
+function addStudentToPickedList(arrayOfStudent){
+
+    $(`#divStudent-`+arrayOfStudent.id).remove();
+
+    $('#selectorSomeStudent').append(`
+        <div class="singleSelector" id="divStudent-`+arrayOfStudent.id+`">
+            <p>`+ arrayOfStudent.username +`</p>
+            <button type="button" class="btnRemoveStudent" id="btnRemoveStudent-`+arrayOfStudent.id+`" ><i class="fa-solid fa-arrow-right-long"></i></button>
+        </div>
+    `);
+
+    $('#btnRemoveStudent-'+arrayOfStudent.id).click(() => {
+        removeStudentFromPickedList(arrayOfStudent);
+    });
+
+    checkStudentPollFilled();
+
+}
+
+function removeStudentFromPickedList(arrayOfStudent){
+    $(`#divStudent-`+arrayOfStudent.id).remove();
+
+    $('#selectorAllStudent').append(`
+        <div class="singleSelector" id="divStudent-`+ arrayOfStudent.id + `">
+            <button type="button" class="btnAddStudent" id="btnAddStudent-`+arrayOfStudent.id+`" ><i class="fa-solid fa-arrow-left-long"></i></button>
+            <p>`+ arrayOfStudent.username +`</p>
+        </div>
+    `);
+
+    $('#btnAddStudent-'+arrayOfStudent.id).click(() => {
+        addStudentToPickedList(arrayOfStudent);
+    });
+
+    checkStudentPollFilled();
+
+}
+
+function checkTeacherPollFilled(){
 
     if ($('#inputTitle').val().length > 0 && $('#inputStartDate').val().length > 0 && $('#inputEndDate').val().length > 0 && $('#selectorSomeTeachers').children().length > 0) {
         
         if ($(".containerQuestions").length) return
 
         $('#formPoll').append(`
-            <label>Selecció de Preguntes:</label>
+            <label><strong>Selecció de Preguntes:</strong></label>
 
             <div class="containerQuestions" >
                 <div class="containerSingleQuestionSelector">
@@ -167,7 +260,7 @@ function checkPollFilled(){
                     </div>
                 </div>
 
-                <div class="containerSingleQuestioSelector">
+                <div class="containerSingleQuestionSelector">
                     <label>Preguntes Disponibles</label>
                     <div class="selectorQuestions" id="selectorAllQuestion" >
                     </div>
@@ -205,10 +298,14 @@ function addQuestionToPickedList(question){
     `);
 
     $(`#btnRemoveQuestion-${idQuestionPicked}`).click(function () {
-        console.log("this:",$(this));
         // $(this).parent(`#divQuestion-`+question.id).remove();
         $(`#btnRemoveQuestion-${idQuestionPicked}`).parent(`#divQuestion-${idQuestionPicked}`).remove();
+        checkQuestionPollFilled();
+        checkStudentPollFilled();
+
     });
+    checkQuestionPollFilled();
+    checkStudentPollFilled();
     idInputOptions += 1;
 };
 
@@ -226,7 +323,8 @@ function removeTeacherFromPickedList(arrayOfTeacher){
         addTeacherToPickedList(arrayOfTeacher);
     });
 
-    checkPollFilled();
+    checkTeacherPollFilled();
+    checkStudentPollFilled();
 
 }
 
@@ -246,7 +344,8 @@ function addTeacherToPickedList(arrayOfTeacher){
         removeTeacherFromPickedList(arrayOfTeacher);
     });
 
-    checkPollFilled();
+    checkTeacherPollFilled();
+    checkStudentPollFilled();
 
 }
 
@@ -331,21 +430,21 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
     // Creacion de Formulario
     fatherObjectJquery.append(`
         <form class='formPoll' id="formPoll" method='POST'>
-            <label for"inputTitle">Títol de l'enquesta:</label>
+            <label for"inputTitle"><strong>Títol de l'enquesta:</strong></label>
             <input type="text" class="inputTitle" id="inputTitle">
             <div class="containerDates" >
                 <div class="divSingleDate" >
-                    <label for"inputTitle">Data d'inici:</label>
+                    <label for"inputTitle"><strong>Data d'inici:</strong></label>
                     <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate">
                 </div>
 
                 <div class="divSingleDate" >
-                    <label for"inputTitle">Data final:</label>
+                    <label for"inputTitle"><strong>Data final:</strong></label>
                     <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate">
                 </div>
             </div>
 
-            <label>Selecció de Professors:</label>
+            <label><strong>Selecció de Professors:</strong></label>
             <div class="containerTeachers" >
                 <div class="containerSingleTeacherSelector">
                     <label>Profesors Escollits</label>
@@ -373,15 +472,15 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
 
 
     $('#inputTitle').on('input',() => {
-        checkPollFilled();
+        checkTeacherPollFilled();
     });
 
     $('#inputStartDate').on('change',() => {
-        checkPollFilled();
+        checkTeacherPollFilled();
     });
 
     $('#inputEndDate').on('change',() => {
-        checkPollFilled();
+        checkTeacherPollFilled();
     });
 
     $('#btnCancelar').click(() => {
