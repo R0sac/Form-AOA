@@ -1,4 +1,4 @@
-
+var idInputOptions = 0;
 function removeAllAfterTitle(){
     $('#inputTitle').nextAll().remove();
     $('#btnAcceptar').remove();
@@ -30,27 +30,39 @@ function checkIfAllOptionsFilled(){
 }
 
 function addExtraSimpleOption(){
+    var idNumber = idInputOptions;
     $('#addOrDeleteOptionButtons').before(`
-        <div class="containerSingleRadioButtonWithOptions">
+        <div class="containerSingleRadioButtonWithOptions" id="div-Option-${idNumber}">
             <input class="radioOption"  type="radio" onclick="this.checked = false;">
             <input class="textOption" type="text"/>
+            <button type="button" id="btnRemoveOption-${idNumber}" class="btnRemoveOption"><i class="fa-solid fa-minus"></i></button>
         </div>
     `);
     $( $('.textOption')[$('.textOption').length - 1 ] ).on('input',() => {
         checkIfAllOptionsFilled();
     });
 
+    
+    $(`#btnRemoveOption-${idNumber}`).click(() => {
+        removeExtraSimpleOption(idNumber);
+    });
+    idInputOptions +=1;
     checkIfAllOptionsFilled();
 }
 
-function removeExtraSimpleOption(){
+function removeExtraSimpleOption(idNumberDiv){
+
+    
     if ($('.containerSingleRadioButtonWithOptions').length <= 2) {
         return
     }
-    $('.containerSingleRadioButtonWithOptions')[ $('.containerSingleRadioButtonWithOptions').length - 1].remove();
+    
+    $(`#div-Option-${idNumberDiv}`).remove();
+
     if ($('btnAcceptar')) {
         removeAcceptButton();
     }
+
     checkIfAllOptionsFilled();
 
 }
@@ -92,21 +104,24 @@ function addViewOfSelectedTypeQuestion(){
 
         case 3:
             removeAllAfterTitle();
-            
+
+            var idNumber = idInputOptions;
+
             $('#formQuestion').append(`
 
-                <div class="containerSingleRadioButtonWithOptions">
+                <div class="containerSingleRadioButtonWithOptions" id = "div-Option-${idNumber}">
                     <input class="radioOption" type="radio" onclick="this.checked = false;">
                     <input class="textOption" type="text"/>
+                    <button type="button" id="btnRemoveOption-${idNumber}" class="btnRemoveOption" ><i class="fa-solid fa-minus"></i></button>
                 </div>
-                <div class="containerSingleRadioButtonWithOptions">
+                <div class="containerSingleRadioButtonWithOptions" id = "div-Option-${idNumber + 1}">
                     <input class="radioOption"  type="radio" onclick="this.checked = false;">
                     <input class="textOption" type="text"/>
+                    <button type="button" id="btnRemoveOption-${idNumber + 1}" class="btnRemoveOption" ><i class="fa-solid fa-minus"></i></button>
                 </div>
 
                 <div id="addOrDeleteOptionButtons" class="addOrDeleteOptionButtons">
                     <button type="button" id="btnAddOption" class="btnAddOption"><i class="fa-solid fa-plus"></i></button>
-                    <button type="button" id="btnRemoveOption" class="btnRemoveOption"><i class="fa-solid fa-minus"></i></button>
                 </div>
             `);
 
@@ -121,9 +136,15 @@ function addViewOfSelectedTypeQuestion(){
                 addExtraSimpleOption();
             });
 
-            $('#btnRemoveOption').click(() => {
-                removeExtraSimpleOption();
+            $(`#btnRemoveOption-${idNumber}`).click(function() {
+                removeExtraSimpleOption(idNumber);
             });
+
+            $(`#btnRemoveOption-${idNumber+1}`).click(function() {
+                removeExtraSimpleOption(idNumber+1);
+            });
+
+            idInputOptions += 2 ;
             break;
     }
 
@@ -174,21 +195,21 @@ function checkPollFilled(){
 }
 
 function addQuestionToPickedList(question){
-
+    var idQuestionPicked = idInputOptions;
     $('#selectorSomeQuestion').append(`
-        <div class="singleSelector" id="divQuestion-`+question.id+`">
-            <p>`+ question.text +`</p>
-            <button type="button" class="btnRemoveQuestion" id="btnRemoveQuestion-`+question.id+`" ><i class="fa-solid fa-trash"></i>
+        <div class="singleSelector" id="divQuestion-${idQuestionPicked}">
+            <p id="questionId-${question.id}"> ${question.text} </p>
+            <button type="button" class="btnRemoveQuestion" id="btnRemoveQuestion-${idQuestionPicked}" ><i class="fa-solid fa-trash"></i>
             </button>
         </div>
     `);
 
-    $('#btnRemoveQuestion-'+question.id).click(function () {
+    $(`#btnRemoveQuestion-${idQuestionPicked}`).click(function () {
         console.log("this:",$(this));
-        $(this).parent(`#divQuestion-`+question.id).remove();
-        // $('#btnRemoveQuestion-'+question.id).parent(`#divQuestion-`+question.id).remove(); TODO Arreglar que se borre solo 1
+        // $(this).parent(`#divQuestion-`+question.id).remove();
+        $(`#btnRemoveQuestion-${idQuestionPicked}`).parent(`#divQuestion-${idQuestionPicked}`).remove();
     });
-
+    idInputOptions += 1;
 };
 
 function removeTeacherFromPickedList(arrayOfTeacher){

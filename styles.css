@@ -372,11 +372,17 @@ footer{
     color: rgb(0, 224, 0);
 }
 
-.pollContent .formQuestion .addOrDeleteOptionButtons .btnRemoveOption{
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions .btnRemoveOption{
+    background-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
     color: red;
 }
 
-.pollContent .formQuestion .addOrDeleteOptionButtons .btnRemoveOption:hover{
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions .btnRemoveOption:hover{
+    cursor: pointer;
+    transform: scale(1.4);
     color: rgb(255, 120, 78);
 
 }
