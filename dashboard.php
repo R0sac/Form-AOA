@@ -19,14 +19,23 @@ $_GET['logout'] = '';
         ?>
             <div id="DashAdmin">
             <a href="" id="dashAdminUsuaris" class="BtnDash">Usuaris</a>
-            <a href="" id="dashAdminEnquestes" class="BtnDash">Enquestes</a>
+            <a href="poll.php" id="dashAdminEnquestes" class="BtnDash">Enquestes</a>
             <a href="" id="dashAdminEstats" class="BtnDash">Estadistiques</a>
         </div>
         <?php
     }
     else{
-        
-        header("Location: login.php");
+        if(issetErrors()){
+            echo "<script>console.log(".$_SESSION["errors"].");</script>";
+            array_push($_SESSION["errors"],["error","Inicia la sessió"]);
+            header("Location: login.php");
+        }
+        else{
+            $_SESSION["errors"] = array();
+            array_push($_SESSION["errors"],["error","Inicia la sessió"]);
+            header("Location: login.php");
+        }
+
 
     }
 ?>

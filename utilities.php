@@ -12,5 +12,11 @@ function connectionBBDD(){
         exit;
     }
 };
-
+function issetErrors(){
+    if (isset($_SESSION["errors"])){
+        return true;
+    }else{
+        return false;
+    }
+}
 ?>

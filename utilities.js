@@ -26,3 +26,16 @@ function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
         $(parent).append("<"+elementDOM+" id='"+ids+"' class="+classes+">") 
     }
 }
+
+//SUBMIT MANUAL
+
+function Submit() {
+    var user = $("[name=user]").val();
+    var pass = $("[name=pass]").val();
+    if (user && pass){
+        $("#login").submit();
+    }else{
+        NewError("warning","Emplena el formdwqqqqulari");
+        
+    }
+}

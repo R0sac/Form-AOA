@@ -6,6 +6,7 @@ body{
     background-color: #9C8BD9;
     font-family: Poppins;
     padding-bottom: 100px;
+    max-width: 1920px;
 }
 header{
     display: flex;
@@ -16,16 +17,18 @@ header{
     font-family: Poppins;
     text-align: center;
     height: 60px;
+    max-width: 1920px;
 }
 footer{
     background-color: #251659;
     font-family: Poppins;
     text-align: center;
     color: white;
-    position:absolute;
+    position:fixed;
     padding: 20px;
     bottom: 0;
     width: 100%;
+    max-width: 1920px;
 }
 /* LANDING PAGE*/
 #divLanding{
@@ -65,7 +68,7 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 170px;
+    margin-top:80px;
 }
 #divLogin h1{
     margin-bottom: 10px;
@@ -84,8 +87,8 @@ footer{
     color:  #7559D9;
 }
 #divLogin{
-    height: 300px;
-    width: 400px;
+    height: 350px;
+    width: 450px;
     border-radius: 35px;
     border: 2px solid #251659;
     background-color: white;
@@ -153,20 +156,22 @@ footer{
 }
 /* CSS MESSAGES */
 #mensajes{
+    font-weight: bold;
     position: absolute;
-    top: 40px;
-    left: 39%;
+    top: 55px;
+    margin: auto;
 }
 .error ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .error{
     height: auto;
     width: auto;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(255, 76, 76);
+    background-color: rgb(255, 101, 101);
     border-radius: 10px;
     border: 1px solid rgb(131, 21, 21);
     color: rgb(131, 21, 21);
@@ -179,13 +184,14 @@ footer{
 .warning ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .warning{
     height: auto;
     width: auto;
     padding: 20px;
     margin: 10px;
-    background-color: #F5EB32;
+    background-color: #fff758;
     border-radius: 10px;
     border: 1px solid rgb(130, 130, 23);
     color: rgb(130, 130, 23);
@@ -199,6 +205,7 @@ footer{
 .info ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .info{
     height: auto;
@@ -218,13 +225,14 @@ footer{
 .succes ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .succes{
     height: auto;
     width: auto;
     padding: 20px;
     margin: 10px;
-    background-color: #51f36a;
+    background-color: #6cff82;
     border-radius: 10px;
     border: 1px solid green;
     color: green;
@@ -242,6 +250,7 @@ footer{
 }
 .closebtn:hover {
     color: black;
+    cursor: pointer;
 }
 
 @keyframes cascade {

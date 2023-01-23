@@ -1,6 +1,8 @@
-<?php session_start(); 
+<?php session_start();
+include('utilities.php');
 $_SESSION["errors"] = array();
 function logIn(){
+    $pdo = connectionBBDD();
     $stmt = $pdo ->prepare("SELECT * FROM usuaris WHERE usuari = ? AND contrasenya =  sha2(?,512);");            
     $stmt->bindParam(1,htmlspecialchars($_POST['user']));
     $stmt->bindParam(2,htmlspecialchars($_POST['pass']));
@@ -10,7 +12,8 @@ function logIn(){
         $_SESSION["usuario"] = [$row["usuari"],$row["rol"]];
         header('Location: dashboard.php');
     }else{
-        $_SESSION["errors"]= array_push($_SESSION["errors"],["error","Usuari o cotrasenya incorrectes"]);
+        array_push($_SESSION["errors"],["error","Credencials incorrectes"]);
+        header('Location: login.php');
     }
 }
 if(isset($_POST["user"] ) && isset($_POST["pass"])){
