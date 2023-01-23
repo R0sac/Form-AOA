@@ -1,0 +1,10 @@
+[2023-01-20 18:20:47] Button 'miBoton' clicked 
+[2023-01-20 18:20:47] User logged in: admin
+[2023-01-20 19:26:57] Button 'miBoton' clicked 
+[2023-01-20 19:26:57] User logged in: admin
+[2023-01-20 19:27:55] Button 'miBoton' clicked 
+[2023-01-20 19:27:55] User logged in: admin
+[2023-01-20 19:27:56] Button 'miBoton' clicked 
+[2023-01-20 19:27:56] User logged in: admin
+[2023-01-20 19:28:27] Button 'miBoton' clicked 
+[2023-01-20 19:28:27] User logged in: admin

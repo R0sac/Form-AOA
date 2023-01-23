@@ -1,19 +1,15 @@
-let arrayNameOption= ["Selecciona","Numeric","Text"];
-let arrayValueOption= ["sel","numeric","text"];
-let arrayNameButton= ["Cancelar", "Confirmar"];
-let arrayIdButton= ["cancelar", "confirm"];
-let arrayTypeButton= ['button', 'submit'];
-let arrayTextListQuestion= ["PREGUNTA SOBRE LA VIDA", "PREGUNTA SOBRE LA MUERTE","PREGUNTA SOBRE LA MUSICA"]
-let arrayTextListPoll= ["ENCUESTA SOBRE COLORES", "ENCUESTA SOBRE EL BICHO"]
+let arrayNameOption= ["Selecciona","Numeric","Text", "Opcion Simple"];
+let arrayValueOption= ["sel","numeric","text", "simpleOption"];
+let arrayLabelTextCreationQuestion= ["Res satisfet","Poc satisfet","Neutral", "Molt Satisfet", "Totalment Satisfet"]
 let verSelect= false;
 let verInput= false;
+let divInputButtonClass= 0;
 
-$(".dash-contenido").removeAttr("style");
 $(document).ready(function(){
+    $('#cancelar').click(cancelButton);
+    $('#confirm').click(confirmButton);
     $("#crearPregunta").click(function(){
         createQuestion(".dash-contenido");
-        $('#cancelar').click(cancelButton);
-        $('#confirm').click(confirmButton);
     });
     $('#crearEncuesta').click(function(){
         createPoll(".dash-contenido")
@@ -38,9 +34,8 @@ function creationDashboard(elementDOM){
     createElements2(".panel", "button", "btnPanelAdmin", "listarPreguntas", true, "Llistat de Preguntes");
     createElements2(".panel", "button", "btnPanelAdmin", "listarEncuestas", true, "Llistat d'Enquestes");
     createQuestion(".dash-contenido");
-    $('#cancelar').click(cancelButton);
-    $('#confirm').click(confirmButton);
 }
+
 function limpiarPantalla() {
     $("body").children().remove();
 }
@@ -48,11 +43,14 @@ function limpiarPantalla() {
 //CREAR PREGUNTA
 function createQuestion(elementDOM){
     $(elementDOM).empty();
-    $(elementDOM).append("<form class='contentRs formQuestion' method='POST'><p>NOM:</p><input id='nameQuestion' type='text' name='inputName'><p>TIPUS:</p></form>");
-    createTypeQuestion(arrayNameOption,arrayValueOption,"form")
-    $("form").append("<div id='buttonConfirm'></div>");
-    createButtons(arrayNameButton, "#buttonConfirm", arrayIdButton,arrayTypeButton);
-    //$("#buttonConfirm").append("<input type='submit'id='confirm' value='Confirmar'>")
+    $(elementDOM).append("<form class='contentRs formQuestion' method='POST'></form>");//CREA UN FORMULARIO VACIO
+    createElements(".contentRs","p","pFormType",true,"TIPUS:");//AÑADE DENTRO DEL FORMULARIO UNA 'P'
+    createTypeQuestion(arrayNameOption,arrayValueOption,".contentRs")//AÑADE DENTRO DEL FORMULARIO UN 'SELECT'
+    createElements(".contentRs","div","divRadioButton",true);//AÑADE DENTRO DEL FORMULARIO UN 'DIV' PARA LAS OPCIONES DEL RADIO BUTTON
+    createElements(".contentRs","p","pFormName",true,"NOM:");//AÑADE DENTRO DEL FORMULARIO UNA 'P'
+    createInputElement(".contentRs","text", "nameQuestion","nameQuestion","inputName");//AÑADE DENTRO DEL FORMULARIO UN 'INPUT'
+    createElements2(".contentRs", "div","buttonConfirm","buttonConfirm",true)//AÑADE DENTRO DEL FORMULARIO UN 'DIV' PARA LOS BOTONES
+    createButtons("#buttonConfirm", "button", "cancelar", "cancelar", "Cancelar",);//AÑADE DENTRO DEL DIV_BOTONES UNOS DOS BOTONES
     
     $("#confirm").attr("disabled","true");
     $("#typeQuestion").on('change',selected)
@@ -69,13 +67,62 @@ function createTypeQuestion(nameOption,valueOption,elementDOM){
 }
 
 function selected(){
-    if($(this).val()!='sel'){
+    $(".buttonAddInput").remove();
+    if($(this).val()=='numeric'){
         verSelect= true;
+        $(".divRadioButton").empty();
+        arrayLabelTextCreationQuestion.forEach(element => {
+            createInputElement(".divRadioButton","radio","inputRadioButton", "inputRadioButton", "typeQuestionRadio", element)
+            createElements(".divRadioButton","label","labelRadioButton",true, element);
+            $(".divRadioButton").append("<br>");
+        });
     }
+
+    else if($(this).val()=='text'){
+        verSelect= true;
+        $(".divRadioButton").empty();
+        $(".divRadioButton").append("<textarea id='textArea' name='text' rows='4' cols='50' placeholder='Escriu aqui...' disabled>")
+    }
+
+    else if($(this).val()=='simpleOption'){
+        verSelect= true;
+        $(".divRadioButton").empty();
+        $("#typeQuestion").after("<button type='button' class='buttonAddInput' >Mas</button>");
+        for (let index = 0; index < 2; index++) {
+            createElements(".divRadioButton","div", `divInputButton ${divInputButtonClass}`,true);
+            createInputElement(`.${divInputButtonClass}`,"text","inputSimpleOption","inputSimpleOption","simpleOption");
+            createButtons(`.${divInputButtonClass}`,"button","buttonCreateInputs","buttonCreateInputs","Eliminar"); 
+            divInputButtonClass++;
+        }
+        $(".buttonCreateInputs").click(function(event){
+            var targerRemove= $(event.target);
+            $(targerRemove).parent().remove();
+        });
+
+        $(".buttonAddInput").click(createDivInputButton);
+        // createInputElement(".divRadioButton","text","inputSimpleOption","inputSimpleOption","simpleOption");
+    }
+
     else{
+        $(".divRadioButton").empty();
         verSelect= false;
     }
     comprovation()
+}
+
+function createInputElement(parent, type, classe, ids, name, value=''){
+    $(parent).append("<input type='"+type+"' class='"+classe+"' id='"+ids+"' name='"+name+"' value='"+value+"'>")
+}
+
+function createDivInputButton(){
+    createElements(".divRadioButton","div", `divInputButton ${divInputButtonClass}`,true);
+    createInputElement(`.${divInputButtonClass}`,"text","inputSimpleOption","inputSimpleOption","simpleOption");
+    createButtons(`.${divInputButtonClass}`,"button","buttonCreateInputs","buttonCreateInputs","Eliminar");  
+    divInputButtonClass++;
+    $(".buttonCreateInputs").click(function(event){
+        var targerRemove= $(event.target);
+        $(targerRemove).parent().remove();
+    });
 }
 
 function inputName(){
@@ -91,22 +138,21 @@ function inputName(){
 
 function comprovation(){
     if(verInput== true && verSelect== true){
-        $('#confirm').prop("disabled", false);
+        $(".confirm").remove()
+        createButtons("#buttonConfirm", "submit", "confirm", "confirm", "Confirmar",);
     }
     else{
-        $("#confirm").attr("disabled","true");
+        $(".confirm").remove()
     }
 }
 
-function createButtons(nameButtons, elementDOM, arrayId, typeButton){
-    let i= 0;
-    nameButtons.forEach(element => {
-        $(elementDOM).append("<button type='"+typeButton[i]+"' id='"+ arrayId[i] +"'>" + element + "</button>");
-        i++;
-    });
+function createButtons(parent, type, classe, ids,text){
+    $(parent).append("<button type='"+type+"' class='"+classe+"' id='"+ ids +"'>" + text + "</button>");
 }
 
 function cancelButton(){
+    verSelect= false;
+    verInput= false;
     createQuestion(".dash-contenido");
 }
 
@@ -142,23 +188,4 @@ function viewListPoll(elementDOM){
         createElements(`.${cont}`, "li","liViewPoll", true, element);
         cont++;
     });
-}
-
-//
-function createElements(parent,elementDOM, classes,cierreForzado,text=''){
-    if (cierreForzado==true){
-        $(parent).append("<"+elementDOM+" class='"+classes+"'>"+text+"</"+elementDOM+">") 
-    }
-    else{
-        $(parent).append("<"+elementDOM+" class="+classes+">") 
-    }
-}
-
-function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
-    if (cierreForzado==true){
-        $(parent).append("<"+elementDOM+" id='"+ids+"' class='"+classes+"'>"+text+"</"+elementDOM+">") 
-    }
-    else{
-        $(parent).append("<"+elementDOM+" id='"+ids+"' class="+classes+">") 
-    }
 }

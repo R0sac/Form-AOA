@@ -10,25 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Dashboard-Enquestes</title>
+    <script src="enquestes.js"></script>
+    <script src="utilities.js"></script>
     <!-- <script src="enquestes.js"></script> -->
 </head>
 <body onload="creationDashboard('body')">
     <?php
+    require('utilities.php');
     require_once('template.php');
     headerTemplate();
     ?>
     <?php
-        try {
-            $hostname = "localhost";
-            $dbname = "EnquestaProfessors";
-            $username = "admin";
-            $pw = "admin123";
-            $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
-        } catch (PDOException $e) {
-            echo "Failed to get DB handle: " . $e->getMessage() . "\n";
-            exit;
-        }
-
+        $pdo= connectionBBDD();
         //ARRAY TITOL QUESTION
         $arrayTitolQuestion =[];
         $stmt = $pdo ->prepare("SELECT text FROM pregunta;");            
@@ -36,6 +29,15 @@
         $row = $stmt->fetch();
         while($row){
             array_push($arrayTitolQuestion, $row['text']);
+            $row = $stmt->fetch();
+        }
+
+        $arraySelectText =[];
+        $stmt = $pdo ->prepare("SELECT tipus FROM tipus_pregunta;");            
+        $stmt->execute();
+        $row = $stmt->fetch();
+        while($row){
+            array_push($arraySelectText, $row['tipus']);
             $row = $stmt->fetch();
         }
 
@@ -75,6 +77,7 @@
     <?php
         $json_arrayPoll = json_encode($_SESSION['arrayTitolEnquesta']);
         $json_arrayQuestion = json_encode($arrayTitolQuestion);
+        $json_arraySelectText = json_encode($arraySelectText);
     ?>
     <?php
     require_once('template.php');
@@ -83,7 +86,7 @@
     <script>
     var arrayTitolPoll = <?php echo $json_arrayPoll; ?>;
     var arrayTitolQuestion = <?php echo $json_arrayQuestion; ?>;
+    var arraySelectText = <?php echo $json_arraySelectText; ?>;
     </script>
-    <script src="enquestes.js"></script>
 </body>
 </html>

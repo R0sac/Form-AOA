@@ -14,22 +14,14 @@
 
 <body id="bodyLogin">
     <?php
+    require('utilities.php');
     require_once('template.php');
     headerTemplate();
     ?>
 <div id="mensajes">
 </div>
     <?php
-        try {
-            $hostname = "localhost";
-            $dbname = "EnquestaProfessors";
-            $username = "admin";
-            $pw = "admin123";
-            $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
-          } catch (PDOException $e) {
-            echo "Failed to get DB handle: " . $e->getMessage() . "\n";
-            exit;
-        }
+        $pdo= connectionBBDD();  
     ?>
     <center>
     <div id="divLogin">
