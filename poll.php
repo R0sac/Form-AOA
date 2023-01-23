@@ -73,4 +73,4 @@ $_GET['idBody'] = 'bodyPoll';
 
     </div>
 </div>
-<?php //include "footer.php"; ?>
+<?php include "footer.php"; ?>
