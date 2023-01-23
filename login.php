@@ -29,7 +29,7 @@ $_GET['idBody'] = 'bodyLogin';
         $stmt->execute();
         $row = $stmt->fetch();
         if ($row){
-            $_SESSION["user"] = [$row["id"],$row["email"],$row["username"],$row["role"]];
+            $_SESSION["user"] = [intval($row["id"]),$row["email"],$row["username"],intval($row["role"])];
             header('Location: dashboard.php');
         }
     }

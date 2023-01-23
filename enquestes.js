@@ -1,181 +1,439 @@
-var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-3.6.3.min.js';
-document.getElementsByTagName('head')[0].appendChild(script);
 
-// let arrayNameOption= ["Selecciona","Numeric","Text", "Opcion Simple"];
-// let arrayValueOption= ["sel","numeric","text", "simpleOption"];
-// let arrayLabelTextCreationQuestion= ["Res satisfet","Poc satisfet","Neutral", "Molt Satisfet", "Totalment Satisfet"]
-// let verSelect= false;
-// let verInput= false;
-
-// $(".dash-contenido").removeAttr("style");
-// $(document).ready(function(){
-//     $("#crearPregunta").click(function(){
-//         createQuestion(".dash-contenido");
-//         $('#cancelar').click(cancelButton);
-//         $('#confirm').click(confirmButton);
-//     });
-//     $('#crearEncuesta').click(function(){
-//         createPoll(".dash-contenido")
-//     });
-//     $('#listarPreguntas').click(function(){
-//         viewListQuestion(".dash-contenido",arrayTitolQuestion);
-//     });
-        
-//     $('#listarEncuestas').click(function(){
-//         viewListPoll(".dash-contenido")
-//     });
-// });
-
-//CREA DASHBOARD
-function limpiarPantalla() {
-    $("body").children().remove();
+function removeAllAfterTitle(){
+    $('#inputTitle').nextAll().remove();
+    $('#btnAcceptar').remove();
 }
+
+function addAcceptButton(){
+    $('#containerConfirmButtons').prepend(`
+        <button class="btnConfirm btnAcceptar" id="btnAcceptar" >Acceptar</button>
+    `);
+
+    $('#btnAcceptar').click(()=>{
+        $('#formQuestion').submit();
+    });    
+}
+
+function removeAcceptButton(){
+    $('#btnAcceptar').remove();
+}
+
+function checkIfAllOptionsFilled(){
+    removeAcceptButton();
+
+    for (let i = 0; i < $('.textOption').length; i++) {
+        if(!$( $('.textOption')[i] ).val()){
+            return
+        }
+    }
+    addAcceptButton();
+}
+
+function addExtraSimpleOption(){
+    $('#addOrDeleteOptionButtons').before(`
+        <div class="containerSingleRadioButtonWithOptions">
+            <input class="radioOption"  type="radio" onclick="this.checked = false;">
+            <input class="textOption" type="text"/>
+        </div>
+    `);
+    $( $('.textOption')[$('.textOption').length - 1 ] ).on('input',() => {
+        checkIfAllOptionsFilled();
+    });
+
+    checkIfAllOptionsFilled();
+}
+
+function removeExtraSimpleOption(){
+    if ($('.containerSingleRadioButtonWithOptions').length <= 2) {
+        return
+    }
+    $('.containerSingleRadioButtonWithOptions')[ $('.containerSingleRadioButtonWithOptions').length - 1].remove();
+    if ($('btnAcceptar')) {
+        removeAcceptButton();
+    }
+    checkIfAllOptionsFilled();
+
+}
+
+
+
+function addViewOfSelectedTypeQuestion(){
+    var tipusPregunta = Number($('#typeQuestion').val());
+    var enunciatPregunta = $('#inputTitle').val();
+
+
+    if (!tipusPregunta || !enunciatPregunta){
+        removeAllAfterTitle();
+        return;
+    } 
+    switch (tipusPregunta) {
+        case 1:
+            removeAllAfterTitle();
+            arrayOptionsOfTypeNumber.forEach(option => {
+                $('#formQuestion').append(`
+                <div class="containerSingleRadioButton" id="containerSingleRadioButton">
+                    <input type="radio" id="radioBtn-`+ option.id +`" onclick="this.checked = false;">
+                    <label for="radioBtn-`+ option.id +`">`+option.text+`</label>
+                </div>
+                `);
+
+            });
+
+            addAcceptButton();
+            break;
+
+        case 2:
+            removeAllAfterTitle();
+            $('#formQuestion').append(`
+                <textarea id="textareaExample" readonly></textarea>
+            `);
+            addAcceptButton();
+            break;
+
+        case 3:
+            removeAllAfterTitle();
+            
+            $('#formQuestion').append(`
+
+                <div class="containerSingleRadioButtonWithOptions">
+                    <input class="radioOption" type="radio" onclick="this.checked = false;">
+                    <input class="textOption" type="text"/>
+                </div>
+                <div class="containerSingleRadioButtonWithOptions">
+                    <input class="radioOption"  type="radio" onclick="this.checked = false;">
+                    <input class="textOption" type="text"/>
+                </div>
+
+                <div id="addOrDeleteOptionButtons" class="addOrDeleteOptionButtons">
+                    <button type="button" id="btnAddOption" class="btnAddOption"><i class="fa-solid fa-plus"></i></button>
+                    <button type="button" id="btnRemoveOption" class="btnRemoveOption"><i class="fa-solid fa-minus"></i></button>
+                </div>
+            `);
+
+            // Adding oninput function to check if are filled all inputs
+            for (let i = 0; i < $('.textOption').length; i++) {
+                $( $('.textOption')[i] ).on('input',() => {
+                    checkIfAllOptionsFilled();
+                });
+            }
+
+            $('#btnAddOption').click(() => {
+                addExtraSimpleOption();
+            });
+
+            $('#btnRemoveOption').click(() => {
+                removeExtraSimpleOption();
+            });
+            break;
+    }
+
+
+}
+
+function checkPollFilled(){
+
+    if ($('#inputTitle').val().length > 0 && $('#inputStartDate').val().length > 0 && $('#inputEndDate').val().length > 0 && $('#selectorSomeTeachers').children().length > 0) {
+        
+        if ($(".containerQuestions").length) return
+
+        $('#formPoll').append(`
+            <label>Selecció de Preguntes:</label>
+
+            <div class="containerQuestions" >
+                <div class="containerSingleQuestionSelector">
+                    <label>Preguntes Escollides</label>
+                    <div class="selectorQuestions" id="selectorSomeQuestion" >
+                    </div>
+                </div>
+
+                <div class="containerSingleQuestioSelector">
+                    <label>Preguntes Disponibles</label>
+                    <div class="selectorQuestions" id="selectorAllQuestion" >
+                    </div>
+                </div>
+            </div>
+
+        `);
+
+        arrayQuestions.forEach(question => {
+            $('#selectorAllQuestion').append(`
+                <div class="singleSelector" id="divTeacher-`+ question.id + `">
+                    <button type="button" class="btnAddTeacher" id="btnAddTeacher-`+question.id+`" ><i class="fa-solid fa-arrow-left-long"></i></button>
+                    <p>`+ question.text +`</p>
+                </div>
+            `);
+        
+            $('#btnAddTeacher-'+question.id).click(() => {
+                addQuestionToPickedList(question);
+            });
+        });
+        return
+    };
+    $($('.containerTeachers')[0]).nextAll().remove();
+
+}
+
+function addQuestionToPickedList(question){
+
+    $('#selectorSomeQuestion').append(`
+        <div class="singleSelector" id="divQuestion-`+question.id+`">
+            <p>`+ question.text +`</p>
+            <button type="button" class="btnRemoveQuestion" id="btnRemoveQuestion-`+question.id+`" ><i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+    `);
+
+    $('#btnRemoveQuestion-'+question.id).click(function () {
+        console.log("this:",$(this));
+        $(this).parent(`#divQuestion-`+question.id).remove();
+        // $('#btnRemoveQuestion-'+question.id).parent(`#divQuestion-`+question.id).remove(); TODO Arreglar que se borre solo 1
+    });
+
+};
+
+function removeTeacherFromPickedList(arrayOfTeacher){
+    $(`#divTeacher-`+arrayOfTeacher.id).remove();
+
+    $('#selectorAllTeachers').append(`
+        <div class="singleSelector" id="divTeacher-`+ arrayOfTeacher.id + `">
+            <button type="button" class="btnAddTeacher" id="btnAddTeacher-`+arrayOfTeacher.id+`" ><i class="fa-solid fa-arrow-left-long"></i></button>
+            <p>`+ arrayOfTeacher.username +`</p>
+        </div>
+    `);
+
+    $('#btnAddTeacher-'+arrayOfTeacher.id).click(() => {
+        addTeacherToPickedList(arrayOfTeacher);
+    });
+
+    checkPollFilled();
+
+}
+
+
+function addTeacherToPickedList(arrayOfTeacher){
+
+    $(`#divTeacher-`+arrayOfTeacher.id).remove();
+
+    $('#selectorSomeTeachers').append(`
+        <div class="singleSelector" id="divTeacher-`+arrayOfTeacher.id+`">
+            <p>`+ arrayOfTeacher.username +`</p>
+            <button type="button" class="btnRemoveTeacher" id="btnRemoveTeacher-`+arrayOfTeacher.id+`" ><i class="fa-solid fa-arrow-right-long"></i></button>
+        </div>
+    `);
+
+    $('#btnRemoveTeacher-'+arrayOfTeacher.id).click(() => {
+        removeTeacherFromPickedList(arrayOfTeacher);
+    });
+
+    checkPollFilled();
+
+}
+
 
 //CREAR PREGUNTA
-function createQuestion(elementDOM){
-    $(elementDOM).empty();
-    $(elementDOM).append("<form class='contentRs formQuestion' method='POST'></form>");//CREA UN FORMULARIO VACIO
-    createElements(".contentRs","p","pFormType",true,"TIPUS:");//AÑADE DENTRO DEL FORMULARIO UNA 'P'
-    createTypeQuestion(arrayNameOption,arrayValueOption,".contentRs")//AÑADE DENTRO DEL FORMULARIO UN 'SELECT'
-    createElements(".contentRs","div","divRadioButton",true);//AÑADE DENTRO DEL FORMULARIO UN 'DIV' PARA LAS OPCIONES DEL RADIO BUTTON
-    createElements(".contentRs","p","pFormName",true,"NOM:");//AÑADE DENTRO DEL FORMULARIO UNA 'P'
-    createInputElement(".contentRs","text", "nameQuestion","nameQuestion","inputName");//AÑADE DENTRO DEL FORMULARIO UN 'INPUT'
-    createElements2(".contentRs", "div","buttonConfirm","buttonConfirm",true)//AÑADE DENTRO DEL FORMULARIO UN 'DIV' PARA LOS BOTONES
-    createButtons("#buttonConfirm", "button", "cancelar", "cancelar", "Cancelar",);//AÑADE DENTRO DEL DIV_BOTONES UNOS DOS BOTONES
+function createQuestion(elementDOM,arrayTextListQuestion){
+    var fatherObjectJquery = $(elementDOM);
+    fatherObjectJquery.empty();
+
+    $('#btnCrearPregunta').addClass('active');
     
-    $("#confirm").attr("disabled","true");
-    $("#typeQuestion").on('change',selected)
-    $("#nameQuestion").on('input',inputName)
-}
+    $('#btnListarPreguntas').removeClass('active');
+    $('#btnCrearEncuesta').removeClass('active');
+    $('#btnListarEncuestas').removeClass('active');
 
-function createTypeQuestion(nameOption,valueOption,elementDOM){
-    $(elementDOM).append("<select id='typeQuestion' name='selectType'></select>")
-    let i= 0;
-    nameOption.forEach(elem => {
-        $("#typeQuestion").append("<option value='"+ valueOption[i] +"'>"+ elem +"</option>");
-        i++;
+    // Creacion de Formulario
+    fatherObjectJquery.append(`
+        <form class='formQuestion' id="formQuestion" method='POST'>
+            <label for"typeQuestion">Tipus de pregunta:</label>
+            <select class="typeQuestion" id="typeQuestion">
+                <option value="0" disabled selected>Tria un tipus de pregunta</option>
+            </select>
+
+            <label for"inputTitle">Enunciat de la pregunta:</label>
+            <input type="text" class="inputTitle" id="inputTitle">
+
+        </form> 
+        <div id="containerConfirmButtons" class="containerConfirmButtons" >
+            <button class="btnConfirm btnCancelar" id="btnCancelar" >Cancel·lar</button>
+        </div>
+    `);
+
+    // Creacion de dropdown
+    arrayTextListQuestion.forEach(typeQuestion => {
+        $('#typeQuestion').append(`
+            <option value="`+ typeQuestion.id +`">
+                `+typeQuestion.type+`
+            </option>
+        `);
     });
-}
 
-function selected(){
-    if($(this).val()=='numeric'){
-        verSelect= true;
-        $(".divRadioButton").empty();
-        arrayLabelTextCreationQuestion.forEach(element => {
-            createInputElement(".divRadioButton","radio","inputRadioButton", "inputRadioButton", "typeQuestionRadio", element)
-            createElements(".divRadioButton","label","labelRadioButton",true, element);
-            $(".divRadioButton").append("<br>");
-        });
-    }
+    $('#typeQuestion').change(() => {
+        addViewOfSelectedTypeQuestion();
+    });
 
-    else if($(this).val()=='text'){
-        verSelect= true;
-        $(".divRadioButton").empty();
-        $(".divRadioButton").append("<textarea id='textArea' name='text' rows='4' cols='50' placeholder='Escriu aqui...' disabled>")
-    }
+    $('#inputTitle').on('input',() => {
+        addViewOfSelectedTypeQuestion();
+    });
 
-    else if($(this).val()=='simpleOption'){
-        verSelect= true;
-        $(".divRadioButton").empty();
-        createInputElement(".divRadioButton","text","inputSimpleOption","inputSimpleOption","simpleOption")
-    }
+    $('#btnCancelar').click(() => {
+        fatherObjectJquery.empty();
+        createQuestion(elementDOM,arrayTextListQuestion);
+    });
+    
 
-    else{
-        $(".divRadioButton").empty();
-        verSelect= false;
-    }
-    comprovation()
-}
-
-function createInputElement(parent, type, classe, ids, name, value=''){
-    $(parent).append("<input type='"+type+"' class='"+classe+"' id='"+ids+"' name='"+name+"' value='"+value+"'>")
-}
-
-function inputName(){
-    let ver= $("#nameQuestion").val().length;
-    if(ver!=0){
-        verInput= true;
-    }
-    else{
-        verInput= false;
-    }
-    comprovation()
-}
-
-function comprovation(){
-    if(verInput== true && verSelect== true){
-        $(".confirm").remove()
-        createButtons("#buttonConfirm", "submit", "confirm", "confirm", "Confirmar",);
-    }
-    else{
-        $(".confirm").remove()
-    }
-}
-
-function createButtons(parent, type, classe, ids,text){
-    $(parent).append("<button type='"+type+"' class='"+classe+"' id='"+ ids +"'>" + text + "</button>");
-}
-
-function cancelButton(){
-    createQuestion(".dash-contenido");
-}
-
-function confirmButton(){
-    location.reload();
 }
 
 // CREATE POLL
-function createPoll(elementDOM){
-    $(elementDOM).empty();
-    createElements(elementDOM, "div","contentRs", true);
-    createElements(".contentRs", "p","pPoll",true,"EN CONSTRUCCIÓ...");
+function createPoll(elementDOM, arrayQuestions, arrayTeachers){
+    var fatherObjectJquery = $(elementDOM);
+    fatherObjectJquery.empty();
+    
+    $('#btnCrearEncuesta').addClass('active');
+    
+    $('#btnListarPreguntas').removeClass('active');
+    $('#btnCrearPregunta').removeClass('active');
+    $('#btnListarEncuestas').removeClass('active');
+
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var minDate = year + '-' + month + '-' + day;
+
+    // Creacion de Formulario
+    fatherObjectJquery.append(`
+        <form class='formPoll' id="formPoll" method='POST'>
+            <label for"inputTitle">Títol de l'enquesta:</label>
+            <input type="text" class="inputTitle" id="inputTitle">
+            <div class="containerDates" >
+                <div class="divSingleDate" >
+                    <label for"inputTitle">Data d'inici:</label>
+                    <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate">
+                </div>
+
+                <div class="divSingleDate" >
+                    <label for"inputTitle">Data final:</label>
+                    <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate">
+                </div>
+            </div>
+
+            <label>Selecció de Professors:</label>
+            <div class="containerTeachers" >
+                <div class="containerSingleTeacherSelector">
+                    <label>Profesors Escollits</label>
+                    <div class="selectorTeachers" id="selectorSomeTeachers" >
+                    </div>
+                </div>
+
+                <div class="containerSingleTeacherSelector">
+                    <label>Profesors Disponibles</label>
+                    <div class="selectorTeachers" id="selectorAllTeachers" >
+                    </div>
+                </div>
+            </div>
+
+        </form> 
+        <div id="containerConfirmButtons" class="containerConfirmButtons" >
+            <button class="btnConfirm btnCancelar" id="btnCancelar" >Cancel·lar</button>
+        </div>
+    `);
+
+    
+    arrayTeachers.forEach(teacher => {
+        removeTeacherFromPickedList(teacher)
+    });
+
+
+    $('#inputTitle').on('input',() => {
+        checkPollFilled();
+    });
+
+    $('#inputStartDate').on('change',() => {
+        checkPollFilled();
+    });
+
+    $('#inputEndDate').on('change',() => {
+        checkPollFilled();
+    });
+
+    $('#btnCancelar').click(() => {
+        fatherObjectJquery.empty();
+        createPoll(elementDOM, arrayQuestions, arrayTeachers, arrayStudents);
+    });
 }
 
 // LLISTAT DE PREGUNTES
 function viewListQuestion(elementDOM,arrayTextListQuestion){
-    var objectJquery = $(elementDOM);
-    objectJquery.empty();
-    let cont= 1;
-    objectJquery.append("<div class='containerQuestions' id='containerQuestions'></div>");
+    var fatherObjectJquery = $(elementDOM);
+    fatherObjectJquery.empty();
 
-    var containerQuestions = $('#containerQuestions');
+    $('#btnListarPreguntas').addClass('active');
+
+    $('#btnCrearPregunta').removeClass('active');
+    $('#btnCrearEncuesta').removeClass('active');
+    $('#btnListarEncuestas').removeClass('active');
+
+    fatherObjectJquery.append(`
+    <table id="containerPolls" class="containerPolls">
+            <tr>
+                <th class ="textComponent" ><p>Preguntes</p></th>
+                <th class="editComponent"><p>Accions</p></th>
+            </tr>
+        </table>
+    `);
+    
+    var containerQuestions = $('#containerPolls tbody');
 
     arrayTextListQuestion.forEach(question => {
-        containerQuestions.append(
-        "<div class='divSingleQuestion' id='question-"+ cont + "'><p>" + question + "</p></div>"
-        );
-        cont++;
+        containerQuestions.append(`
+            <tr>
+                <td class = "textComponent">` + question.text + `</td>
+                <td class="editComponent">
+                    <i class="fa-solid fa-pencil"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </td>
+            </tr>
+        `);
     });
 
 }
 // LLISTAT D'ENQUESTES
-function viewListPoll(elementDOM){
-    $(elementDOM).empty();
-    createElements(elementDOM, "div","contentRs", true);
-    let cont= 0;
-    arrayTitolPoll.forEach(element => {
-        createElements('.contentRs', "div",`divViewPoll ${cont}`, true);
-        createElements(`.${cont}`, "li","liViewPoll", true, element);
-        cont++;
+function viewListPoll(elementDOM,arrayTitleListPoll){
+    var fatherObjectJquery = $(elementDOM);
+    fatherObjectJquery.empty();
+    
+    $('#btnListarEncuestas').addClass('active');
+
+    $('#btnCrearPregunta').removeClass('active');
+    $('#btnCrearEncuesta').removeClass('active');
+    $('#btnListarPreguntas').removeClass('active');
+
+    fatherObjectJquery.append(`
+        <table id="containerPolls" class="containerPolls">
+            <tr>
+                <th class ="textComponent" ><p>Enquestes</p></th>
+                <th class="editComponent"><p>Accions</p></th>
+            </tr>
+        </table>
+    `);
+    var containerPolls = $('#containerPolls tbody');
+
+    arrayTitleListPoll.forEach(poll => {
+        containerPolls.append(`
+            <tr>
+                <td class = "textComponent">` + poll.title + `</td>
+                <td class="editComponent">
+                    <i class="fa-solid fa-pencil"></i>
+                    <i class="fa-solid fa-trash"></i>
+                </td>
+            </tr>
+        `);
     });
-}
-
-//
-function createElements(parent,elementDOM, classes,cierreForzado,text=''){
-    if (cierreForzado==true){
-        $(parent).append("<"+elementDOM+" class='"+classes+"'>"+text+"</"+elementDOM+">") 
-    }
-    else{
-        $(parent).append("<"+elementDOM+" class="+classes+">") 
-    }
-}
-
-function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
-    if (cierreForzado==true){
-        $(parent).append("<"+elementDOM+" id='"+ids+"' class='"+classes+"'>"+text+"</"+elementDOM+">") 
-    }
-    else{
-        $(parent).append("<"+elementDOM+" id='"+ids+"' class="+classes+">") 
-    }
 }
