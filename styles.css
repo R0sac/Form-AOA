@@ -113,6 +113,7 @@ footer{
 }
 
 /* DASHBOARD.PHP */
+
 #Dashprofe,#DashAdmin{
     height: 500px;
     display: flex;
@@ -263,101 +264,250 @@ footer{
       transform: translateY(0);
     }
 }
-/* DASHBOARD */
-.dashboard{
-    display: grid;
-    grid-template-columns: 275px 1fr;
-    grid-template-rows: 1fr;
-}
+
 /* POLL-BAR */
 .panel{
-    grid-column: 1/1;
-    margin-top: 5%;
-    display: inline-block;
-    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .btnPanelAdmin{
     border-radius: 10px;
     background-color: white;
-    padding: 40px;
-    display: flex;
+    padding: 40px 0px;
     margin-top: 10px;
-    flex-direction: column;
+    margin-bottom: 50px;
     width: 100%;
     font-size: medium;
     font-weight: bold;
     text-align: center;
 }
 
+.btnPanelAdmin.active{
+    background-color: #5c2d56;
+    color: white;
+}
+
 .btnPanelAdmin:hover{
     background-color: rgba(3, 2, 13, 0.6);
     color: white;
+    cursor: pointer;
 }
 
-/* POLL-CREATE-QUESTION */
-.dash-contenido{
-     grid-column: 2/2;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-}
 
-.contentRs{
-    padding: 30px;
-    border: 2px solid #03020D;
-    border-radius: 10px;
+/* DYNAMIC CONTAINER */
+.pollContent{
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, 1);
+    border: 1px solid #61525f;
     background-color: #BF9FBA;
+    border-radius: 10px;
+    padding: 15px;
+    width: 60%;
 }
 
-.formQuestion p{
-    font-weight: bolder;
-    color: black;
+/* CREATE-QUESTION */
+.pollContent .formQuestion{
+   display: flex;
+   flex-direction: column;
 }
 
-.formQuestion input{
+.pollContent .formQuestion label{
+    text-align: center;
+}
+
+/* Selector para todos los elementos siguientes a un label (los inputs) */
+.pollContent .formQuestion label + *{
+    box-sizing:content-box;
     background-color:#251659;
     color: white;
     border: 1px solid black;
     border-radius: 10px;
-    height: 30px;
+    padding: 10px 30px;
+    align-self: center;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#typeQuestion{
-    background-color:#251659;
-    color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 40px;
+.pollContent .formQuestion .containerSingleRadioButton{
+    align-self: center;
+    box-sizing:content-box;
+    width: 60%;
 }
 
-#buttonConfirm{
-    padding-top: 40px;
+.pollContent .formQuestion .containerSingleRadioButton input{
+    margin-left: 40%; 
+
 }
 
-#buttonConfirm button{
-    border-radius: 10px;
-    height: 50px;
-    width: 100px;
+.pollContent .formQuestion .containerSingleRadioButton label{
+    text-align: left;
+    width: 50%; 
 }
 
-#buttonConfirm #cancelar{
-    background-color: red;
-    margin-right: 50px;
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions{
+    align-self: center;
 }
-
-#buttonConfirm #confirm{
-    background-color: greenyellow;
+.containerSingleRadioButtonWithOptions .radioOption{
+    padding-top: 2px;
 }
-
-/* POLL-VIEW-QUESTION */
-.divViewQuestion{
-    margin-top: 10px;
-    padding: 20px;
-    border: 1px solid #03020D;
-    border-radius: 10px;
+.containerSingleRadioButtonWithOptions .textOption{
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
     background-color: #251659;
     color: white;
+    padding: 5px 0px;
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons{
+    align-self: center;
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons *{
+    background-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons *:hover{
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons .btnAddOption{
+    color: green;
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons .btnAddOption:hover{
+    color: rgb(0, 224, 0);
+}
+
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions .btnRemoveOption{
+    background-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    color: red;
+}
+
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions .btnRemoveOption:hover{
+    cursor: pointer;
+    transform: scale(1.4);
+    color: rgb(255, 120, 78);
+
+}
+
+.pollContent .formQuestion textarea{
+    resize: none;
+    box-sizing: content-box;
+    border-radius: 12px;
+    width: 60%;
+    padding: 10px 30px;
+    height: 100px;
+    align-self: center;
+}
+
+.pollContent .containerConfirmButtons{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pollContent .containerConfirmButtons .btnConfirm{
+    width: 20%;
+    padding: 5px 0px;
+    border-radius: 5px;
+}   
+
+.pollContent .containerConfirmButtons .btnConfirm:hover{
+    border-color: black;
+    background-color: #9C8BD9;
+    color: #251659;
+    cursor: pointer;
+}
+
+.pollContent .containerConfirmButtons .btnAcceptar{
+    background-color: #6cff82;
+    border-color: rgb(0, 46, 0);
+    font-weight: bold;
+}   
+
+.pollContent .containerConfirmButtons .btnCancelar{
+    background-color: rgb(255, 101, 101);
+    border-color: darkred;
+    font-weight: bold;
+}
+
+/* CREATE-POLL */
+.pollContent .formPoll{
+    display: flex;
+    flex-direction: column;
+}
+
+.pollContent .formPoll label{
+    text-align: center;
+}
+
+/* Selector para todos los elementos siguientes a un label (los inputs) */
+.pollContent .formPoll .inputTitle{
+    box-sizing:content-box;
+    background-color:#251659;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 30px;
+    align-self: center;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.pollContent .formPoll .containerDates{
+    box-sizing:content-box;
+    padding: 10px 0px;
+    align-self: center;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.pollContent .formPoll .containerTeachers, .containerQuestions, .containerStudents{
+    box-sizing:content-box;
+    padding: 10px 30px;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.pollContent .formPoll .containerTeachers .containerSingleTeacherSelector, .containerSingleQuestionSelector, .containerSingleStudentSelector{
+    width: 40%;
+}
+
+.pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions, .selectorStudents{
+    background-color: #9C8BD9;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, 1);
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.pollContent .formPoll .singleSelector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 /* POLL-VIEW-POLL */
@@ -409,4 +559,77 @@ footer{
 }
 .buttonLogout:hover .logout{
   opacity: .9;
+}
+.pollContent .formPoll .singleSelector button{
+    border: none;
+    background-color: transparent;
+}
+
+.pollContent .formPoll .singleSelector button:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.pollContent .formPoll .singleSelector button.btnAddTeacher, button.btnAddQuestion, button.btnAddStudent{
+    color: green;
+}
+.pollContent .formPoll  .singleSelector button.btnAddTeacher:hover, button.btnAddQuestion:hover, button.btnAddStudent:hover{
+    color: rgb(0, 224, 0);
+}
+
+.pollContent .formPoll .singleSelector button.btnRemoveTeacher,  button.btnRemoveQuestion, button.btnRemoveStudent{
+    color: red;
+}
+.pollContent .formPoll .singleSelector button.btnRemoveTeacher:hover, button.btnRemoveQuestion:hover, button.btnRemoveStudent:hover{
+    color: rgb(255, 120, 78);
+}
+
+.pollContent .formPoll .divSingleDate{
+    display: flex;
+    flex-direction: column;
+}
+
+/* VIEW QUESION/POLL */
+.pollContent table.containerPolls{
+    width: 100%;
+}
+
+.pollContent .textComponent{
+    width: 80%;
+    text-align: center;
+}
+.pollContent .editComponent{
+    width: 20%;
+}
+
+/* Títols de la taula de llistat */
+.pollContent th.textComponent p{
+    border-bottom: #03020D solid;
+    margin: 0px 15px;
+}
+.pollContent th.editComponent p{
+    border-bottom: #03020D solid;
+    margin: 0px 5px;
+}
+
+/* Separador entre files(tr) */
+.pollContent .containerPolls tr{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pollContent .containerPolls td.editComponent{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pollContent .containerPolls td.editComponent i{
+    color: rgb(194, 32, 32);
+    cursor: pointer;
+}
+
+.pollContent .containerPolls td.editComponent :first-child{
+    color: #251659;
 }

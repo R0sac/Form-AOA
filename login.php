@@ -1,4 +1,4 @@
-<?php 
+<?php
 $_GET['Titulo'] = 'Log in';
 $_GET['idBody'] = 'bodyLogin';
 ?>
@@ -36,7 +36,11 @@ $_GET['idBody'] = 'bodyLogin';
 </div>
 <script>
     $( document ).ready(function() {
-        $("#btnLogin").click(Submit);
+
+        $("#btnLogin").click(() => {
+            submitLogin();
+        });
+        
     });
 </script>
 <?php include "footer.php"; ?>

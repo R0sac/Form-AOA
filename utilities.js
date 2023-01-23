@@ -29,13 +29,14 @@ function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
 
 //SUBMIT MANUAL
 
-function Submit() {
+function submitLogin() {
+    console.log("a");
     var user = $("[name=user]").val();
     var pass = $("[name=pass]").val();
     if (user && pass){
         $("#login").submit();
     }else{
-        NewError("warning","Emplena el formdwqqqqulari");
+        NewError("warning","Emplena el formulari");
         
     }
 }
