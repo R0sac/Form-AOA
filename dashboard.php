@@ -7,7 +7,7 @@ $_GET['logout'] = '';
 <?php include "header.php"; ?>
 <div id="divDash">
 <?php
-    if($_SESSION["usuario"][1] === "profe"){/*id=2*/
+    if($_SESSION["user"][3] === 2){
         ?>
         <div id="Dashprofe">
             <a href="" id="dashProfePerfil" class="BtnDash">Perfil</a>
@@ -15,7 +15,7 @@ $_GET['logout'] = '';
         </div>
         <?php
     }
-    elseif ($_SESSION["usuario"][1] === "admin") {/*id=1*/
+    elseif ($_SESSION["user"][3] === 1) {
         ?>
             <div id="DashAdmin">
             <a href="" id="dashAdminUsuaris" class="BtnDash">Usuaris</a>
@@ -26,7 +26,6 @@ $_GET['logout'] = '';
     }
     else{
         if(issetErrors()){
-            echo "<script>console.log(".$_SESSION["errors"].");</script>";
             array_push($_SESSION["errors"],["error","Inicia la sessió"]);
             header("Location: login.php");
         }

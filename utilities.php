@@ -2,9 +2,9 @@
 function connectionBBDD(){
     try {
         $hostname = "localhost";
-        $dbname = "EnquestaProfessors";
-        $username = "admin";
-        $pw = "admin123";
+        $dbname = "creyentes_poll";
+        $username = "root";
+        $pw = "";
         $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
         return $pdo;
     } catch (PDOException $e) {
@@ -19,4 +19,18 @@ function issetErrors(){
         return false;
     }
 }
+
+function getListByQuery($query){
+    $arrayQuestions = [];
+    $pdo = connectionBBDD();
+    $stmt = $pdo -> prepare($query);            
+    $stmt->execute();
+    $row = $stmt->fetch();
+    while($row){
+        array_push($arrayQuestions, $row);
+        $row = $stmt->fetch();
+    }
+    return $arrayQuestions;
+}
+
 ?>

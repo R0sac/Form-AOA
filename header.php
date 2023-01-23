@@ -8,15 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script src="/utilities.js"></script>
     <script src="https://kit.fontawesome.com/277f72a273.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./utilities.js"></script>
     <title><?php echo $_GET['Titulo']; ?></title>
     <?php require('utilities.php'); ?>
 </head>
 
 <body id='<?php echo $_GET['idBody']; ?>'>
-
+    
+<script src="./utilities.js"></script>
 <header class='headerAll'>
 
     <h2>Enquestes Professorat</h2>

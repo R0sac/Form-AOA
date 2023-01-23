@@ -2,14 +2,17 @@
 include('utilities.php');
 $_SESSION["errors"] = array();
 function logIn(){
+    $user = htmlspecialchars($_POST['user']);
+    $pass = htmlspecialchars($_POST['pass']);
+
     $pdo = connectionBBDD();
-    $stmt = $pdo ->prepare("SELECT * FROM usuaris WHERE usuari = ? AND contrasenya =  sha2(?,512);");            
-    $stmt->bindParam(1,htmlspecialchars($_POST['user']));
-    $stmt->bindParam(2,htmlspecialchars($_POST['pass']));
+    $stmt = $pdo ->prepare("SELECT * FROM user u WHERE u.email = ? AND u.password =  sha2(?,512);");            
+    $stmt->bindParam(1,$user);
+    $stmt->bindParam(2,$pass);
     $stmt->execute();
     $row = $stmt->fetch();
     if ($row){
-        $_SESSION["usuario"] = [$row["usuari"],$row["rol"]];
+        $_SESSION["user"] = [$row["id"],$row["email"],$row["username"],intval($row["role"])];
         header('Location: dashboard.php');
     }else{
         array_push($_SESSION["errors"],["error","Credencials incorrectes"]);
