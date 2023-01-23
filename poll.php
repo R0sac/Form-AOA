@@ -13,7 +13,7 @@ $_GET['logout'] = ' ';
     $arrayQuestions = getListByQuery("SELECT * FROM question;");
     $arrayPolls = getListByQuery("SELECT * FROM poll;");
     $arrayTypesOfQuestion = getListByQuery("SELECT * FROM question_type;");
-    $arrayOptionsOfTypeNumber = getListByQuery("SELECT * FROM option WHERE id <= 5;");
+    $arrayOptionsOfTypeNumber = getListByQuery("SELECT * FROM creyentes_poll.option WHERE id <= 5;");
     $arrayTeachersAndStudents = getListByQuery("SELECT * FROM user u WHERE u.role >= 2;");
     $arrayTeachers = [];
     $arrayStudents = [];
