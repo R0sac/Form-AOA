@@ -33,24 +33,10 @@ footer{
 /* LANDING PAGE*/
 #divLanding{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 200px;
-}
-.btnLanding{
-    font-family: Poppins;
-    font-size: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1PX solid #251659 ;
-    background-color:  #251659 ;
-    color: white;
-
-}
-.btnLanding:hover{
-    border: 1px solid #7559D9 ;
-    background-color:  #7559D9 ;
 }
 
 #bodyLanding a{
@@ -62,6 +48,27 @@ footer{
 }
 #bodyLanding a:hover{
     background-color:  #7559D9;
+}
+#bodyLanding img{
+    position: absolute;
+    animation-name: moviment;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+
+}
+@keyframes moviment {
+    0%  { left: -400px; top: 300px}
+    10%  { left: -400px; top: 300px}
+    20% { left: 400px ;top: 300px}
+    30% { left: 400px; top: -50px}
+    40% { left: 0px; top: -50px}
+    50% { left: 0px; top: 300px}
+    60% { left: 1300px; top:300px}
+    70% { left: 1300px; top : -50px}
+    80% { left: 900px; top : -50px}
+    90% { left: 900px; top : 300px}
+    100% { left: 1900px; top : 300px}
 }
 /* LOGIN.PHP */
 .autocenter{
