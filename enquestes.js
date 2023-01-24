@@ -9,16 +9,15 @@ function addAcceptButton(){
         <button class="btnConfirm btnAcceptar" id="btnAcceptar" >Acceptar</button>
     `);
 
-    console.log("entra");
 
     if ($('#formQuestion').length) {
-        console.log("aa");
         var questionType = Number($('#typeQuestion').val());
 
         switch (questionType) {
-            case 1:
+            case 1: //Pregunta Numérica
+
                 $('#formQuestion').append(`
-                    <form method="POST" action="./checkForm.php" id="questionFormBDD" hidden>
+                    <form method="POST" action="./checkForm.php" id="questionFormBDD" hidden  style="display:none;">
                         <input type="text" name="typeOfForm" value="createQuestion" />
                         <input type="number" name="questionType" value="${questionType}" />
                         <input type="text" name="questionTitle" value="${$('#inputTitle').val()}" />
@@ -28,16 +27,46 @@ function addAcceptButton(){
                     $('#questionFormBDD').submit();
                 });   
                 break;
-            case 2:
-                
+
+            case 2: //Pregunta de Text
+
+                $('#formQuestion').append(`
+                    <form method="POST" action="./checkForm.php" id="questionFormBDD" hidden  style="display:none;">
+                        <input type="text" name="typeOfForm" value="createQuestion" />
+                        <input type="number" name="questionType" value="${questionType}" />
+                        <input type="text" name="questionTitle" value="${$('#inputTitle').val()}" />
+                    </form>
+                `);
+                $('#btnAcceptar').click(()=>{
+                    $('#questionFormBDD').submit();
+                });   
                 break;
-            case 3:
+
+            case 3:  //Pregunta d'Opció Simple
+
+                $('#questionFormBDD').remove();
+
+                $('#formQuestion').append(`
+                    <form method="POST" action="./checkForm.php" id="questionFormBDD" hidden  style="display:none;">
+                        <input type="text" name="typeOfForm" value="createQuestion" />
+                        <input type="number" name="questionType" value="${questionType}" />
+                        <input type="text" name="questionTitle" value="${$('#inputTitle').val()}" />
+                    </form>
+                `);
                 
+                for (let i = 0; i < $('.containerSingleRadioButtonWithOptions').length; i++) {
+                    console.log(` <input type="text" name="inputOptions[${i}]" value="${$($('.textOption')[i]).val()}" />`);
+                    $('#questionFormBDD').append(`
+                        <input type="text" name="inputOptions[${i}]" value="${$($('.textOption')[i]).val()}" />
+                    `);
+                }
+
+
+                $('#btnAcceptar').click(()=>{
+                    $('#questionFormBDD').submit();
+                });   
                 break;
         }
-
-
- 
     }
     else if ($('#formPoll').length){
         console.log("bb");
