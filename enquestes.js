@@ -9,9 +9,42 @@ function addAcceptButton(){
         <button class="btnConfirm btnAcceptar" id="btnAcceptar" >Acceptar</button>
     `);
 
-    $('#btnAcceptar').click(()=>{
-        $('#formQuestion').submit();
-    });    
+    console.log("entra");
+
+    if ($('#formQuestion').length) {
+        console.log("aa");
+        var questionType = Number($('#typeQuestion').val());
+
+        switch (questionType) {
+            case 1:
+                $('#formQuestion').append(`
+                    <form method="POST" action="./checkForm.php" id="questionFormBDD" hidden>
+                        <input type="text" name="typeOfForm" value="createQuestion" />
+                        <input type="number" name="questionType" value="${questionType}" />
+                        <input type="text" name="questionTitle" value="${$('#inputTitle').val()}" />
+                    </form>
+                `);
+                $('#btnAcceptar').click(()=>{
+                    $('#questionFormBDD').submit();
+                });   
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+        }
+
+
+ 
+    }
+    else if ($('#formPoll').length){
+        console.log("bb");
+    }
+
+
+
 }
 
 function removeAcceptButton(){

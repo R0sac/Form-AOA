@@ -19,7 +19,53 @@ function logIn(){
         header('Location: login.php');
     }
 }
+
+function sendQuestionTOBDD($typeQuestion, $questionTitle ,$questionText , $options=[]){
+    switch (intval($_POST["questionType"])) {
+        case 1:  //Question type number
+            # code...
+            break;
+        case 2:   //Question type text
+            
+            break;
+        case 3:   //Question type simple option
+            # code...
+            break;
+    }
+
+    try {
+        $pdo = connectionBBDD();
+        $pdo->beginTransaction();
+
+        $pdo->exec("DROP TABLE fruit");
+        $pdo->exec("UPDATE dessert SET name = 'hamburger'");
+
+        $pdo->commit();
+
+    } catch (\Throwable $th) {
+        $pdo->rollBack();
+        // TODO poner mensaje error
+    }
+}
+
+
 if(isset($_POST["user"] ) && isset($_POST["pass"])){
     logIn();
 }
+else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.php
+
+    switch ($_POST["typeOfForm"]) {
+        case 'createQuestion':
+
+            sendQuestionTOBDD($_POST["typeOfForm"], );
+
+            break;
+        
+        case 'createPoll':
+            # code...
+            break;
+    }
+}
+
+
 ?>
