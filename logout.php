@@ -1,8 +1,9 @@
 
 <?php
     session_start();
-    include "log.php";//
-    logButtonClick("S","logout.php","S'ha sortit de la sessió correctament\n",$_SESSION['user'][2]);//
+    include "log.php";
+    $locationLogout= $_SESSION["locationLogout"];
+    logButtonClick("S","logout.php","S'ha sortit de la sessió correctament des de '{$locationLogout}'\n",$_SESSION['user'][2]);
     session_destroy();
     header("Location: login.php");
 ?>

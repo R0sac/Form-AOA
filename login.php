@@ -2,8 +2,8 @@
 $_GET['Titulo'] = 'Log in';
 $_GET['idBody'] = 'bodyLogin';
 ?>
-<?php include "header.php"; ?>
-<?php include "log.php"; ?><!-- --->
+<?php include "header.php";
+include "log.php";?>
 <div class="autocenter">
     <div id="mensajes">
 </div>
@@ -47,7 +47,7 @@ $_GET['idBody'] = 'bodyLogin';
 <?php include "footer.php"; ?>
 
 <?php
-    if(isset($_POST['systemLog'])){//TODO
-        logButtonClick("A","index.php","S'ha utilitzat el botó 'Login'\n");
+    if(isset($_POST['systemLog'])){
+        logButtonClick("S","login.php","S'ha utilitzat el botó 'Login'\n");
     }
 ?>

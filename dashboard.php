@@ -1,10 +1,11 @@
-<?php 
+<?php
 $_GET['Titulo'] = 'Dashboard';
 $_GET['idBody'] = 'bodyDashboard';
 $_GET['logout'] = '';
 
 ?>
-<?php include "header.php"; ?>
+<?php include "header.php";
+$_SESSION["locationLogout"]= "dashboard.php"; ?>
 <div id="divDash">
 <?php
     if($_SESSION["user"][3] === 2){

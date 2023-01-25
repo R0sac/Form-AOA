@@ -434,12 +434,12 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
             <input type="text" class="inputTitle" id="inputTitle" name='systemLogInputTitlePoll'>
             <div class="containerDates" >
                 <div class="divSingleDate" >
-                    <label for"inputTitle"><strong>Data d'inici:</strong></label>
+                    <label for"inputStartDate"><strong>Data d'inici:</strong></label>
                     <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate" name='systemLogInputDateStartPoll'>
                 </div>
 
                 <div class="divSingleDate" >
-                    <label for"inputTitle"><strong>Data final:</strong></label>
+                    <label for"inputEndDate"><strong>Data final:</strong></label>
                     <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate" name='systemLogInputDateEndPoll'>
                 </div>
             </div>
