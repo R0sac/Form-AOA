@@ -1,9 +1,12 @@
-<?php 
+<?php
 $_GET['Titulo'] = 'Poll';
 $_GET['idBody'] = 'bodyPoll';
 $_GET['logout'] = ' ';
 ?>
-<?php include "header.php"; ?>
+<?php include "header.php";
+$_SESSION["locationLogout"]= "poll.php";
+include "log.php";
+logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSION['user'][2]);?>
 
 <div id="mensajes"></div>
 

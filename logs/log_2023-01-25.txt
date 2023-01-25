@@ -1,0 +1,27 @@
+[2023-01-25 23:49:51][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-25 23:50:08][E][checkForm.php][] Credencials incorrectes
+[2023-01-25 23:50:27][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-25 23:50:34][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-25 23:50:46][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion) VALUES (NUMBER,1)
+[2023-01-25 23:50:46][S][checkForm.php][Andrés] INSERT INTO question_option (idQuestion,idOption) values (24, 5)
+[2023-01-25 23:50:46][S][checkForm.php][Andrés] La pregunta del tipus 'Numeric' s'ha desat correctament
+[2023-01-25 23:50:46][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-25 23:51:08][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion) VALUES (TEXTO,2)
+[2023-01-25 23:51:08][S][checkForm.php][Andrés] La pregunta del tipus 'Text' s'ha desat correctament
+[2023-01-25 23:51:08][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-25 23:51:53][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion) VALUES (SIMPLE,3)
+[2023-01-25 23:51:53][S][checkForm.php][Andrés] INSERT INTO `option` (`text`) values (lll)
+[2023-01-25 23:51:53][S][checkForm.php][Andrés] INSERT INTO question_option (idQuestion,idOption) values (26, 15)
+[2023-01-25 23:51:53][S][checkForm.php][Andrés] La pregunta del tipus 'Opcio Simple' s'ha desat correctament
+[2023-01-25 23:51:53][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-25 23:52:55][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-25 23:53:25][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (NUEVA ENCUESTA,25-01-23 11:53:25,2023-03-03 00:00:00,2023-04-13 00:00:00,1)
+[2023-01-25 23:53:25][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (3,11)
+[2023-01-25 23:53:25][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (3,20)
+[2023-01-25 23:53:25][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (3,6)
+[2023-01-25 23:53:25][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-25 23:53:25][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-25 23:53:49][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-25 23:53:56][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-25 23:53:58][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-25 23:54:06][E][checkForm.php][] Credencials incorrectes
