@@ -12,6 +12,7 @@ function addAcceptButton(){
 
     if ($('#formQuestion').length) {
         var questionType = Number($('#typeQuestion').val());
+        $('#questionFormBDD').remove();
 
         switch (questionType) {
             case 1: //Pregunta Numérica
@@ -44,7 +45,6 @@ function addAcceptButton(){
 
             case 3:  //Pregunta d'Opció Simple
 
-                $('#questionFormBDD').remove();
 
                 $('#formQuestion').append(`
                     <form method="POST" action="./checkForm.php" id="questionFormBDD" hidden  style="display:none;">
@@ -55,7 +55,6 @@ function addAcceptButton(){
                 `);
                 
                 for (let i = 0; i < $('.containerSingleRadioButtonWithOptions').length; i++) {
-                    console.log(` <input type="text" name="inputOptions[${i}]" value="${$($('.textOption')[i]).val()}" />`);
                     $('#questionFormBDD').append(`
                         <input type="text" name="inputOptions[${i}]" value="${$($('.textOption')[i]).val()}" />
                     `);
@@ -69,7 +68,46 @@ function addAcceptButton(){
         }
     }
     else if ($('#formPoll').length){
-        console.log("bb");
+        $('#pollFormBDD').remove();
+
+        $('#formPoll').append(`
+            <form method="POST" action="./checkForm.php" id="pollFormBDD" hidden  style="display:none;">
+                <input type="text" name="typeOfForm" value="createPoll" />
+                <input type="text" name="pollTitle" value="${$('#inputTitle').val()}" />
+                <input type="text" name="inputStartDate" value="${$('#inputStartDate').val()}" />
+                <input type="text" name="inputEndDate" value="${$('#inputEndDate').val()}" />
+            </form>
+        `);
+        
+        // ADDING TEACHERS TO FORM
+        for (let i = 0; i < $('#selectorSomeTeachers').children().length; i++) {
+            var idTeacher = $($('#selectorSomeTeachers').children()[i]).attr('id').split("-")[1];
+            $('#pollFormBDD').append(`
+                <input type="text" name="inputTeachersId[${i}]" value="${idTeacher}" />
+            `);
+        };
+
+        // ADDING QUESTIONS TO FORM
+        for (let i = 0; i < $('#selectorSomeQuestion').children().length; i++) {
+            var fatherElementOfId = $($('#selectorSomeQuestion').children()[i]);
+            var idQuestion = $(fatherElementOfId.children()[0]).attr('id').split("-")[1];
+
+            $('#pollFormBDD').append(`
+                <input type="text" name="inputQuestionsId[${i}]" value="${idQuestion}" />
+            `);
+        };
+
+        // ADDING STUDENTS TO FORM
+        for (let i = 0; i < $('#selectorSomeStudent').children().length; i++) {
+            var idStudent = $($('#selectorSomeStudent').children()[i]).attr('id').split("-")[1];
+            $('#pollFormBDD').append(`
+                <input type="text" name="inputStudentsId[${i}]" value="${idStudent}" />
+            `);
+        };
+
+        $('#btnAcceptar').click(()=>{
+            $('#pollFormBDD').submit();
+        });   
     }
 
 
@@ -496,12 +534,12 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
             <input type="text" class="inputTitle" id="inputTitle">
             <div class="containerDates" >
                 <div class="divSingleDate" >
-                    <label for"inputTitle"><strong>Data d'inici:</strong></label>
+                    <label for"inputStartDate"><strong>Data d'inici:</strong></label>
                     <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate">
                 </div>
 
                 <div class="divSingleDate" >
-                    <label for"inputTitle"><strong>Data final:</strong></label>
+                    <label for"inputEndDate"><strong>Data final:</strong></label>
                     <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate">
                 </div>
             </div>
