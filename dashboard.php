@@ -27,11 +27,13 @@ $_GET['logout'] = '';
     else{
         if(issetErrors()){
             array_push($_SESSION["errors"],["error","Inicia la sessió"]);
+            logButtonClick("E","login.php","S'ha intentat entrar sense iniciar sessió\n");//
             header("Location: login.php");
         }
         else{
             $_SESSION["errors"] = array();
             array_push($_SESSION["errors"],["error","Inicia la sessió"]);
+            logButtonClick("E","login.php","S'ha intentat entrar sense iniciar sessió\n");//
             header("Location: login.php");
         }
 

@@ -1,5 +1,6 @@
 <?php session_start();
 include('utilities.php');
+include "log.php";//
 $_SESSION["errors"] = array();
 function logIn(){
     $user = htmlspecialchars($_POST['user']);
@@ -13,9 +14,11 @@ function logIn(){
     $row = $stmt->fetch();
     if ($row){
         $_SESSION["user"] = [$row["id"],$row["email"],$row["username"],intval($row["role"])];
+        logButtonClick("S","login.php","S'ha iniciat la sessió correctament\n",$_SESSION['user'][2]);//
         header('Location: dashboard.php');
     }else{
         array_push($_SESSION["errors"],["error","Credencials incorrectes"]);
+        logButtonClick("E","login.php","Credencials incorrectes\n");//
         header('Location: login.php');
     }
 }

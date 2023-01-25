@@ -6,8 +6,8 @@ function removeAllAfterTitle(){
 
 function addAcceptButton(){
     $('#containerConfirmButtons').prepend(`
-        <button class="btnConfirm btnAcceptar" id="btnAcceptar" >Acceptar</button>
-    `);
+        <button class="btnConfirm btnAcceptar" id="btnAcceptar" name='systemLogBtnAcceptar'>Acceptar</button>
+    `);//
 
     $('#btnAcceptar').click(()=>{
         $('#formQuestion').submit();
@@ -365,18 +365,18 @@ function createQuestion(elementDOM,arrayTextListQuestion){
     fatherObjectJquery.append(`
         <form class='formQuestion' id="formQuestion" method='POST'>
             <label for"typeQuestion">Tipus de pregunta:</label>
-            <select class="typeQuestion" id="typeQuestion">
+            <select class="typeQuestion" id="typeQuestion" name='systemLogSelector'>
                 <option value="0" disabled selected>Tria un tipus de pregunta</option>
             </select>
 
             <label for"inputTitle">Enunciat de la pregunta:</label>
-            <input type="text" class="inputTitle" id="inputTitle">
+            <input type="text" class="inputTitle" id="inputTitle" name='systemLogInput'>
 
         </form> 
         <div id="containerConfirmButtons" class="containerConfirmButtons" >
             <button class="btnConfirm btnCancelar" id="btnCancelar" >Cancel·lar</button>
         </div>
-    `);
+    `);//name
 
     // Creacion de dropdown
     arrayTextListQuestion.forEach(typeQuestion => {
@@ -427,20 +427,20 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
 
     var minDate = year + '-' + month + '-' + day;
 
-    // Creacion de Formulario
+    // Creacion de Formulario// Name
     fatherObjectJquery.append(`
         <form class='formPoll' id="formPoll" method='POST'>
             <label for"inputTitle"><strong>Títol de l'enquesta:</strong></label>
-            <input type="text" class="inputTitle" id="inputTitle">
+            <input type="text" class="inputTitle" id="inputTitle" name='systemLogInputTitlePoll'>
             <div class="containerDates" >
                 <div class="divSingleDate" >
                     <label for"inputTitle"><strong>Data d'inici:</strong></label>
-                    <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate">
+                    <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate" name='systemLogInputDateStartPoll'>
                 </div>
 
                 <div class="divSingleDate" >
                     <label for"inputTitle"><strong>Data final:</strong></label>
-                    <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate">
+                    <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate" name='systemLogInputDateEndPoll'>
                 </div>
             </div>
 

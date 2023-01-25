@@ -3,7 +3,10 @@ $_GET['Titulo'] = 'Poll';
 $_GET['idBody'] = 'bodyPoll';
 $_GET['logout'] = ' ';
 ?>
-<?php include "header.php"; ?>
+<?php include "header.php";//TODO
+include "log.php";
+logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSION['user'][2]);
+?>
 
 <div id="mensajes"></div>
 
@@ -74,4 +77,20 @@ $_GET['logout'] = ' ';
 
     </div>
 </div>
+<?php//TODO PHP
+    if(isset($_POST['systemLogSelector'])){
+        $selector= $_POST['systemLogSelector'];
+        $selectorName= $arrayTypesOfQuestion[$selector-1][1];
+        $inputTitle= $_POST['systemLogInput'];
+        logButtonClick("S","poll.php","El tipus de la nova pregunta es: '{$selectorName}'\n",$_SESSION['user'][2]);
+        logButtonClick("S","poll.php","L'enunciat de la nova pregunta es: '{$inputTitle}'\n",$_SESSION['user'][2]);
+        logButtonClick("S","poll.php","S'ha creat una nova pregunta correctament\n",$_SESSION['user'][2]);
+    };
+
+    // if(isset($_POST['systemLogInputTitlePoll'])){
+    //     $inputTitle= $_POST['systemLogInputTitlePoll'];
+    //     logButtonClick("S","poll.php","Per crear una enquesta l'enunciat es: '{$inputTitle}'\n",$_SESSION['user'][2]);
+    //     logButtonClick("S","poll.php","S'ha creat una nova enquesta correctament'\n",$_SESSION['user'][2]);
+    // }
+?>
 <?php include "footer.php"; ?>

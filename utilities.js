@@ -30,7 +30,6 @@ function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
 //SUBMIT MANUAL
 
 function submitLogin() {
-    console.log("a");
     var user = $("[name=user]").val();
     var pass = $("[name=pass]").val();
     if (user && pass){
