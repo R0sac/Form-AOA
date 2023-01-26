@@ -23,15 +23,15 @@ logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSI
         $_SESSION["errors"] = array();
     }
 
-    $arrayQuestions = getListByQuery("SELECT * FROM question WHERE available = true;");
-    $arrayPolls = getListByQuery("SELECT * FROM poll WHERE available = true;");
-    $arrayTypesOfQuestion = getListByQuery("SELECT * FROM question_type;");
-    $arrayOptions = getListByQuery("SELECT * FROM `option`;");
-    $arrayTeachersAndStudents = getListByQuery("SELECT * FROM user u WHERE u.role >= 2;");
-    $arrayQuestionOptions = getListByQuery("SELECT * FROM `question_option`;");
-    $arrayPollQuestion = getListByQuery("SELECT * FROM `poll_question`;");
-    $arrayPollStudent = getListByQuery("SELECT * FROM `poll_student`;");
-    $arrayPollTeacher = getListByQuery("SELECT * FROM `poll_teacher`;");
+    $arrayQuestions = getListByQuery("SELECT * FROM creyentes_poll.question WHERE available = true;");
+    $arrayPolls = getListByQuery("SELECT * FROM creyentes_poll.poll WHERE available = true;");
+    $arrayTypesOfQuestion = getListByQuery("SELECT * FROM creyentes_poll.question_type;");
+    $arrayOptions = getListByQuery("SELECT * FROM creyentes_poll.option;");
+    $arrayTeachersAndStudents = getListByQuery("SELECT * FROM creyentes_poll.user u WHERE u.role >= 2;");
+    $arrayQuestionOptions = getListByQuery("SELECT * FROM creyentes_poll.question_option;");
+    $arrayPollQuestion = getListByQuery("SELECT * FROM creyentes_poll.poll_question;");
+    $arrayPollStudent = getListByQuery("SELECT * FROM creyentes_poll.poll_student;");
+    $arrayPollTeacher = getListByQuery("SELECT * FROM creyentes_poll.poll_teacher;");
     $arrayTeachers = [];
     $arrayStudents = [];
 

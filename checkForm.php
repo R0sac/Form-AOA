@@ -8,7 +8,7 @@ function logIn(){
     $pass = htmlspecialchars($_POST['pass']);
 
     $pdo = connectionBBDD();
-    $stmt = $pdo ->prepare("SELECT * FROM user u WHERE u.email = ? AND u.password =  sha2(?,512);");            
+    $stmt = $pdo ->prepare("SELECT * FROM creyentes_poll.user u WHERE u.email = ? AND u.password =  sha2(?,512);");            
     $stmt->bindParam(1,$user);
     $stmt->bindParam(2,$pass);
     $stmt->execute();
@@ -30,7 +30,7 @@ function saveTextQuestion($typeQuestion, $questionTitle){
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
-        $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
@@ -55,13 +55,13 @@ function editTextQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
 
-        $stmn = $pdo->prepare("UPDATE `question` SET `available`=? WHERE id=?");
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.question SET `available`=? WHERE id=?");
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idQuestionToEdit);
         $stmn->execute();
         logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$notAvailable} WHERE id={$idQuestionToEdit}\n",$_SESSION['user'][2]);
 
-        $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
@@ -85,7 +85,7 @@ function saveNumberQuestion($typeQuestion, $questionTitle){
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
 
-        $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
@@ -96,7 +96,7 @@ function saveNumberQuestion($typeQuestion, $questionTitle){
         
         $arrayOptions = [1,2,3,4,5];
         foreach ($arrayOptions as $key => $value) {
-            $stmn = $pdo->prepare("INSERT INTO question_option (idQuestion,idOption) values (?, ?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question_option (idQuestion,idOption) values (?, ?);");
             $stmn -> bindParam(1, $lastId);
             $stmn -> bindParam(2, $value);
             $stmn->execute();
@@ -122,13 +122,13 @@ function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
 
-        $stmn = $pdo->prepare("UPDATE `question` SET `available`=? WHERE id=?");
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.question SET `available`=? WHERE id=?");
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idQuestionToEdit);
         $stmn->execute();
         logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$notAvailable} WHERE id={$idQuestionToEdit}\n",$_SESSION['user'][2]);
 
-        $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
@@ -139,7 +139,7 @@ function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         
         $arrayOptions = [1,2,3,4,5];
         foreach ($arrayOptions as $key => $value) {
-            $stmn = $pdo->prepare("INSERT INTO question_option (idQuestion,idOption) values (?, ?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question_option (idQuestion,idOption) values (?, ?);");
             $stmn -> bindParam(1, $lastId);
             $stmn -> bindParam(2, $value);
             $stmn->execute();
@@ -163,7 +163,7 @@ function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
 
-        $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
@@ -172,13 +172,13 @@ function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
 
         $lastIdOfQuestion = $pdo->lastInsertId();
         foreach ($arrayOptions as $key => $value) {
-            $stmn = $pdo->prepare("INSERT INTO `option` (`text`) values (?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.option (`text`) values (?);");
 
             $stmn -> bindParam(1, $value);
             $stmn->execute();
             $lastIdOfOption = $pdo->lastInsertId();
 
-            $stmn = $pdo->prepare("INSERT INTO question_option (idQuestion,idOption) values (?, ?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question_option (idQuestion,idOption) values (?, ?);");
             $stmn->bindParam(1,$lastIdOfQuestion);
             $stmn->bindParam(2,$lastIdOfOption);
             $stmn->execute();
@@ -206,13 +206,13 @@ function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
 
-        $stmn = $pdo->prepare("UPDATE `question` SET `available`=? WHERE id=?");
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.question SET `available`=? WHERE id=?");
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idQuestionToEdit);
         $stmn->execute();
         logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$notAvailable} WHERE id={$idQuestionToEdit}\n",$_SESSION['user'][2]);
 
-        $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
@@ -222,13 +222,13 @@ function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, 
 
         $lastIdOfQuestion = $pdo->lastInsertId();
         foreach ($arrayOptions as $key => $value) {
-            $stmn = $pdo->prepare("INSERT INTO `option` (`text`) values (?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.option (`text`) values (?);");
 
             $stmn -> bindParam(1, $value);
             $stmn->execute();
             $lastIdOfOption = $pdo->lastInsertId();
 
-            $stmn = $pdo->prepare("INSERT INTO question_option (idQuestion,idOption) values (?, ?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.question_option (idQuestion,idOption) values (?, ?);");
             $stmn->bindParam(1,$lastIdOfQuestion);
             $stmn->bindParam(2,$lastIdOfOption);
             $stmn->execute();
@@ -262,7 +262,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $pdo->beginTransaction();
 
         // SAVING POLL
-        $stmn = $pdo->prepare("INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (?,?,?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (?,?,?,?,?)");
         $stmn->bindParam(1,$pollTitle);
         $stmn->bindParam(2,$actualDate);
         $stmn->bindParam(3,$startDate);
@@ -276,7 +276,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         // SAVING TEACHERS OF POLL
         foreach ($arrayTeachersId as $key => $idTeacher) {
-            $stmn = $pdo->prepare("INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (?,?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll_teacher (`idPoll`, `idTeacher`) values (?,?);");
             $stmn -> bindParam(1, $lastIdOfPoll);
             $stmn -> bindParam(2, $idTeacher);
             $stmn->execute();
@@ -285,7 +285,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         // SAVING QUESTIONS OF POLL
         foreach ($arrayQuestionsId as $key => $idQuestion) {
-            $stmn = $pdo->prepare("INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (?,?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll_question (`idPoll`, `idQuestion`) values (?,?);");
             $stmn -> bindParam(1, $lastIdOfPoll);
             $stmn -> bindParam(2, $idQuestion);
             $stmn->execute();
@@ -294,7 +294,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         // SAVING STUDENTS OF POLL
         foreach ($arrayStudentsId as $key => $idStudent) {
-            $stmn = $pdo->prepare("INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (?,?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll_student (`idPoll`, `idStudent`) values (?,?);");
             $stmn -> bindParam(1, $lastIdOfPoll);
             $stmn -> bindParam(2, $idStudent);
             $stmn->execute();
@@ -324,14 +324,14 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
 
-        $stmn = $pdo->prepare("UPDATE `poll` SET `available`=? WHERE id=?");
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.poll SET `available`=? WHERE id=?");
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idPollToEdit);
         $stmn->execute();
         logButtonClick("S","checkForm.php","UPDATE `poll` SET `available`={$notAvailable} WHERE id={$idPollToEdit}\n",$_SESSION['user'][2]);
 
         // SAVING POLL
-        $stmn = $pdo->prepare("INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (?,?,?,?,?)");
+        $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (?,?,?,?,?)");
         $stmn->bindParam(1,$pollTitle);
         $stmn->bindParam(2,$actualDate);
         $stmn->bindParam(3,$startDate);
@@ -345,7 +345,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         // SAVING TEACHERS OF POLL
         foreach ($arrayTeachersId as $key => $idTeacher) {
-            $stmn = $pdo->prepare("INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (?,?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll_teacher (`idPoll`, `idTeacher`) values (?,?);");
             $stmn -> bindParam(1, $lastIdOfPoll);
             $stmn -> bindParam(2, $idTeacher);
             $stmn->execute();
@@ -354,7 +354,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         // SAVING QUESTIONS OF POLL
         foreach ($arrayQuestionsId as $key => $idQuestion) {
-            $stmn = $pdo->prepare("INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (?,?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll_question (`idPoll`, `idQuestion`) values (?,?);");
             $stmn -> bindParam(1, $lastIdOfPoll);
             $stmn -> bindParam(2, $idQuestion);
             $stmn->execute();
@@ -363,7 +363,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         // SAVING STUDENTS OF POLL
         foreach ($arrayStudentsId as $key => $idStudent) {
-            $stmn = $pdo->prepare("INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (?,?);");
+            $stmn = $pdo->prepare("INSERT INTO creyentes_poll.poll_student (`idPoll`, `idStudent`) values (?,?);");
             $stmn -> bindParam(1, $lastIdOfPoll);
             $stmn -> bindParam(2, $idStudent);
             $stmn->execute();
@@ -387,7 +387,7 @@ function removeAvailabilityOfQuestion($idQuestion){
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
-        $stmn = $pdo->prepare("UPDATE `question` SET `available`=? WHERE id=?");
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.question SET `available`=? WHERE id=?");
         $stmn->bindParam(1,$available);
         $stmn->bindParam(2,$idQuestion);
         $stmn->execute();
@@ -410,7 +410,7 @@ function removeAvailabilityOfPoll($idPoll){
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
-        $stmn = $pdo->prepare("UPDATE `poll` SET `available`=? WHERE id=?");
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.poll SET `available`=? WHERE id=?");
         $stmn->bindParam(1,$available);
         $stmn->bindParam(2,$idPoll);
         $stmn->execute();
