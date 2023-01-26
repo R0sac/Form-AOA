@@ -3,8 +3,8 @@ function connectionBBDD(){
     try {
         $hostname = "localhost";
         $dbname = "creyentes_poll";
-        $username = "adminSalud";
-        $pw = "salud123!";
+        $username = "admin";
+        $pw = "admin123";
         $pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$pw");
         return $pdo;
     } catch (PDOException $e) {

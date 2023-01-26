@@ -92,3 +92,23 @@
 [2023-01-26 12:10:13][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
 [2023-01-26 12:10:15][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=24
 [2023-01-26 12:10:15][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
+[2023-01-26 15:50:25][E][checkForm.php][] El usuari o la contrasenya son incorrectes
+[2023-01-26 15:50:39][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-26 15:50:43][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 15:51:08][S][checkForm.php][Aleix] INSERT INTO question (text, idTypeQuestion, available) VALUES (testSImple,3,1)
+[2023-01-26 15:51:08][S][checkForm.php][Aleix] INSERT INTO `option` (`text`) values (3)
+[2023-01-26 15:51:08][S][checkForm.php][Aleix] INSERT INTO question_option (idQuestion,idOption) values (23, 16)
+[2023-01-26 15:51:08][S][checkForm.php][Aleix] La pregunta del tipus 'Opció Simple' s'ha desat correctament
+[2023-01-26 15:51:08][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 15:51:42][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (test,26-01-23 03:51:42,2023-01-26 00:00:00,2023-01-27 00:00:00,1)
+[2023-01-26 15:51:42][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (3,11)
+[2023-01-26 15:51:42][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (3,23)
+[2023-01-26 15:51:42][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (3,4)
+[2023-01-26 15:51:42][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-26 15:51:42][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 15:51:49][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'esborrar una enquesta
+[2023-01-26 15:51:49][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-26 15:51:49][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 15:52:18][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'esborrar una enquesta
+[2023-01-26 15:52:18][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-26 15:52:18][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
