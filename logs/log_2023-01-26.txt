@@ -1,0 +1,104 @@
+[2023-01-26 11:56:43][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-26 11:56:50][E][checkForm.php][] El nom o la contrasenya son incorrectes
+[2023-01-26 11:57:21][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-26 11:57:23][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 11:57:46][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-26 11:57:50][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-26 11:57:51][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-26 11:58:00][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-26 11:58:00][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 11:58:19][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion, available) VALUES (PRUEBA1,1,1)
+[2023-01-26 11:58:19][S][checkForm.php][Andrés] INSERT INTO question_option (idQuestion,idOption) values (23, 5)
+[2023-01-26 11:58:19][S][checkForm.php][Andrés] La pregunta del tipus 'Numeric' s'ha desat correctament
+[2023-01-26 11:58:19][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 11:58:47][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion, available) VALUES (PRUEBA2,2,1)
+[2023-01-26 11:58:47][S][checkForm.php][Andrés] La pregunta del tipus 'Text' s'ha desat correctament
+[2023-01-26 11:58:47][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 11:59:12][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion, available) VALUES (PRUEBA3,3,1)
+[2023-01-26 11:59:12][S][checkForm.php][Andrés] INSERT INTO `option` (`text`) values (JAJAJA)
+[2023-01-26 11:59:12][S][checkForm.php][Andrés] INSERT INTO question_option (idQuestion,idOption) values (25, 15)
+[2023-01-26 11:59:12][S][checkForm.php][Andrés] La pregunta del tipus 'Opcio Simple' s'ha desat correctament
+[2023-01-26 11:59:12][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:00:55][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Encuesta,26-01-23 12:00:55,2023-01-27 00:00:00,2023-02-16 00:00:00,1)
+[2023-01-26 12:00:55][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (4,12)
+[2023-01-26 12:00:55][E][checkForm.php][Andrés] Hi ha hagut un error a l'hora d'inserir una enquesta!!!!!
+[2023-01-26 12:00:55][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:00:55][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:02:44][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:04:57][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-26 12:04:59][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-26 12:05:01][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:05:26][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (JAJA,26-01-23 12:05:26,2023-01-26 00:00:00,2023-02-09 00:00:00,1)
+[2023-01-26 12:05:26][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (5,10)
+[2023-01-26 12:05:26][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (5,21)
+[2023-01-26 12:05:26][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (5,4)
+[2023-01-26 12:05:26][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:05:26][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:06:09][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=23
+[2023-01-26 12:06:09][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
+[2023-01-26 12:06:09][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:06:22][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=5
+[2023-01-26 12:06:22][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
+[2023-01-26 12:06:22][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:06:45][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-26 12:06:53][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-26 12:06:54][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:07:03][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion, available) VALUES (JUANMA,2,1)
+[2023-01-26 12:07:03][S][checkForm.php][Andrés] La pregunta del tipus 'Text' s'ha desat correctament
+[2023-01-26 12:07:03][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:07:29][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (HA,26-01-23 12:07:29,2023-01-26 00:00:00,2023-02-16 00:00:00,1)
+[2023-01-26 12:07:29][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (6,10)
+[2023-01-26 12:07:29][E][checkForm.php][Andrés] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-26 12:07:29][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:07:29][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:08:04][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (PEPE,26-01-23 12:08:04,2023-01-26 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-26 12:08:04][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (7,10)
+[2023-01-26 12:08:04][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (7,26)
+[2023-01-26 12:08:04][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (7,4)
+[2023-01-26 12:08:04][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:08:04][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:08:31][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (BOTELLA,26-01-23 12:08:31,2023-01-26 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-26 12:08:31][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (8,10)
+[2023-01-26 12:08:31][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (8,26)
+[2023-01-26 12:08:31][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (8,4)
+[2023-01-26 12:08:31][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:08:31][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:08:47][S][checkForm.php][Andrés] INSERT INTO question (text, idTypeQuestion, available) VALUES (ERRROR,2,1)
+[2023-01-26 12:08:47][S][checkForm.php][Andrés] La pregunta del tipus 'Text' s'ha desat correctament
+[2023-01-26 12:08:47][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:09:18][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (ERROREsS,26-01-23 12:09:18,2023-01-26 00:00:00,2023-02-23 00:00:00,1)
+[2023-01-26 12:09:18][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (9,10)
+[2023-01-26 12:09:18][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (9,27)
+[2023-01-26 12:09:18][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (9,4)
+[2023-01-26 12:09:18][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:09:18][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:09:45][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (ERROR,26-01-23 12:09:45,2023-01-26 00:00:00,2023-01-27 00:00:00,1)
+[2023-01-26 12:09:45][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (10,10)
+[2023-01-26 12:09:45][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (10,20)
+[2023-01-26 12:09:45][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (10,4)
+[2023-01-26 12:09:45][S][checkForm.php][Andrés] El formulari s'ha desat correctament
+[2023-01-26 12:09:45][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:05][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=7
+[2023-01-26 12:10:05][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
+[2023-01-26 12:10:05][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:08][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=27
+[2023-01-26 12:10:08][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
+[2023-01-26 12:10:08][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:11][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=26
+[2023-01-26 12:10:11][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
+[2023-01-26 12:10:11][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:12][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=25
+[2023-01-26 12:10:12][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
+[2023-01-26 12:10:13][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:15][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=24
+[2023-01-26 12:10:15][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
+[2023-01-26 12:10:15][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:18][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=8
+[2023-01-26 12:10:18][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
+[2023-01-26 12:10:18][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:24][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=9
+[2023-01-26 12:10:24][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
+[2023-01-26 12:10:24][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-26 12:10:26][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=10
+[2023-01-26 12:10:26][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
+[2023-01-26 12:10:26][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament

@@ -1,5 +1,6 @@
 <?php session_start();
 include('utilities.php');
+include "log.php";
 $_SESSION["errors"] = array();
 
 function logIn(){
@@ -14,9 +15,11 @@ function logIn(){
     $row = $stmt->fetch();
     if ($row){
         $_SESSION["user"] = [$row["id"],$row["email"],$row["username"],intval($row["role"])];
+        logButtonClick("S","checkForm.php","S'ha iniciat la sessió correctament\n",$_SESSION['user'][2]);
         header('Location: dashboard.php');
     }else{
         array_push($_SESSION["errors"],["error","Credencials incorrectes"]);
+        logButtonClick("E","checkForm.php","El usuari o la contrasenya son incorrectes\n");
         header('Location: login.php');
     }
 }
@@ -33,13 +36,14 @@ function saveTextQuestion($typeQuestion, $questionTitle){
         $stmn->bindParam(3,$available);
         $stmn->execute();
         $pdo->commit();
+        logButtonClick("S","checkForm.php","INSERT INTO question (text, idTypeQuestion, available) VALUES ({$questionTitle},{$typeQuestion},{$available})\n",$_SESSION['user'][2]);
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
-        } 
-        // TODO poner mensaje error
+        }
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Text'\n",$_SESSION['user'][2]);
     }
 }
 
@@ -55,6 +59,7 @@ function editTextQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idQuestionToEdit);
         $stmn->execute();
+        logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$notAvailable} WHERE id={$idQuestionToEdit}\n",$_SESSION['user'][2]);
 
         $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
@@ -62,13 +67,14 @@ function editTextQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         $stmn->bindParam(3,$available);
         $stmn->execute();
         $pdo->commit();
+        logButtonClick("S","checkForm.php","INSERT INTO question (text, idTypeQuestion, available) VALUES ({$questionTitle},{$typeQuestion},{$available})\n",$_SESSION['user'][2]);
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
         } 
-        // TODO poner mensaje error
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Text'\n",$_SESSION['user'][2]);
     }
 }
 
@@ -84,6 +90,7 @@ function saveNumberQuestion($typeQuestion, $questionTitle){
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
         $stmn->execute();
+        logButtonClick("S","checkForm.php","INSERT INTO question (text, idTypeQuestion, available) VALUES ({$questionTitle},{$typeQuestion},{$available})\n",$_SESSION['user'][2]);
 
         $lastId = $pdo->lastInsertId();
         
@@ -95,12 +102,14 @@ function saveNumberQuestion($typeQuestion, $questionTitle){
             $stmn->execute();
         };
         $pdo->commit();
+        logButtonClick("S","checkForm.php","INSERT INTO question_option (idQuestion,idOption) values ({$lastId}, {$value})\n",$_SESSION['user'][2]);
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
         } 
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Numeric'\n",$_SESSION['user'][2]);
     }
 }
 
@@ -117,12 +126,14 @@ function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idQuestionToEdit);
         $stmn->execute();
+        logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$notAvailable} WHERE id={$idQuestionToEdit}\n",$_SESSION['user'][2]);
 
         $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
         $stmn->execute();
+        logButtonClick("S","checkForm.php","INSERT INTO question (text, idTypeQuestion, available) VALUES ({$questionTitle},{$typeQuestion},{$available})\n",$_SESSION['user'][2]);
 
         $lastId = $pdo->lastInsertId();
         
@@ -134,12 +145,14 @@ function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
             $stmn->execute();
         };
         $pdo->commit();
+        logButtonClick("S","checkForm.php","INSERT INTO question_option (idQuestion,idOption) values ({$lastId}, {$value})\n",$_SESSION['user'][2]);
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
-        } 
+        }
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Numeric'\n",$_SESSION['user'][2]);
     }
 }
 
@@ -155,6 +168,7 @@ function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
         $stmn->bindParam(2,$typeQuestion);
         $stmn->bindParam(3,$available);
         $stmn->execute();
+        logButtonClick("S","checkForm.php","INSERT INTO question (text, idTypeQuestion, available) VALUES ({$questionTitle},{$typeQuestion},{$available})\n",$_SESSION['user'][2]);
 
         $lastIdOfQuestion = $pdo->lastInsertId();
         foreach ($arrayOptions as $key => $value) {
@@ -171,12 +185,15 @@ function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
         };
     
         $pdo->commit();
+        logButtonClick("S","checkForm.php","INSERT INTO `option` (`text`) values ({$value})\n",$_SESSION['user'][2]);
+        logButtonClick("S","checkForm.php","INSERT INTO question_option (idQuestion,idOption) values ({$lastIdOfQuestion}, {$lastIdOfOption})\n",$_SESSION['user'][2]);
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
-        } 
+        }
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Opció Simple'\n",$_SESSION['user'][2]);
     }
 }
 
@@ -193,7 +210,7 @@ function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, 
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idQuestionToEdit);
         $stmn->execute();
-
+        logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$notAvailable} WHERE id={$idQuestionToEdit}\n",$_SESSION['user'][2]);
 
         $stmn = $pdo->prepare("INSERT INTO `question` (`text`, `idTypeQuestion`,`available`) VALUES (?,?,?)");
         $stmn->bindParam(1,$questionTitle);
@@ -201,6 +218,7 @@ function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, 
         $stmn->bindParam(3,$available);
 
         $stmn->execute();
+        logButtonClick("S","checkForm.php","INSERT INTO question (text, idTypeQuestion, available) VALUES ({$questionTitle},{$typeQuestion},{$available})\n",$_SESSION['user'][2]);
 
         $lastIdOfQuestion = $pdo->lastInsertId();
         foreach ($arrayOptions as $key => $value) {
@@ -217,12 +235,15 @@ function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, 
         };
     
         $pdo->commit();
+        logButtonClick("S","checkForm.php","INSERT INTO `option` (`text`) values ({$value})\n",$_SESSION['user'][2]);
+        logButtonClick("S","checkForm.php","INSERT INTO question_option (idQuestion,idOption) values ({$lastIdOfQuestion}, {$lastIdOfOption})\n",$_SESSION['user'][2]);
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
-        } 
+        }
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Opció Simple'\n",$_SESSION['user'][2]);
     }
 }
 
@@ -249,6 +270,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $stmn->bindParam(5,$available);
 
         $stmn->execute();
+        logButtonClick("S","checkForm.php","INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES ({$pollTitle},{$actualDate},{$startDate},{$endDate},{$available})\n",$_SESSION['user'][2]);
 
         $lastIdOfPoll = $pdo->lastInsertId();
 
@@ -259,6 +281,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
             $stmn -> bindParam(2, $idTeacher);
             $stmn->execute();
         };
+        logButtonClick("S","checkForm.php","INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values ({$lastIdOfPoll},{$idTeacher})\n",$_SESSION['user'][2]);
 
         // SAVING QUESTIONS OF POLL
         foreach ($arrayQuestionsId as $key => $idQuestion) {
@@ -267,6 +290,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
             $stmn -> bindParam(2, $idQuestion);
             $stmn->execute();
         };
+        logButtonClick("S","checkForm.php","INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values ({$lastIdOfPoll},{$idQuestion})\n",$_SESSION['user'][2]);
 
         // SAVING STUDENTS OF POLL
         foreach ($arrayStudentsId as $key => $idStudent) {
@@ -275,6 +299,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
             $stmn -> bindParam(2, $idStudent);
             $stmn->execute();
         };
+        logButtonClick("S","checkForm.php","INSERT INTO `poll_student` (`idPoll`, `idStudent`) values ({$lastIdOfPoll},{$idStudent})\n",$_SESSION['user'][2]);
     
         $pdo->commit();
     } 
@@ -283,6 +308,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         {
            $pdo->rollBack();
         } 
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una enquesta\n",$_SESSION['user'][2]);
     }
 }
 
@@ -302,6 +328,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idPollToEdit);
         $stmn->execute();
+        logButtonClick("S","checkForm.php","UPDATE `poll` SET `available`={$notAvailable} WHERE id={$idPollToEdit}\n",$_SESSION['user'][2]);
 
         // SAVING POLL
         $stmn = $pdo->prepare("INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (?,?,?,?,?)");
@@ -312,6 +339,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $stmn->bindParam(5,$available);
 
         $stmn->execute();
+        logButtonClick("S","checkForm.php","INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES ({$pollTitle},{$actualDate},{$startDate},{$endDate},{$available})\n",$_SESSION['user'][2]);
 
         $lastIdOfPoll = $pdo->lastInsertId();
 
@@ -322,6 +350,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
             $stmn -> bindParam(2, $idTeacher);
             $stmn->execute();
         };
+        logButtonClick("S","checkForm.php","INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values ({$lastIdOfPoll},{$idTeacher})\n",$_SESSION['user'][2]);
 
         // SAVING QUESTIONS OF POLL
         foreach ($arrayQuestionsId as $key => $idQuestion) {
@@ -330,6 +359,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
             $stmn -> bindParam(2, $idQuestion);
             $stmn->execute();
         };
+        logButtonClick("S","checkForm.php","INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values ({$lastIdOfPoll},{$idQuestion})\n",$_SESSION['user'][2]);
 
         // SAVING STUDENTS OF POLL
         foreach ($arrayStudentsId as $key => $idStudent) {
@@ -338,6 +368,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
             $stmn -> bindParam(2, $idStudent);
             $stmn->execute();
         };
+        logButtonClick("S","checkForm.php","INSERT INTO `poll_student` (`idPoll`, `idStudent`) values ({$lastIdOfPoll},{$idStudent})\n",$_SESSION['user'][2]);
     
         $pdo->commit();
     } 
@@ -345,7 +376,8 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
-        } 
+        }
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una enquesta\n",$_SESSION['user'][2]);
     }
 }
 
@@ -360,13 +392,15 @@ function removeAvailabilityOfQuestion($idQuestion){
         $stmn->bindParam(2,$idQuestion);
         $stmn->execute();
         $pdo->commit();
+        logButtonClick("S","checkForm.php","UPDATE `question` SET `available`={$available} WHERE id={$idQuestion}\n",$_SESSION['user'][2]);
+
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
         } 
-        // TODO poner mensaje error
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'esborrar una pregunta\n",$_SESSION['user'][2]);
     }
 }
 
@@ -381,13 +415,15 @@ function removeAvailabilityOfPoll($idPoll){
         $stmn->bindParam(2,$idPoll);
         $stmn->execute();
         $pdo->commit();
+        logButtonClick("S","checkForm.php","UPDATE `poll` SET `available`={$available} WHERE id={$idPoll}\n",$_SESSION['user'][2]);
+
     } 
     catch (PDOException $e) {
         if ($pdo->inTransaction())
         {
            $pdo->rollBack();
         } 
-        // TODO poner mensaje error
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'esborrar una enquesta\n",$_SESSION['user'][2]);
     }
 }
 
@@ -410,7 +446,7 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
                     else{
                         saveNumberQuestion($_POST["questionType"], $_POST["questionTitle"]);
                     }
-                    // TO DO meter log de envío de pregunta realizado correctamente
+                    logButtonClick("S","checkForm.php","La pregunta del tipus 'Numeric' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
 
                 case 2:   //Question type text      
@@ -421,7 +457,7 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
                     else{
                         saveTextQuestion($_POST["questionType"], $_POST["questionTitle"]);
                     }      
-                    // TO DO meter log de envío de pregunta realizado correctamente
+                    logButtonClick("S","checkForm.php","La pregunta del tipus 'Text' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
                     
                 case 3:   //Question type simple option
@@ -432,8 +468,7 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
                     else{
                         saveSimpleOptionQuestion($_POST["questionType"], $_POST["questionTitle"], $_POST['inputOptions']);
                     }  
-
-                    // TO DO meter log de envío de pregunta realizado correctamente
+                    logButtonClick("S","checkForm.php","La pregunta del tipus 'Opció Simple' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
             }
 
@@ -445,7 +480,8 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
             }
             else{
                 savePoll($_POST["pollTitle"], $_POST["inputStartDate"], $_POST["inputEndDate"], $_POST["inputTeachersId"], $_POST["inputQuestionsId"], $_POST["inputStudentsId"]);
-            }  
+            } 
+            logButtonClick("S","checkForm.php","El formulari s'ha desat correctament\n",$_SESSION['user'][2]);
             break;
     }
     header("Location: poll.php");
@@ -456,10 +492,12 @@ else if(isset($_POST["removeElement"])){
 
         case 'question':
             removeAvailabilityOfQuestion($_POST["removeIdQuestion"]);
+            logButtonClick("S","checkForm.php","S'ha esborrat la pregunta correctament\n",$_SESSION['user'][2]);
             break;
         
         case 'poll':
             removeAvailabilityOfPoll($_POST["removeIdPoll"]);
+            logButtonClick("S","checkForm.php","S'ha esborrat l'enquesta correctament\n",$_SESSION['user'][2]);
             break;
     }
     header("Location: poll.php");
