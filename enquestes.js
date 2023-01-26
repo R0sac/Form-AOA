@@ -24,6 +24,13 @@ function addAcceptButton(){
                         <input type="text" name="questionTitle" value="${$('#inputTitle').val()}" />
                     </form>
                 `);
+
+                if ($("#idQuestionEdit").length) {
+                    $('#questionFormBDD').append(`
+                        <input type="text" name="idQuestionEdit" id="idQuestionEdit" value="${$("#idQuestionEdit").val()}" hidden/>
+                    `);
+                }
+
                 $('#btnAcceptar').click(()=>{
                     $('#questionFormBDD').submit();
                 });   
@@ -38,6 +45,13 @@ function addAcceptButton(){
                         <input type="text" name="questionTitle" value="${$('#inputTitle').val()}" />
                     </form>
                 `);
+
+                if ($("#idQuestionEdit").length) {
+                    $('#questionFormBDD').append(`
+                        <input type="text" name="idQuestionEdit" id="idQuestionEdit" value="${$("#idQuestionEdit").val()}" hidden/>
+                    `);
+                }
+
                 $('#btnAcceptar').click(()=>{
                     $('#questionFormBDD').submit();
                 });   
@@ -60,6 +74,11 @@ function addAcceptButton(){
                     `);
                 }
 
+                if ($("#idQuestionEdit").length) {
+                    $('#questionFormBDD').append(`
+                        <input type="text" name="idQuestionEdit" id="idQuestionEdit" value="${$("#idQuestionEdit").val()}" hidden/>
+                    `);
+                }
 
                 $('#btnAcceptar').click(()=>{
                     $('#questionFormBDD').submit();
@@ -104,6 +123,12 @@ function addAcceptButton(){
                 <input type="text" name="inputStudentsId[${i}]" value="${idStudent}" />
             `);
         };
+
+        if ($("#idPollEdit").length) {
+            $('#pollFormBDD').append(`
+                <input type="text" name="idPollEdit" id="idQuestionEdit" value="${$("#idPollEdit").val()}" hidden/>
+            `);
+        }
 
         $('#btnAcceptar').click(()=>{
             $('#pollFormBDD').submit();
@@ -204,48 +229,48 @@ function addViewOfSelectedTypeQuestion(){
             break;
 
         case 3:
-            removeAllAfterTitle();
+            if (!$(".containerSingleRadioButtonWithOptions").length){
+                var idNumber = idInputOptions;
+                removeAllAfterTitle();
+                $('#formQuestion').append(`
 
-            var idNumber = idInputOptions;
+                    <div class="containerSingleRadioButtonWithOptions" id = "div-Option-${idNumber}">
+                        <input class="radioOption" type="radio" onclick="this.checked = false;">
+                        <input class="textOption" type="text"/>
+                        <button type="button" id="btnRemoveOption-${idNumber}" class="btnRemoveOption" ><i class="fa-solid fa-minus"></i></button>
+                    </div>
+                    <div class="containerSingleRadioButtonWithOptions" id = "div-Option-${idNumber + 1}">
+                        <input class="radioOption"  type="radio" onclick="this.checked = false;">
+                        <input class="textOption" type="text"/>
+                        <button type="button" id="btnRemoveOption-${idNumber + 1}" class="btnRemoveOption" ><i class="fa-solid fa-minus"></i></button>
+                    </div>
 
-            $('#formQuestion').append(`
+                    <div id="addOrDeleteOptionButtons" class="addOrDeleteOptionButtons">
+                        <button type="button" id="btnAddOption" class="btnAddOption"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                `);
 
-                <div class="containerSingleRadioButtonWithOptions" id = "div-Option-${idNumber}">
-                    <input class="radioOption" type="radio" onclick="this.checked = false;">
-                    <input class="textOption" type="text"/>
-                    <button type="button" id="btnRemoveOption-${idNumber}" class="btnRemoveOption" ><i class="fa-solid fa-minus"></i></button>
-                </div>
-                <div class="containerSingleRadioButtonWithOptions" id = "div-Option-${idNumber + 1}">
-                    <input class="radioOption"  type="radio" onclick="this.checked = false;">
-                    <input class="textOption" type="text"/>
-                    <button type="button" id="btnRemoveOption-${idNumber + 1}" class="btnRemoveOption" ><i class="fa-solid fa-minus"></i></button>
-                </div>
+                // Adding oninput function to check if are filled all inputs
+                for (let i = 0; i < $('.textOption').length; i++) {
+                    $( $('.textOption')[i] ).on('input',() => {
+                        checkIfAllOptionsFilled();
+                    });
+                }
 
-                <div id="addOrDeleteOptionButtons" class="addOrDeleteOptionButtons">
-                    <button type="button" id="btnAddOption" class="btnAddOption"><i class="fa-solid fa-plus"></i></button>
-                </div>
-            `);
-
-            // Adding oninput function to check if are filled all inputs
-            for (let i = 0; i < $('.textOption').length; i++) {
-                $( $('.textOption')[i] ).on('input',() => {
-                    checkIfAllOptionsFilled();
+                $('#btnAddOption').click(() => {
+                    addExtraSimpleOption();
                 });
-            }
 
-            $('#btnAddOption').click(() => {
-                addExtraSimpleOption();
-            });
+                $(`#btnRemoveOption-${idNumber}`).click(function() {
+                    removeExtraSimpleOption(idNumber);
+                });
 
-            $(`#btnRemoveOption-${idNumber}`).click(function() {
-                removeExtraSimpleOption(idNumber);
-            });
-
-            $(`#btnRemoveOption-${idNumber+1}`).click(function() {
-                removeExtraSimpleOption(idNumber+1);
-            });
-
-            idInputOptions += 2 ;
+                $(`#btnRemoveOption-${idNumber+1}`).click(function() {
+                    removeExtraSimpleOption(idNumber+1);
+                });
+                idInputOptions += 2 ;
+        }
+        checkIfAllOptionsFilled();
             break;
     }
 
@@ -449,6 +474,161 @@ function addTeacherToPickedList(arrayOfTeacher){
 
 }
 
+function editQuestion(question){
+    createQuestion('#pollContent',arrayTypesOfQuestion);
+    $("#typeQuestion").val(question.idTypeQuestion);
+    $("#typeQuestion").prop("disabled",true);
+    $("#inputTitle").val(question.text);
+    $("#formQuestion").prepend(`
+        <input type="text" id="idQuestionEdit" value="${question.id}" hidden/>
+    `);
+    addViewOfSelectedTypeQuestion();
+    if (Number(question.idTypeQuestion) === 3 ) {  //singleOption questions
+        for (let i = 0; i < arrayQuestionOption[question.id].length; i++) {
+            var textOfInput = "";
+            if (i > 1) {
+                addExtraSimpleOption();
+            }
+            for (let j = 0; j < arrayOptions.length; j++) {
+                if (Number(arrayOptions[j].id) ===  arrayQuestionOption[question.id][i]) {
+                    textOfInput = arrayOptions[j].text;
+                }
+            }
+
+            $($($(".containerSingleRadioButtonWithOptions")[i]).children()[1]).val(textOfInput);
+        }
+
+    }
+    checkIfAllOptionsFilled();
+
+}
+
+function removeQuestion(question){
+    $('body').append(`
+        <dialog id="modalDelete">
+            <div class="titleDialog">
+                <h2>Vols esborrar la pregunta: "${question.text}" ?</h2>
+            </div>
+            <h3>Al fer click en Esborrar, esborrarás la pregunta. Tot i així en les enquestes on es trobi la pregunta romandrá</h3>
+            <div class="buttonsRemove">
+                <button id="btnCancelDelete">Cancel·lar</button>
+                <button id="btnAcceptDelete" >Esborrar</button>
+            </div>
+        </dialog>
+    `);
+
+    $('#btnCancelDelete').click(() => {
+        $("#modalDelete").remove();
+    });
+
+    $('#btnAcceptDelete').click(() => {
+        $("#pollContent").append(`
+            <form id="formRemoveQuestion" action="./checkForm.php" method="POST" hidden>
+                <input type="text" name="removeElement" value="question" />
+                <input type="text" name="removeIdQuestion" value="${question.id}" />
+            </form>
+        `);
+
+        $("#formRemoveQuestion").submit();
+
+
+        $("#modalDelete").remove();
+    });
+
+    const modal = $("#modalDelete").get(0);
+    modal.showModal();
+    
+}
+
+function editPoll(poll){
+    createPoll('#pollContent',arrayQuestions, arrayTeachers, arrayStudents);
+    $("#inputTitle").val(poll.title);
+
+
+    var startDate = new Date(poll.startDate.replace(/-/g,"/"));
+    var dd = String(startDate.getDate()).padStart(2, '0');
+    var mm = String(startDate.getMonth() + 1).padStart(2, '0');
+    var yyyy = startDate.getFullYear();
+    startDate =  yyyy + '-' + mm + '-' + dd;
+    $("#inputStartDate").val(startDate);
+
+    var endDate = new Date(poll.endDate.replace(/-/g,"/"));
+    var dd = String(endDate.getDate()).padStart(2, '0');
+    var mm = String(endDate.getMonth() + 1).padStart(2, '0');
+    var yyyy = endDate.getFullYear();
+    endDate =  yyyy + '-' + mm + '-' + dd;
+
+    $("#inputEndDate").val(endDate);
+
+    for (let i = 0; i < arrayPollTeacher[poll.id].length; i++) {
+        for (let j = 0; j < arrayTeachers.length; j++) {
+            if (Number(arrayTeachers[j].id) ===  arrayPollTeacher[poll.id][i]) {
+                addTeacherToPickedList(arrayTeachers[j]);
+            }
+        }
+    }      
+    checkTeacherPollFilled();
+
+    for (let i = 0; i < arrayPollQuestion[poll.id].length; i++) {
+        for (let j = 0; j < arrayQuestions.length; j++) {
+            if (Number(arrayQuestions[j].id) ===  arrayPollQuestion[poll.id][i]) {
+                addQuestionToPickedList(arrayQuestions[j]);
+            }
+        }
+    }      
+    checkQuestionPollFilled();
+
+    for (let i = 0; i < arrayPollStudent[poll.id].length; i++) {
+        for (let j = 0; j < arrayStudents.length; j++) {
+            if (Number(arrayStudents[j].id) ===  arrayPollStudent[poll.id][i]) {
+                addStudentToPickedList(arrayStudents[j]);
+            }
+        }
+    }      
+    checkStudentPollFilled();
+
+    $("#formPoll").prepend(`
+        <input type="text" id="idPollEdit" value="${poll.id}" hidden/>
+    `);
+
+}
+
+function removePoll(poll){
+    $('body').append(`
+        <dialog id="modalDelete">
+            <div class="titleDialog">
+                <h2>Vols esborrar l'enquesta: "${poll.title}" ?</h2>
+            </div>
+            <h3>Al fer click en Esborrar, esborrarás l'enquesta. Tot i així les enquestes actives romandrán fins que finalitzin</h3>
+            <div class="buttonsRemove">
+                <button id="btnCancelDelete">Cancel·lar</button>
+                <button id="btnAcceptDelete" >Esborrar</button>
+            </div>
+        </dialog>
+    `);
+
+    $('#btnCancelDelete').click(() => {
+        $("#modalDelete").remove();
+    });
+
+    $('#btnAcceptDelete').click(() => {
+        $("#pollContent").append(`
+            <form id="formRemovePoll" action="./checkForm.php" method="POST" hidden>
+                <input type="text" name="removeElement" value="poll" />
+                <input type="text" name="removeIdPoll" value="${poll.id}" />
+            </form>
+        `);
+
+        $("#formRemovePoll").submit();
+
+
+        $("#modalDelete").remove();
+    });
+
+    const modal = $("#modalDelete").get(0);
+    modal.showModal();
+    
+}
 
 //CREAR PREGUNTA
 function createQuestion(elementDOM,arrayTextListQuestion){
@@ -514,19 +694,6 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
     $('#btnCrearPregunta').removeClass('active');
     $('#btnListarEncuestas').removeClass('active');
 
-    var dtToday = new Date();
-
-    var month = dtToday.getMonth() + 1;
-    var day = dtToday.getDate();
-    var year = dtToday.getFullYear();
-
-    if(month < 10)
-        month = '0' + month.toString();
-    if(day < 10)
-        day = '0' + day.toString();
-
-    var minDate = year + '-' + month + '-' + day;
-
     // Creacion de Formulario
     fatherObjectJquery.append(`
         <form class='formPoll' id="formPoll" method='POST'>
@@ -535,12 +702,12 @@ function createPoll(elementDOM, arrayQuestions, arrayTeachers){
             <div class="containerDates" >
                 <div class="divSingleDate" >
                     <label for"inputStartDate"><strong>Data d'inici:</strong></label>
-                    <input type="date" min="`+minDate+`" class="inputDate" id="inputStartDate">
+                    <input type="date" class="inputDate" id="inputStartDate">
                 </div>
 
                 <div class="divSingleDate" >
                     <label for"inputEndDate"><strong>Data final:</strong></label>
-                    <input type="date"  min="`+minDate+`" class="inputDate" id="inputEndDate">
+                    <input type="date"  class="inputDate" id="inputEndDate">
                 </div>
             </div>
 
@@ -616,11 +783,20 @@ function viewListQuestion(elementDOM,arrayTextListQuestion){
             <tr>
                 <td class = "textComponent">` + question.text + `</td>
                 <td class="editComponent">
-                    <i class="fa-solid fa-pencil"></i>
-                    <i class="fa-solid fa-trash"></i>
+                    <button class="editButton" id="editButton-${question.id}" ><i class="fa-solid fa-pencil"></i></button>
+                    <button class="removeButton" id="removeButton-${question.id}" ><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
         `);
+                
+        $(`#editButton-${question.id}`).click(() => {
+            editQuestion(question);
+        });
+
+        $(`#removeButton-${question.id}`).click(() => {
+            removeQuestion(question);
+        });
+
     });
 
 }
@@ -650,10 +826,18 @@ function viewListPoll(elementDOM,arrayTitleListPoll){
             <tr>
                 <td class = "textComponent">` + poll.title + `</td>
                 <td class="editComponent">
-                    <i class="fa-solid fa-pencil"></i>
-                    <i class="fa-solid fa-trash"></i>
+                    <button class="editButton" id="editButton-${poll.id}" ><i class="fa-solid fa-pencil"></i></button>
+                    <button class="removeButton" id="removeButton-${poll.id}" ><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
         `);
+                
+        $(`#editButton-${poll.id}`).click(() => {
+            editPoll(poll);
+        });
+
+        $(`#removeButton-${poll.id}`).click(() => {
+            removePoll(poll);
+        });
     });
 }
