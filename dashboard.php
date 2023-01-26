@@ -1,51 +1,45 @@
 <?php
-    session_start();
-    include "log.php";
+$_GET['Titulo'] = 'Dashboard';
+$_GET['idBody'] = 'bodyDashboard';
+$_GET['logout'] = '';
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <title>Dashboard</title>
-</head>
-<body id="bodyDashboard">
+<?php include "header.php";
+$_SESSION["locationLogout"]= "dashboard.php"; ?>
+<div id="divDash">
 <?php
-    require_once('template.php');
-    headerTemplate();
-    ?>
-    <div id="divDash">
-    <?php
-        if($_SESSION["usuario"][1] === "profe"){
-            ?>
-            <div id="Dashprofe">
-                <button id="dashProfePerfil" class="BtnDash">Perfil</button>
-                <button id="dashProfeEstats" class="BtnDash">Estadistiques</button>
-            </div>
-            <?php
+    if($_SESSION["user"][3] === 2){
+        ?>
+        <div id="Dashprofe">
+            <a href="" id="dashProfePerfil" class="BtnDash">Perfil</a>
+            <a href="" id="dashProfeEstats" class="BtnDash">Estadistiques</a>
+        </div>
+        <?php
+    }
+    elseif ($_SESSION["user"][3] === 1) {
+        ?>
+            <div id="DashAdmin">
+            <a href="" id="dashAdminUsuaris" class="BtnDash">Usuaris</a>
+            <a href="poll.php" id="dashAdminEnquestes" class="BtnDash">Enquestes</a>
+            <a href="" id="dashAdminEstats" class="BtnDash">Estadistiques</a>
+        </div>
+        <?php
+    }
+    else{
+        if(issetErrors()){
+            array_push($_SESSION["errors"],["error","Inicia la sessió"]);
+            logButtonClick("E","login.php","S'ha intentat entrar sense iniciar sessió\n");//
+            header("Location: login.php");
         }
-        elseif ($_SESSION["usuario"][1] === "admin") {
-            ?>
-             <div id="DashAdmin">
-                <button id="dashAdminUsuaris" class="BtnDash">Usuaris</button>
-                <button id="dashAdminEnquestes" class="BtnDash">Enquestes</button>
-                <button id="dashAdminEstats" class="BtnDash">Estadistiques</button>
-            </div>
-            <?php
+        else{
+            $_SESSION["errors"] = array();
+            array_push($_SESSION["errors"],["error","Inicia la sessió"]);
+            logButtonClick("E","login.php","S'ha intentat entrar sense iniciar sessió\n");//
+            header("Location: login.php");
         }
-    ?>
-    </div>
-    <a href="/login.php">Volver a login</a>
-    <?php
-    require_once('template.php');
-    footerTemplate();
-    ?>
-    <script src="script.js"></script>
-</body>
-</html>
+
+
+    }
+?>
+</div>
+<?php include "footer.php"; ?>

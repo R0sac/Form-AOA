@@ -1,48 +1,57 @@
-body{
-    background-color: #9C8BD9;
-    font-family: Poppins;
-}
 *{
     margin:0;
     padding: 0;
 }
-/* HEADER */
+body{
+    background-color: #9C8BD9;
+    font-family: Poppins;
+    padding-bottom: 100px;
+    max-width: 1920px;
+}
 header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #251659;
     color: white;
     font-family: Poppins;
     text-align: center;
-    padding: 50px;
-    width: 100%;;
+    height: 60px;
+    max-width: 1920px;
 }
-/* FOOTER*/
 footer{
     background-color: #251659;
     font-family: Poppins;
     text-align: center;
     color: white;
+    position:fixed;
+    padding: 20px;
     bottom: 0;
-
+    width: 100%;
+    max-width: 1920px;
 }
 /* LANDING PAGE*/
-#bodyLanding{
-    height: 100%;
-    background-color: #9C8BD9;
+#divLanding{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
 }
-
-.landingH1{
-    padding: 30px;
-    background-color:  #251659;
-    color:white;
-    margin-bottom: 30px;
-}
-
-.landingButton{
+.btnLanding{
+    font-family: Poppins;
+    font-size: 20px;
     padding: 20px;
-    color:white;
-    background-color: #251659;
-    border-radius: 10px;
-    margin-bottom: 50px;
+    border-radius: 5px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+
+}
+.btnLanding:hover{
+    cursor: pointer;
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
 }
 
 #bodyLanding a{
@@ -56,11 +65,12 @@ footer{
     background-color:  #7559D9;
 }
 /* LOGIN.PHP */
-#bodyLogin{
-    height: 937px;
-    background-color: #9C8BD9;
+.autocenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:80px;
 }
-
 #divLogin h1{
     margin-bottom: 10px;
     color:  #251659;
@@ -72,15 +82,14 @@ footer{
 }
 #divLogin a{ 
     color:  #251659;
-    font-family: Poppins;
-    
+    font-family: Poppins; 
 }
 #divLogin a:hover{ 
     color:  #7559D9;
 }
 #divLogin{
-    height: 300px;
-    width: 400px;
+    height: 350px;
+    width: 450px;
     border-radius: 35px;
     border: 2px solid #251659;
     background-color: white;
@@ -88,8 +97,6 @@ footer{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top:300px;
-    margin-bottom:100%;
 }
 
 #btnLogin{
@@ -102,10 +109,13 @@ footer{
 
 }
 #btnLogin:hover{
+    cursor: pointer;
     border: 1px solid #7559D9 ;
     background-color:  #7559D9 ;
 }
+
 /* DASHBOARD.PHP */
+
 #Dashprofe,#DashAdmin{
     height: 500px;
     display: flex;
@@ -114,7 +124,6 @@ footer{
     flex-direction: row;
 }
 #divDash{
-    height: 937px;
     background-color: #9C8BD9;
     display:flex;
     align-items: center;
@@ -122,7 +131,13 @@ footer{
     flex-direction: column;
 }
 .BtnDash{
-    margin: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    margin: 80px;
+    margin-top: 170px;
     transition: all 0.6s ease-in-out;
     font-family: Poppins;
     margin-left: 55px;
@@ -140,23 +155,26 @@ footer{
     height: 200px;
     border: 1px solid #7559D9 ;
     background-color:  #7559D9 ;
+    cursor: pointer;
 }
 /* CSS MESSAGES */
 #mensajes{
+    font-weight: bold;
     position: absolute;
-    top: 0;
+    top: 55px;
+    margin: auto;
 }
-
 .error ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .error{
     height: auto;
     width: auto;
     padding: 20px;
     margin: 10px;
-    background-color: rgb(255, 76, 76);
+    background-color: rgb(255, 101, 101);
     border-radius: 10px;
     border: 1px solid rgb(131, 21, 21);
     color: rgb(131, 21, 21);
@@ -166,17 +184,17 @@ footer{
     list-style: none;
 }
 
-
 .warning ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .warning{
     height: auto;
     width: auto;
     padding: 20px;
     margin: 10px;
-    background-color: #F5EB32;
+    background-color: #fff758;
     border-radius: 10px;
     border: 1px solid rgb(130, 130, 23);
     color: rgb(130, 130, 23);
@@ -190,6 +208,7 @@ footer{
 .info ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .info{
     height: auto;
@@ -209,13 +228,14 @@ footer{
 .succes ul{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .succes{
     height: auto;
     width: auto;
     padding: 20px;
     margin: 10px;
-    background-color: #51f36a;
+    background-color: #6cff82;
     border-radius: 10px;
     border: 1px solid green;
     color: green;
@@ -225,7 +245,6 @@ footer{
     list-style: none;
 }
 
-
 .closebtn {
     margin-left: 10px;
     color: white;
@@ -234,6 +253,7 @@ footer{
 }
 .closebtn:hover {
     color: black;
+    cursor: pointer;
 }
 
 @keyframes cascade {
@@ -246,106 +266,253 @@ footer{
       transform: translateY(0);
     }
 }
-/* DASHBOARD */
-.dashboard{
-    display: grid;
-    grid-template-columns: 275px 1fr;
-    grid-template-rows: 1fr;
-}
-/* DASHBOARD-BAR */
+
+/* POLL-BAR */
 .panel{
-    grid-column: 1/1;
-    margin-top: 5%;
-    display: inline-block;
-    padding: 20px;
-    /* position: fixed; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .btnPanelAdmin{
     border-radius: 10px;
     background-color: white;
-    padding: 40px;
-    display: flex;
+    padding: 40px 0px;
     margin-top: 10px;
-    flex-direction: column;
+    margin-bottom: 50px;
     width: 100%;
     font-size: medium;
     font-weight: bold;
     text-align: center;
 }
 
+.btnPanelAdmin.active{
+    background-color: #5c2d56;
+    color: white;
+}
+
 .btnPanelAdmin:hover{
     background-color: rgba(3, 2, 13, 0.6);
     color: white;
+    cursor: pointer;
 }
 
-/* DASHBOARD-CREATE-QUESTION */
-.dash-contenido{
-     grid-column: 2/2;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-}
 
-.contentRs{
-    padding: 30px;
-    border: 2px solid #03020D;
-    border-radius: 10px;
+/* DYNAMIC CONTAINER */
+.pollContent{
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, 1);
+    border: 1px solid #61525f;
     background-color: #BF9FBA;
+    border-radius: 10px;
+    padding: 15px;
+    width: 60%;
 }
 
-.formQuestion p{
-    font-weight: bolder;
-    color: black;
+/* CREATE-QUESTION */
+.pollContent .formQuestion{
+   display: flex;
+   flex-direction: column;
 }
 
-.formQuestion input{
+.pollContent .formQuestion label{
+    text-align: center;
+}
+
+/* Selector para todos los elementos siguientes a un label (los inputs) */
+.pollContent .formQuestion label + *{
+    box-sizing:content-box;
     background-color:#251659;
     color: white;
     border: 1px solid black;
     border-radius: 10px;
-    height: 30px;
+    padding: 10px 30px;
+    align-self: center;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#typeQuestion{
-    background-color:#251659;
-    color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    height: 40px;
+.pollContent .formQuestion .containerSingleRadioButton{
+    align-self: center;
+    box-sizing:content-box;
+    width: 60%;
 }
 
-#buttonConfirm{
-    padding-top: 40px;
+.pollContent .formQuestion .containerSingleRadioButton input{
+    margin-left: 40%; 
+
 }
 
-#buttonConfirm button{
-    border-radius: 10px;
-    height: 50px;
-    width: 100px;
+.pollContent .formQuestion .containerSingleRadioButton label{
+    text-align: left;
+    width: 50%; 
 }
 
-#buttonConfirm #cancelar{
-    background-color: red;
-    margin-right: 50px;
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions{
+    align-self: center;
 }
-
-#buttonConfirm #confirm{
-    background-color: greenyellow;
+.containerSingleRadioButtonWithOptions .radioOption{
+    padding-top: 2px;
 }
-
-/* DASHBOARD-VIEW-QUESTION */
-.divViewQuestion{
-    margin-top: 10px;
-    padding: 20px;
-    border: 1px solid #03020D;
-    border-radius: 10px;
+.containerSingleRadioButtonWithOptions .textOption{
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 5px;
     background-color: #251659;
     color: white;
+    padding: 5px 0px;
 }
 
-/* DASHBOARD-VIEW-POLL */
+.pollContent .formQuestion .addOrDeleteOptionButtons{
+    align-self: center;
+}
 
+.pollContent .formQuestion .addOrDeleteOptionButtons *{
+    background-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons *:hover{
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons .btnAddOption{
+    color: green;
+}
+
+.pollContent .formQuestion .addOrDeleteOptionButtons .btnAddOption:hover{
+    color: rgb(0, 224, 0);
+}
+
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions .btnRemoveOption{
+    background-color: transparent;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+    color: red;
+}
+
+.pollContent .formQuestion .containerSingleRadioButtonWithOptions .btnRemoveOption:hover{
+    cursor: pointer;
+    transform: scale(1.4);
+    color: rgb(255, 120, 78);
+
+}
+
+.pollContent .formQuestion textarea{
+    resize: none;
+    box-sizing: content-box;
+    border-radius: 12px;
+    width: 60%;
+    padding: 10px 30px;
+    height: 100px;
+    align-self: center;
+}
+
+.pollContent .containerConfirmButtons{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pollContent .containerConfirmButtons .btnConfirm{
+    width: 20%;
+    padding: 5px 0px;
+    border-radius: 5px;
+}   
+
+.pollContent .containerConfirmButtons .btnConfirm:hover{
+    border-color: black;
+    background-color: #9C8BD9;
+    color: #251659;
+    cursor: pointer;
+}
+
+.pollContent .containerConfirmButtons .btnAcceptar{
+    background-color: #6cff82;
+    border-color: rgb(0, 46, 0);
+    font-weight: bold;
+}   
+
+.pollContent .containerConfirmButtons .btnCancelar{
+    background-color: rgb(255, 101, 101);
+    border-color: darkred;
+    font-weight: bold;
+}
+
+/* CREATE-POLL */
+.pollContent .formPoll{
+    display: flex;
+    flex-direction: column;
+}
+
+.pollContent .formPoll label{
+    text-align: center;
+}
+
+/* Selector para todos los elementos siguientes a un label (los inputs) */
+.pollContent .formPoll .inputTitle{
+    box-sizing:content-box;
+    background-color:#251659;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 30px;
+    align-self: center;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.pollContent .formPoll .containerDates{
+    box-sizing:content-box;
+    padding: 10px 0px;
+    align-self: center;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.pollContent .formPoll .containerTeachers, .containerQuestions, .containerStudents{
+    box-sizing:content-box;
+    padding: 10px 30px;
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.pollContent .formPoll .containerTeachers .containerSingleTeacherSelector, .containerSingleQuestionSelector, .containerSingleStudentSelector{
+    width: 40%;
+}
+
+.pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions, .selectorStudents{
+    background-color: #9C8BD9;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, 1);
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.pollContent .formPoll .singleSelector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* POLL-VIEW-POLL */
 .divViewPoll{
     margin-top: 10px;
     padding: 20px;
@@ -354,5 +521,171 @@ footer{
     background-color: #251659;
     color: white;
 }
+/*LOG OUT*/
+.logout {
+    margin-left: 10px;
+    font-size: 0.8em;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+}
+.containerLogoutBtn{
+    display: flex;
+    width: 100%;
+}
+.buttonLogout i{
 
-/* AÑADIR COLOR A LOS BOTONES CUANDO LE DAMOS UN CLICK, ASI SABEMOS DONDE ESTAMOS */
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+.buttonLogout {
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 16px;
+    padding-left: 10px;
+    margin: 15px;
+    color: #251659;
+    width: 25px;
+    background-color: #7559D9;
+    transition: width .35s;
+    -webkit-transition: width .35s;
+    overflow: hidden;
+}
+.buttonLogout:hover {
+  width: 100px;
+}
+.buttonLogout:hover .logout{
+  opacity: .9;
+}
+.pollContent .formPoll .singleSelector button{
+    border: none;
+    background-color: transparent;
+}
+
+.pollContent .formPoll .singleSelector button:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.pollContent .formPoll .singleSelector button.btnAddTeacher, button.btnAddQuestion, button.btnAddStudent{
+    color: green;
+}
+.pollContent .formPoll  .singleSelector button.btnAddTeacher:hover, button.btnAddQuestion:hover, button.btnAddStudent:hover{
+    color: rgb(0, 224, 0);
+}
+
+.pollContent .formPoll .singleSelector button.btnRemoveTeacher,  button.btnRemoveQuestion, button.btnRemoveStudent{
+    color: red;
+}
+.pollContent .formPoll .singleSelector button.btnRemoveTeacher:hover, button.btnRemoveQuestion:hover, button.btnRemoveStudent:hover{
+    color: rgb(255, 120, 78);
+}
+
+.pollContent .formPoll .divSingleDate{
+    display: flex;
+    flex-direction: column;
+}
+
+/* VIEW QUESION/POLL */
+.pollContent table.containerPolls{
+    width: 100%;
+}
+
+.pollContent .textComponent{
+    width: 80%;
+    text-align: center;
+}
+.pollContent .editComponent{
+    width: 20%;
+}
+
+/* Títols de la taula de llistat */
+.pollContent th.textComponent p{
+    border-bottom: #03020D solid;
+    margin: 0px 15px;
+}
+.pollContent th.editComponent p{
+    border-bottom: #03020D solid;
+    margin: 0px 5px;
+}
+
+/* Separador entre files(tr) */
+.pollContent .containerPolls tr{
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pollContent .containerPolls td.editComponent{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pollContent .containerPolls td.editComponent button{
+    color: rgb(194, 32, 32);
+    cursor: pointer;
+    background-color: transparent;
+    border:none;
+}
+
+.pollContent .containerPolls td.editComponent button:hover{
+    transform: scale(1.4);
+    color: rgb(218, 67, 67);
+}
+
+.pollContent .containerPolls td.editComponent .editButton{
+    color: #251659;
+}
+
+.pollContent .containerPolls td.editComponent .editButton:hover{
+    color: #543ea5;
+}
+
+dialog{
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+}
+
+dialog::backdrop  {
+    background: rgba(0,0,0,0.75) !important;
+}
+
+#modalDelete .buttonsRemove{
+    display: flex;
+    justify-content: center;
+}
+#modalDelete .titleDialog{
+    display: flex;
+    justify-content: center;
+}
+
+#modalDelete .buttonsRemove #btnCancelDelete{
+    font-weight: bold;
+    margin: 2px;
+    background-color: grey;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#modalDelete .buttonsRemove #btnAcceptDelete{
+    font-weight: bold;
+    margin: 2px;
+    background-color: red;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#modalDelete .titleDialog{
+    text-align: center;
+}
+
+#modalDelete h3{
+    text-align: center;
+}
+
