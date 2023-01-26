@@ -7,8 +7,9 @@ $_GET['logout'] = ' ';
 $_SESSION["locationLogout"]= "poll.php";
 include "log.php";
 logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSION['user'][2]);?>
-
-<div id="mensajes"></div>
+<div class="autocenter">
+    <div id="mensajes"></div>
+</div>
 
 <script src="./enquestes.js"></script>
 
