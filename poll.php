@@ -10,14 +10,27 @@ $_GET['logout'] = ' ';
 <script src="./enquestes.js"></script>
 
 <?php
-    $arrayQuestions = getListByQuery("SELECT * FROM question;");
-    $arrayPolls = getListByQuery("SELECT * FROM poll;");
+    $arrayQuestions = getListByQuery("SELECT * FROM question WHERE available = true;");
+    $arrayPolls = getListByQuery("SELECT * FROM poll WHERE available = true;");
     $arrayTypesOfQuestion = getListByQuery("SELECT * FROM question_type;");
-    $arrayOptionsOfTypeNumber = getListByQuery("SELECT * FROM creyentes_poll.option WHERE id <= 5;");
+    $arrayOptions = getListByQuery("SELECT * FROM `option`;");
     $arrayTeachersAndStudents = getListByQuery("SELECT * FROM user u WHERE u.role >= 2;");
+    $arrayQuestionOptions = getListByQuery("SELECT * FROM `question_option`;");
+    $arrayPollQuestion = getListByQuery("SELECT * FROM `poll_question`;");
+    $arrayPollStudent = getListByQuery("SELECT * FROM `poll_student`;");
+    $arrayPollTeacher = getListByQuery("SELECT * FROM `poll_teacher`;");
     $arrayTeachers = [];
     $arrayStudents = [];
 
+    $arrayOptionsOfTypeNumber = [];
+    // Dividing options of options of number
+    for ($i=0; $i < count($arrayOptions); $i++) { 
+        if ( intval($arrayOptions[$i]["id"]) <= 5) {
+            array_push($arrayOptionsOfTypeNumber,$arrayOptions[$i]);
+        }
+    }
+
+    // Dividing between teachers and alums
     for ($i=0; $i < count($arrayTeachersAndStudents); $i++) {
         switch ($arrayTeachersAndStudents[$i]["role"]) {
             case 2:
@@ -30,6 +43,50 @@ $_GET['logout'] = ' ';
         }
     }
 
+    $arrayOfQuestionsFiltered = [];
+    // Making a dictionary of question_options
+    for ($i=0; $i < count($arrayQuestionOptions); $i++) { 
+        if ( array_key_exists($arrayQuestionOptions[$i]["idQuestion"], $arrayOfQuestionsFiltered) ) {
+            array_push( $arrayOfQuestionsFiltered[$arrayQuestionOptions[$i]["idQuestion"]]   ,$arrayQuestionOptions[$i]["idOption"]);
+        }
+        else{
+            $arrayOfQuestionsFiltered[$arrayQuestionOptions[$i]["idQuestion"]] = [$arrayQuestionOptions[$i]["idOption"]];
+        }
+    }
+
+    $arrayOfPollQuestionsFiltered = [];
+    // Making a dictionary of poll_question
+    for ($i=0; $i < count($arrayPollQuestion); $i++) { 
+        if ( array_key_exists($arrayPollQuestion[$i]["idPoll"], $arrayOfPollQuestionsFiltered) ) {
+            array_push( $arrayOfPollQuestionsFiltered[$arrayPollQuestion[$i]["idPoll"]]   ,$arrayPollQuestion[$i]["idQuestion"]);
+        }
+        else{
+            $arrayOfPollQuestionsFiltered[$arrayPollQuestion[$i]["idPoll"]] = [$arrayPollQuestion[$i]["idQuestion"]];
+        }
+    }
+
+    $arrayOfPollStudentFiltered = [];
+    // Making a dictionary of poll_student
+    for ($i=0; $i < count($arrayPollStudent); $i++) { 
+        if ( array_key_exists($arrayPollStudent[$i]["idPoll"], $arrayOfPollStudentFiltered) ) {
+            array_push( $arrayOfPollStudentFiltered[$arrayPollStudent[$i]["idPoll"]]   ,$arrayPollStudent[$i]["idStudent"]);
+        }
+        else{
+            $arrayOfPollStudentFiltered[$arrayPollStudent[$i]["idPoll"]] = [$arrayPollStudent[$i]["idStudent"]];
+        }
+    }
+
+    $arrayOfPollTeacherFiltered = [];
+    // Making a dictionary of poll_teacher
+    for ($i=0; $i < count($arrayPollTeacher); $i++) { 
+        if ( array_key_exists($arrayPollTeacher[$i]["idPoll"], $arrayOfPollTeacherFiltered) ) {
+            array_push( $arrayOfPollTeacherFiltered[$arrayPollTeacher[$i]["idPoll"]]   ,$arrayPollTeacher[$i]["idTeacher"]);
+        }
+        else{
+            $arrayOfPollTeacherFiltered[$arrayPollTeacher[$i]["idPoll"]] = [$arrayPollTeacher[$i]["idTeacher"]];
+        }
+    }
+
     echo "<script>
         var arrayQuestions = ".json_encode($arrayQuestions).";\n;
         var arrayPolls = ".json_encode($arrayPolls).";\n;
@@ -37,6 +94,11 @@ $_GET['logout'] = ' ';
         var arrayOptionsOfTypeNumber =  ".json_encode($arrayOptionsOfTypeNumber).";\n;
         var arrayTeachers = ".json_encode($arrayTeachers).";
         var arrayStudents = ".json_encode($arrayStudents).";
+        var arrayQuestionOption = ".json_encode($arrayOfQuestionsFiltered).";
+        var arrayOptions = ".json_encode($arrayOptions).";
+        var arrayPollQuestion = ".json_encode($arrayOfPollQuestionsFiltered).";
+        var arrayPollStudent = ".json_encode($arrayOfPollStudentFiltered).";
+        var arrayPollTeacher = ".json_encode($arrayOfPollTeacherFiltered).";
     </script>";
 ?>
 
