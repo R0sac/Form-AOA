@@ -620,16 +620,70 @@ footer{
 }
 
 .pollContent .containerPolls td.editComponent{
-    width: 20%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.pollContent .containerPolls td.editComponent i{
+.pollContent .containerPolls td.editComponent button{
     color: rgb(194, 32, 32);
     cursor: pointer;
+    background-color: transparent;
+    border:none;
 }
 
-.pollContent .containerPolls td.editComponent :first-child{
+.pollContent .containerPolls td.editComponent button:hover{
+    transform: scale(1.4);
+    color: rgb(218, 67, 67);
+}
+
+.pollContent .containerPolls td.editComponent .editButton{
     color: #251659;
 }
+
+.pollContent .containerPolls td.editComponent .editButton:hover{
+    color: #543ea5;
+}
+
+dialog{
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+}
+
+dialog::backdrop  {
+    background: rgba(0,0,0,0.75) !important;
+}
+
+#modalDelete .buttonsRemove{
+    display: flex;
+    justify-content: center;
+}
+#modalDelete .titleDialog{
+    display: flex;
+    justify-content: center;
+}
+
+#modalDelete .buttonsRemove #btnCancelDelete{
+    font-weight: bold;
+    margin: 2px;
+    background-color: grey;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#modalDelete .buttonsRemove #btnAcceptDelete{
+    font-weight: bold;
+    margin: 2px;
+    background-color: red;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#modalDelete .titleDialog{
+    text-align: center;
+}
+
+#modalDelete h3{
+    text-align: center;
+}
+
