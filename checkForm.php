@@ -471,7 +471,7 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
                     logButtonClick("S","checkForm.php","La pregunta del tipus 'Opció Simple' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
             }
-
+            array_push($_SESSION["errors"],["succes","La pregunta ha estat creada"]);
             break;
         
         case 'createPoll':
@@ -481,7 +481,8 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
             else{
                 savePoll($_POST["pollTitle"], $_POST["inputStartDate"], $_POST["inputEndDate"], $_POST["inputTeachersId"], $_POST["inputQuestionsId"], $_POST["inputStudentsId"]);
             } 
-            logButtonClick("S","checkForm.php","El formulari s'ha desat correctament\n",$_SESSION['user'][2]);
+            logButtonClick("S","checkForm.php","La enquesta s'ha desat correctament\n",$_SESSION['user'][2]);
+            array_push($_SESSION["errors"],["succes","La enquesta ha estat creada"]);
             break;
     }
     header("Location: poll.php");
@@ -493,11 +494,13 @@ else if(isset($_POST["removeElement"])){
         case 'question':
             removeAvailabilityOfQuestion($_POST["removeIdQuestion"]);
             logButtonClick("S","checkForm.php","S'ha esborrat la pregunta correctament\n",$_SESSION['user'][2]);
+            array_push($_SESSION["errors"],["succes","La pregunta ha estat esborrada"]);
             break;
         
         case 'poll':
             removeAvailabilityOfPoll($_POST["removeIdPoll"]);
             logButtonClick("S","checkForm.php","S'ha esborrat l'enquesta correctament\n",$_SESSION['user'][2]);
+            array_push($_SESSION["errors"],["succes","La enquesta ha estat esborrada"]);
             break;
     }
     header("Location: poll.php");

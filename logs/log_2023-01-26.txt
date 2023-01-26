@@ -92,13 +92,3 @@
 [2023-01-26 12:10:13][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
 [2023-01-26 12:10:15][S][checkForm.php][Andrés] UPDATE `question` SET `available`= WHERE id=24
 [2023-01-26 12:10:15][S][checkForm.php][Andrés] S'ha esborrat la pregunta correctament
-[2023-01-26 12:10:15][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-26 12:10:18][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=8
-[2023-01-26 12:10:18][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
-[2023-01-26 12:10:18][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-26 12:10:24][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=9
-[2023-01-26 12:10:24][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
-[2023-01-26 12:10:24][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-26 12:10:26][S][checkForm.php][Andrés] UPDATE `poll` SET `available`= WHERE id=10
-[2023-01-26 12:10:26][S][checkForm.php][Andrés] S'ha esborrat l'enquesta correctament
-[2023-01-26 12:10:26][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament

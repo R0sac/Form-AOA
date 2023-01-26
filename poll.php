@@ -13,6 +13,16 @@ logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSI
 <script src="./enquestes.js"></script>
 
 <?php
+    if(issetErrors()){
+        for ($i=0; $i < count($_SESSION["errors"]) ; $i++) {
+            echo "<script>NewError('".$_SESSION['errors'][$i][0]."','".$_SESSION['errors'][$i][1]."');</script>";
+        }
+        $_SESSION["errors"] = array();
+    }
+    else{
+        $_SESSION["errors"] = array();
+    }
+
     $arrayQuestions = getListByQuery("SELECT * FROM question WHERE available = true;");
     $arrayPolls = getListByQuery("SELECT * FROM poll WHERE available = true;");
     $arrayTypesOfQuestion = getListByQuery("SELECT * FROM question_type;");
