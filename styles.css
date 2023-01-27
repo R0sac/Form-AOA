@@ -543,7 +543,7 @@ footer{
 }
 .buttonLogout {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     border-radius: 5px;
     text-decoration: none;
     padding: 16px;
