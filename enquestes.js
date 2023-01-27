@@ -490,7 +490,7 @@ function editQuestion(question){
                 addExtraSimpleOption();
             }
             for (let j = 0; j < arrayOptions.length; j++) {
-                if (Number(arrayOptions[j].id) ===  arrayQuestionOption[question.id][i]) {
+                if (Number(arrayOptions[j].id) ===  Number(arrayQuestionOption[question.id][i])) {
                     textOfInput = arrayOptions[j].text;
                 }
             }
@@ -562,7 +562,7 @@ function editPoll(poll){
 
     for (let i = 0; i < arrayPollTeacher[poll.id].length; i++) {
         for (let j = 0; j < arrayTeachers.length; j++) {
-            if (Number(arrayTeachers[j].id) ===  arrayPollTeacher[poll.id][i]) {
+            if (Number(arrayTeachers[j].id) ===  Number(arrayPollTeacher[poll.id][i])) {
                 addTeacherToPickedList(arrayTeachers[j]);
             }
         }
@@ -571,7 +571,7 @@ function editPoll(poll){
 
     for (let i = 0; i < arrayPollQuestion[poll.id].length; i++) {
         for (let j = 0; j < arrayQuestions.length; j++) {
-            if (Number(arrayQuestions[j].id) ===  arrayPollQuestion[poll.id][i]) {
+            if (Number(arrayQuestions[j].id) ===  Number(arrayPollQuestion[poll.id][i])) {
                 addQuestionToPickedList(arrayQuestions[j]);
             }
         }
@@ -580,7 +580,7 @@ function editPoll(poll){
 
     for (let i = 0; i < arrayPollStudent[poll.id].length; i++) {
         for (let j = 0; j < arrayStudents.length; j++) {
-            if (Number(arrayStudents[j].id) ===  arrayPollStudent[poll.id][i]) {
+            if (Number(arrayStudents[j].id) ===  Number(arrayPollStudent[poll.id][i])) {
                 addStudentToPickedList(arrayStudents[j]);
             }
         }
