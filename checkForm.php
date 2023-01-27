@@ -2,6 +2,23 @@
 include('utilities.php');
 include "log.php";
 $_SESSION["errors"] = array();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Require the composer autoloader
+require 'vendor/autoload.php';
+
+// Create a new PHPMailer object
+$mail = new PHPMailer;
+// Set up SMTP
+$mail->isSMTP();
+$mail->SMTPAuth = true;
+$mail->SMTPSecure = 'tls';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->Username = 'asastremoreno.cf@iesesteveterradas.cat';
+$mail->Password =                                                                                                                                                                   'canasta2000';
+
 
 function logIn(){
     $user = htmlspecialchars($_POST['user']);
@@ -427,6 +444,21 @@ function removeAvailabilityOfPoll($idPoll){
     }
 }
 
+function sendRecoverPass($correu){
+    // Set the sender and recipient
+    $mail->addAddress($correu);
+
+    // Set the subject and body
+    $mail->Subject = "Recuperació de Contrasenya";
+    $mail->Body = $_POST["contenido"];
+
+    // Send the email
+    if ($mail->send()) {
+        echo 'Email sent successfully!';
+    } else {
+        echo 'Error: ' . $mail->ErrorInfo;
+    }
+}
 
 if(isset($_POST["user"] ) && isset($_POST["pass"])){
     logIn();
