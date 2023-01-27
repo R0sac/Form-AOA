@@ -1,0 +1,2 @@
+[2023-01-27 18:10:32][S][checkForm.php][Brahian] S'ha iniciat la sessió correctament
+[2023-01-27 18:11:19][S][logout.php][Brahian] S'ha sortit de la sessió correctament des de 'dashboard.php'

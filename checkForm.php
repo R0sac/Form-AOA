@@ -506,6 +506,8 @@ else if(isset($_POST["removeElement"])){
     header("Location: poll.php");
 
 }
-
+else if(isset($_POST["inputForgotPass"])){
+    
+}
 
 ?>
