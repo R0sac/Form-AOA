@@ -5,7 +5,7 @@ function removeAllAfterTitle(){
 }
 
 function addAcceptButton(){
-    $('#containerConfirmButtons').prepend(`
+    $('#containerConfirmButtons').append(`
         <button class="btnConfirm btnAcceptar" id="btnAcceptar" >Acceptar</button>
     `);
 

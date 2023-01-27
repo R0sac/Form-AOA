@@ -26,7 +26,7 @@ function logIn(){
 
 function saveTextQuestion($typeQuestion, $questionTitle){
     try {
-        $available = true;
+        $available = 1;
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
@@ -49,8 +49,8 @@ function saveTextQuestion($typeQuestion, $questionTitle){
 
 function editTextQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
     try {
-        $available = true;
-        $notAvailable = false;
+        $available = 1;
+        $notAvailable = 0;
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
@@ -80,7 +80,7 @@ function editTextQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
 
 function saveNumberQuestion($typeQuestion, $questionTitle){
     try {
-        $available = true;
+        $available = 1;
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
@@ -115,8 +115,8 @@ function saveNumberQuestion($typeQuestion, $questionTitle){
 
 function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
     try {
-        $available = true;
-        $notAvailable = false;
+        $available = 1;
+        $notAvailable = 0;
 
 
         $pdo = connectionBBDD();
@@ -158,7 +158,7 @@ function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
 
 function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
     try {
-        $available = true;
+        $available = 1;
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
@@ -199,8 +199,8 @@ function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
 
 function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, $idQuestionToEdit){
     try {        
-        $available = true;
-        $notAvailable = false;
+        $available = 1;
+        $notAvailable = 0;
 
 
         $pdo = connectionBBDD();
@@ -256,7 +256,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $actualDate = date('d-m-y h:i:s');
         $startDate = convertDateToDatetime($startDate);
         $endDate = convertDateToDatetime($endDate);
-        $available = true;
+        $available = 1;
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
@@ -318,8 +318,8 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $actualDate = date('d-m-y h:i:s');
         $startDate = convertDateToDatetime($startDate);
         $endDate = convertDateToDatetime($endDate);
-        $available = true;
-        $notAvailable = false;
+        $available = 1;
+        $notAvailable = 0;
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
