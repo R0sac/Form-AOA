@@ -1,0 +1,36 @@
+[2023-01-29 23:09:58][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-29 23:11:16][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-29 23:11:36][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:11:41][S][logout.php][Aleix] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-29 23:11:57][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-29 23:12:42][S][logout.php][Aleix] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-29 23:16:05][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-29 23:25:38][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:12][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:17][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:39][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:40][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:45][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:46][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:26:54][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:27:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:27:29][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:33:43][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:34:33][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:34:46][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Numeric'
+[2023-01-29 23:34:46][S][checkForm.php][Aleix] La pregunta del tipus 'Numeric' s'ha desat correctament
+[2023-01-29 23:34:46][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:36:36][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:37:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:37:38][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:38:24][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:38:54][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:40:58][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:41:31][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:41:48][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:42:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:42:26][S][logout.php][Aleix] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-29 23:43:12][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-29 23:43:12][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-29 23:43:36][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament

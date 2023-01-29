@@ -875,8 +875,8 @@ dialog::backdrop  {
         margin-top: 50px;
     }
     #divLogin{
-        height: 250px;
-        width: 350px;
+        height: 270px;
+        width: 280px;
         border-radius: 35px;
         font-size: 10px;
     }
@@ -884,7 +884,7 @@ dialog::backdrop  {
     #btnLogin{
         padding: 8px;
         border-radius: 5px;
-    
+        font-size: 10px;
     }
     /* DASHBOARD.PHP */
     
@@ -896,17 +896,38 @@ dialog::backdrop  {
         flex-direction: column;
     }
     #divDash{
-        margin-top: 20px;
+        margin-top: 90px;
     }
     .BtnDash{
         flex-direction: column;
         margin: 30px;
         margin-top: 20px;
-        font-size: 30px;
-        width: 380px;
-        height: 120px;
+        font-size: 20px;
+        width: 200px;
+        height: 70px;
     }
-    
+    .BtnDash:hover{
+        width: 280px;
+        height: 70px;
+        border: 1px solid #7559D9 ;
+        background-color:  #7559D9 ;
+        cursor: pointer;
+    }
+    .buttonLogout {
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 5px;
+        text-decoration: none;
+        padding: 10px;
+        padding-left: 5px;
+        margin: 15px;
+        color: #251659;
+        width: 25px;
+        background-color: #7559D9;
+        transition: width .35s;
+        -webkit-transition: width .35s;
+        overflow: hidden;
+    }
     /* POLL-BAR */
     .panel{
         width: 90%;
@@ -922,22 +943,30 @@ dialog::backdrop  {
     .btnPanelAdmin{
         padding: 30px 0px;
         margin-bottom: 20px;
-        font-size: small;
+        font-size: 8px ;
     }
 
     /* DYNAMIC CONTAINER */
     .pollContent{
         width: 85%;
-        font-size: small;
+        font-size: 12px;
     }
     
     /* Selector para todos los elementos siguientes a un label (los inputs) */
     .pollContent .formQuestion label + *{
-        padding: 5px 20px;
+        padding: 5px 10px;
         width: 50%;
         margin-bottom: 10px;
     }
-    
+    .typeQuestion{
+        font-size: 10px;
+    }
+    #btnCancelar, #btnAcceptar{
+        font-size: 10px;
+    }
+    .inputDate{
+        margin-left: 10px;
+    }
     .pollContent .formQuestion .containerSingleRadioButton{
         width: 30%;
     }
@@ -955,7 +984,7 @@ dialog::backdrop  {
     
     .pollContent .formQuestion textarea{
         width: 50%;
-        padding: 5px 30px;
+        padding: 5px 20px;
         height: 100px;
         align-self: center;
     }
@@ -973,17 +1002,18 @@ dialog::backdrop  {
     }
     
     .pollContent .formPoll .containerTeachers, .containerQuestions, .containerStudents{
-        padding: 5px 20px;
+        padding: 5px 5px;
         width: 100%;
     }
     
     .pollContent .formPoll .containerTeachers .containerSingleTeacherSelector, .containerSingleQuestionSelector, .containerSingleStudentSelector{
-        width: 40%;
+        width: 44%;
+        font-size: 8px;
     }
     
     .pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions, .selectorStudents{
         width: 100%;
-        padding: 5px 5;
+        padding: 5px 5px;
     }
     /* VIEW QUESION/POLL */
     .pollContent table.containerPolls{
@@ -1012,6 +1042,7 @@ dialog::backdrop  {
         padding: 10px;
         cursor: pointer;
         border-radius: 4px;
+        font-size: x-small;
     }
     #modalDelete .buttonsRemove #btnAcceptDelete{
         font-weight: bold;
@@ -1020,5 +1051,6 @@ dialog::backdrop  {
         padding: 10px;
         cursor: pointer;
         border-radius: 4px;
+        font-size: x-small;
     }
 }
