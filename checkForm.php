@@ -8,16 +8,6 @@ use PHPMailer\PHPMailer\Exception;
 // Require the composer autoloader
 require 'vendor/autoload.php';
 
-// Create a new PHPMailer object
-$mail = new PHPMailer;
-// Set up SMTP
-$mail->isSMTP();
-$mail->SMTPAuth = true;
-$mail->SMTPSecure = 'tls';
-$mail->Host = 'smtp.gmail.com';
-$mail->Port = 587;
-$mail->Username = 'asastremoreno.cf@iesesteveterradas.cat';
-$mail->Password =                                                                                                                                                                   'canasta2000';
 
 
 function logIn(){
@@ -445,18 +435,75 @@ function removeAvailabilityOfPoll($idPoll){
 }
 
 function sendRecoverPass($correu){
+    $arrayUser = getListByQuery("SELECT * from creyentes_poll.user u WHERE u.email ='".$correu."'")[0];
+    logButtonClick("S","checkForm.php","SELECT * from creyentes_poll.user u WHERE u.email ='".$correu."'");
+
+    if (!$arrayUser) {
+        logButtonClick("W","forgot_password.php","Email de recuperació de contrasenya a email inexistent\n",$correu);
+        array_push($_SESSION["errors"],["succes","Si l\'usuari existeix s\'ha enviat un correu de recuperació a ".$correu]);
+        header("Location: forgot_password.php");
+        return;
+    }
+
+    $codedIdentifier = md5("aoa_forms-".$arrayUser["id"]."-recPass");
+
+    // Create a new PHPMailer object
+    $mail = new PHPMailer;
+    // Set up SMTP
+    $mail->isSMTP();
+    $mail->Mailer = "smtp";
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = 'tls';
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+    $mail->Username = 'asastremoreno.cf@iesesteveterradas.cat';
+    $mail->Password =                                                                                                                                                                                                                      'canasta2000';
+
     // Set the sender and recipient
     $mail->addAddress($correu);
 
     // Set the subject and body
     $mail->Subject = "Recuperació de Contrasenya";
-    $mail->Body = $_POST["contenido"];
+    $mail->Body = "
+        Hola ".$arrayUser['username'].",
+
+        Has oblidat la teva contrasenya?
+        Hem rebut una petició per a restablir la contrasenya del teu compte.
+
+        Per a resetejarla fes clic en el següent enllaç:
+        http://localhost/aoa_forms/forgot_password.php?id=".$arrayUser['id']."&codeIdentifier=".$codedIdentifier;
+
 
     // Send the email
     if ($mail->send()) {
-        echo 'Email sent successfully!';
+
+        logButtonClick("S","forgot_password.php","Email de recuperació de contrasenya enviat correctament\n",$correu);
+        array_push($_SESSION["errors"],["succes","Si l\'usuari existeix s\'ha enviat un correu de recuperació a ".$correu]);
+        header("Location: forgot_password.php");
     } else {
         echo 'Error: ' . $mail->ErrorInfo;
+    }
+}
+
+function recoverPassword($idUser, $newPass){
+    try {
+        $pdo = connectionBBDD();
+        $pdo->beginTransaction();
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.user u SET u.password = SHA2(?,512) WHERE id=?;");
+        $stmn->bindParam(1,$newPass);
+        $stmn->bindParam(2,$idUser);
+        $stmn->execute();
+        $pdo->commit();
+        array_push($_SESSION["errors"],["succes","Contrasenya actualitzada"]);
+        logButtonClick("S","checkForm.php","UPDATE creyentes_poll.user u SET u.password = SHA2(?,512) WHERE id=?;\n",$idUser);
+
+    } 
+    catch (PDOException $e) {
+        if ($pdo->inTransaction())
+        {
+           $pdo->rollBack();
+        } 
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora de canviar la contrasenya\n",$_SESSION['user'][2]);
     }
 }
 
@@ -539,7 +586,11 @@ else if(isset($_POST["removeElement"])){
 
 }
 else if(isset($_POST["inputForgotPass"])){
-    
+    sendRecoverPass($_POST["inputForgotPass"]);
+}
+else if (isset($_POST["idRecoverPass"])) {
+    recoverPassword($_POST["idRecoverPass"], $_POST["inputRecoverPass"]);
+    header("Location: login.php");
 }
 
 ?>

@@ -30,7 +30,6 @@ function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
 //SUBMIT MANUAL
 
 function submitLogin() {
-    console.log("a");
     var user = $("[name=user]").val();
     var pass = $("[name=pass]").val();
     if (user && pass){
@@ -39,4 +38,38 @@ function submitLogin() {
         NewError("warning","Emplena el formulari");
         
     }
+}
+
+function submitRecoverPassSendEmail() {
+    var email = $("[name=inputForgotPass]").val();
+    if (email) {
+        $("#formForgotPass").submit();
+    }
+    else{
+        NewError("warning","Emplena el formulari");   
+    }
+}
+
+function submitRecoverPass(){
+    var pass1 =  $("[name=inputRecoverPass]").val();
+    var pass2 =  $("[name=inputRecoverPass2]").val();
+
+    if (pass1 !== pass2) {
+        NewError("warning","Les contrasenyes no coincideixen");
+        return;
+    }
+
+    if (pass1.length < 8) {
+        NewError("warning","La contrasenya ha de tenir com a mínim 8 caràcters");
+        return;
+    }
+
+    if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$/.test(pass1)) {
+        $("#formForgotPass").submit();
+        return;
+    }
+
+    NewError("warning","La contrasenya ha de tenir 1 majúscula 1 minúscula i un caràcter especial");
+    return;
+
 }

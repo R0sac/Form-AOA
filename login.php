@@ -6,7 +6,7 @@ $_GET['idBody'] = 'bodyLogin';
 include "log.php";?>
 <div class="autocenter">
     <div id="mensajes">
-</div>
+    </div>
 </div>
 <?php
     $pdo= connectionBBDD();
