@@ -11,7 +11,7 @@ include "log.php";?>
 <?php
     $pdo= connectionBBDD();
 ?>
-<?php
+<?php  
     if(issetErrors()){
         for ($i=0; $i < count($_SESSION["errors"]) ; $i++) {
             echo "<script>NewError('".$_SESSION['errors'][$i][0]."','".$_SESSION['errors'][$i][1]."');</script>";
@@ -20,7 +20,7 @@ include "log.php";?>
     }
     else{
         $_SESSION["errors"] = array();
-    }
+    }   
 ?>
 <div class="autocenter">
     <div id="divLogin">

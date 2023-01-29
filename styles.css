@@ -269,10 +269,11 @@ footer{
 
 /* POLL-BAR */
 .panel{
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-left: 5%;
 }
 
 .btnPanelAdmin{
@@ -307,7 +308,7 @@ footer{
     background-color: #BF9FBA;
     border-radius: 10px;
     padding: 15px;
-    width: 60%;
+    width: 85%;
 }
 
 /* CREATE-QUESTION */
@@ -533,6 +534,7 @@ footer{
 }
 .containerLogoutBtn{
     display: flex;
+    justify-content: flex-end;
     width: 100%;
 }
 .buttonLogout i{
@@ -689,3 +691,366 @@ dialog::backdrop  {
     text-align: center;
 }
 
+@media only screen and (max-width: 800px) {
+    body{
+        max-width: 800px;
+    }
+    header{
+        max-width: 800px;
+    }
+    footer{
+        max-width: 800px;
+    }
+    /* LOGIN.PHP */
+    .autocenter {
+        margin-top: 50px;
+    }
+    #divLogin{
+        height: 250px;
+        width: 350px;
+        border-radius: 35px;
+        font-size: 10px;
+    }
+    
+    #btnLogin{
+        padding: 8px;
+        border-radius: 5px;
+    
+    }
+    /* DASHBOARD.PHP */
+    
+    #Dashprofe,#DashAdmin{
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #divDash{
+        margin-top: 20px;
+    }
+    .BtnDash{
+        flex-direction: column;
+        margin: 30px;
+        margin-top: 20px;
+        font-size: 30px;
+        width: 380px;
+        height: 120px;
+    }
+    
+    /* POLL-BAR */
+    .panel{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5%;
+    }
+    #bodyPoll .autocenter {
+        margin-top: 0;
+    }
+    .btnPanelAdmin{
+        padding: 30px 0px;
+        margin-bottom: 20px;
+        font-size: small;
+    }
+
+    /* DYNAMIC CONTAINER */
+    .pollContent{
+        width: 85%;
+        font-size: small;
+    }
+    
+    /* Selector para todos los elementos siguientes a un label (los inputs) */
+    .pollContent .formQuestion label + *{
+        padding: 5px 20px;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    
+    .pollContent .formQuestion .containerSingleRadioButton{
+        width: 30%;
+    }
+    
+    .pollContent .formQuestion .containerSingleRadioButton input{
+        margin-left: 30%; 
+    
+    }
+    
+    .pollContent .formQuestion .containerSingleRadioButton label{
+        text-align: left;
+        width: 40%; 
+    }
+    
+    
+    .pollContent .formQuestion textarea{
+        width: 50%;
+        padding: 5px 30px;
+        height: 100px;
+        align-self: center;
+    }
+    
+    /* Selector para todos los elementos siguientes a un label (los inputs) */
+    .pollContent .formPoll .inputTitle{
+        border-radius: 10px;
+        padding: 5px 20px;
+        width: 40%;
+
+    }
+    .pollContent .formPoll .containerDates{
+        padding: 5px 0px;
+        width: 40%;
+    }
+    
+    .pollContent .formPoll .containerTeachers, .containerQuestions, .containerStudents{
+        padding: 5px 20px;
+        width: 100%;
+    }
+    
+    .pollContent .formPoll .containerTeachers .containerSingleTeacherSelector, .containerSingleQuestionSelector, .containerSingleStudentSelector{
+        width: 40%;
+    }
+    
+    .pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions, .selectorStudents{
+        width: 100%;
+        padding: 5px 5;
+    }
+    /* VIEW QUESION/POLL */
+    .pollContent table.containerPolls{
+        width: 100%;
+    }
+    
+    .pollContent .textComponent{
+        width: 80%;
+        text-align: center;
+    }
+    .pollContent .editComponent{
+        width: 20%;
+    }
+    
+    dialog{
+        border-radius: 15px;
+        margin: auto;
+        padding: 20px;
+        font-size: small;
+    }
+
+    #modalDelete .buttonsRemove #btnCancelDelete{
+        font-weight: bold;
+        margin: 2px;
+        background-color: grey;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    #modalDelete .buttonsRemove #btnAcceptDelete{
+        font-weight: bold;
+        margin: 2px;
+        background-color: red;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    body{
+        max-width: 375px;
+        
+    }
+    header{
+        max-width: 375px;
+        font-size: medium;
+    }
+    footer{
+        max-width: 375px;
+        font-size: 10px;
+        text-align: center;
+    }
+    footer p{
+        margin-right: 20px;
+    }
+    /* LOGIN.PHP */
+    .autocenter {
+        margin-top: 50px;
+    }
+    #divLogin{
+        height: 270px;
+        width: 280px;
+        border-radius: 35px;
+        font-size: 10px;
+    }
+    
+    #btnLogin{
+        padding: 8px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+    /* DASHBOARD.PHP */
+    
+    #Dashprofe,#DashAdmin{
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #divDash{
+        margin-top: 90px;
+    }
+    .BtnDash{
+        flex-direction: column;
+        margin: 30px;
+        margin-top: 20px;
+        font-size: 20px;
+        width: 200px;
+        height: 70px;
+    }
+    .BtnDash:hover{
+        width: 280px;
+        height: 70px;
+        border: 1px solid #7559D9 ;
+        background-color:  #7559D9 ;
+        cursor: pointer;
+    }
+    .buttonLogout {
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 5px;
+        text-decoration: none;
+        padding: 10px;
+        padding-left: 5px;
+        margin: 15px;
+        color: #251659;
+        width: 25px;
+        background-color: #7559D9;
+        transition: width .35s;
+        -webkit-transition: width .35s;
+        overflow: hidden;
+    }
+    /* POLL-BAR */
+    .panel{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 5%;
+    }
+    #bodyPoll .autocenter {
+        margin-top: 0;
+    }
+    .btnPanelAdmin{
+        padding: 30px 0px;
+        margin-bottom: 20px;
+        font-size: 8px ;
+    }
+
+    /* DYNAMIC CONTAINER */
+    .pollContent{
+        width: 85%;
+        font-size: 12px;
+    }
+    
+    /* Selector para todos los elementos siguientes a un label (los inputs) */
+    .pollContent .formQuestion label + *{
+        padding: 5px 10px;
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .typeQuestion{
+        font-size: 10px;
+    }
+    #btnCancelar, #btnAcceptar{
+        font-size: 10px;
+    }
+    .inputDate{
+        margin-left: 10px;
+    }
+    .pollContent .formQuestion .containerSingleRadioButton{
+        width: 30%;
+    }
+    
+    .pollContent .formQuestion .containerSingleRadioButton input{
+        margin-left: 30%; 
+    
+    }
+    
+    .pollContent .formQuestion .containerSingleRadioButton label{
+        text-align: left;
+        width: 40%; 
+    }
+    
+    
+    .pollContent .formQuestion textarea{
+        width: 50%;
+        padding: 5px 20px;
+        height: 100px;
+        align-self: center;
+    }
+    
+    /* Selector para todos los elementos siguientes a un label (los inputs) */
+    .pollContent .formPoll .inputTitle{
+        border-radius: 10px;
+        padding: 5px 20px;
+        width: 40%;
+
+    }
+    .pollContent .formPoll .containerDates{
+        padding: 5px 0px;
+        width: 40%;
+    }
+    
+    .pollContent .formPoll .containerTeachers, .containerQuestions, .containerStudents{
+        padding: 5px 5px;
+        width: 100%;
+    }
+    
+    .pollContent .formPoll .containerTeachers .containerSingleTeacherSelector, .containerSingleQuestionSelector, .containerSingleStudentSelector{
+        width: 44%;
+        font-size: 8px;
+    }
+    
+    .pollContent .formPoll .containerTeachers .selectorTeachers, .selectorQuestions, .selectorStudents{
+        width: 100%;
+        padding: 5px 5px;
+    }
+    /* VIEW QUESION/POLL */
+    .pollContent table.containerPolls{
+        width: 100%;
+    }
+    
+    .pollContent .textComponent{
+        width: 80%;
+        text-align: center;
+    }
+    .pollContent .editComponent{
+        width: 20%;
+    }
+    
+    dialog{
+        border-radius: 15px;
+        margin: auto;
+        padding: 20px;
+        font-size: small;
+    }
+
+    #modalDelete .buttonsRemove #btnCancelDelete{
+        font-weight: bold;
+        margin: 2px;
+        background-color: grey;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: x-small;
+    }
+    #modalDelete .buttonsRemove #btnAcceptDelete{
+        font-weight: bold;
+        margin: 2px;
+        background-color: red;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: x-small;
+    }
+}
