@@ -471,7 +471,7 @@ function sendRecoverPass($correu){
         Hem rebut una petició per a restablir la contrasenya del teu compte.
 
         Per a resetejarla fes clic en el següent enllaç:
-        http://localhost/aoa_forms/forgot_password.php?id=".$arrayUser['id']."&codeIdentifier=".$codedIdentifier;
+        https://www.enquestaprofessorat.site/forgot_password.php?id=".$arrayUser['id']."&codeIdentifier=".$codedIdentifier;
 
 
     // Send the email
