@@ -6,7 +6,7 @@ $_GET['idBody'] = 'bodyLogin';
 include "log.php";?>
 <div class="autocenter">
     <div id="mensajes">
-</div>
+    </div>
 </div>
 <?php
     $pdo= connectionBBDD();
@@ -31,7 +31,7 @@ include "log.php";?>
                 <label for="pass"> Contrasenya</label><br>
                 <input type="password" name ="pass" ><br><br>
                 <button id="btnLogin" type="button">Iniciar Sessió</button><br><br>
-                <a href="">He oblidat la contrasenya</a><br>
+                <a href="forgot_password.php">He oblidat la contrasenya</a><br>
             </form>
     </div>
 </div>
