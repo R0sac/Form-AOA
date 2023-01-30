@@ -11,17 +11,26 @@
     $arrayNameStudents=[];
     $arrayIdPoll= [];
     $arrayTitlePoll= [];
-    $pdo = connectionBBDD();
-    $stmt = $pdo ->prepare("SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3;");
-    $stmt->execute();
-    $row = $stmt->fetch();
-    while($row){
-        array_push($arrayIdPoll, $row['idPoll']);
-        array_push($arrayNameStudents, $row['username']);
-        array_push($arrayEmailStudents, $row['email']);
-        array_push($arrayTitlePoll, $row['titlePoll']);
+    try{
+        $pdo = connectionBBDD();
+        $stmt = $pdo ->prepare("SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3;");
+        $stmt->execute();
         $row = $stmt->fetch();
-    };
+        while($row){
+            array_push($arrayIdPoll, $row['idPoll']);
+            array_push($arrayNameStudents, $row['username']);
+            array_push($arrayEmailStudents, $row['email']);
+            array_push($arrayTitlePoll, $row['titlePoll']);
+            $row = $stmt->fetch();
+        };
+    }
+    catch (PDOException $e) {
+        if ($pdo->inTransaction())
+        {
+           $pdo->rollBack();
+        }
+        logButtonClick("E","cron.php","Ha hagut un error en el Select\n");
+    }
 
     for($i=0;$i<5;$i++){
         $mail = new PHPMailer;
