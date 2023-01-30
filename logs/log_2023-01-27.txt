@@ -1,0 +1,33 @@
+[2023-01-27 17:58:16][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 17:58:21][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 17:58:55][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 17:59:00][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 17:59:40][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:00:04][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:00:11][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:00:15][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-27 18:02:12][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:02:19][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:02:21][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-27 18:02:36][S][poll.php][] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:02:38][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:02:49][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:03:30][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:04:51][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-27 18:05:19][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:05:26][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:23:39][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:42:55][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:43:06][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:47:55][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:47:57][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:52:24][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:52:27][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-27 18:52:30][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:52:32][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:52:41][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-27 18:54:49][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:54:50][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-27 18:55:00][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-27 18:55:01][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-27 18:55:11][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament

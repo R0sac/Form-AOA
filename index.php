@@ -2,8 +2,8 @@
 $_GET['Titulo'] = 'Index';
 $_GET['idBody'] = 'bodyLanding';
 
+include "header.php";
 ?>
-<?php include "header.php"; ?>
 <div id="divLanding">
     
     <form action="./login.php" method='POST'>
