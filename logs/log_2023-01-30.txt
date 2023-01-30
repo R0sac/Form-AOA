@@ -1,0 +1,38 @@
+[2023-01-30 16:11:39][S][poll.php][] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:13:05][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-30 16:16:13][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:16:15][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-30 16:16:36][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-30 16:16:38][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:32:37][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-30 17:32:38][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:58:52][S][cron.php][Pepe] 
+[2023-01-30 18:03:49][S][cron.php][Pepe] 
+[2023-01-30 18:13:15][S][cron.php][] S'ha enviat correctament un missatge a Array
+[2023-01-30 18:13:16][S][cron.php][] S'ha enviat correctament un missatge a Array
+[2023-01-30 18:13:17][S][cron.php][] S'ha enviat correctament un missatge a Array
+[2023-01-30 18:13:18][S][cron.php][] S'ha enviat correctament un missatge a Array
+[2023-01-30 18:13:19][S][cron.php][] S'ha enviat correctament un missatge a Array
+[2023-01-30 18:13:35][S][cron.php][] S'ha enviat correctament un missatge a testAlumne1@a.com
+[2023-01-30 18:13:36][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com
+[2023-01-30 18:13:37][S][cron.php][] S'ha enviat correctament un missatge a testAlumne3@a.com
+[2023-01-30 18:13:38][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com
+[2023-01-30 18:13:39][S][cron.php][] S'ha enviat correctament un missatge a testAlumne5@a.com
+[2023-01-30 18:21:08][S][cron.php][] S'ha enviat correctament un missatge a brahianmonsalve412@gmail.com
+[2023-01-30 18:21:09][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com
+[2023-01-30 18:21:10][S][cron.php][] S'ha enviat correctament un missatge a asastremoreno.cf@iesesteveterradas.cat
+[2023-01-30 18:21:11][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com
+[2023-01-30 18:21:12][S][cron.php][] S'ha enviat correctament un missatge a testAlumne5@a.com
+[2023-01-30 18:43:55][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-30 18:43:56][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:45:02][S][checkForm.php][Andrés] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Animales,30-01-23 06:45:02,2023-01-02 00:00:00,2023-01-06 00:00:00,1)
+[2023-01-30 18:45:02][S][checkForm.php][Andrés] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (14,11)
+[2023-01-30 18:45:02][S][checkForm.php][Andrés] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (14,20)
+[2023-01-30 18:45:02][S][checkForm.php][Andrés] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (14,6)
+[2023-01-30 18:45:02][S][checkForm.php][Andrés] La enquesta s'ha desat correctament
+[2023-01-30 18:45:02][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:18:19][S][cron.php][] S'ha enviat correctament un missatge a wovir75626@bymercy.com
+[2023-01-30 19:18:20][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com
+[2023-01-30 19:18:21][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
+[2023-01-30 19:18:22][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
+[2023-01-30 19:18:23][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com
