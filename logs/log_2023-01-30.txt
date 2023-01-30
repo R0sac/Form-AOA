@@ -36,3 +36,8 @@
 [2023-01-30 19:18:21][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
 [2023-01-30 19:18:22][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
 [2023-01-30 19:18:23][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com
+[2023-01-30 19:51:02][S][cron.php][] S'ha enviat correctament un missatge a wovir75626@bymercy.com
+[2023-01-30 19:51:03][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com
+[2023-01-30 19:51:05][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
+[2023-01-30 19:51:07][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
+[2023-01-30 19:51:09][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com

@@ -13,7 +13,7 @@
     $arrayTitlePoll= [];
     try{
         $pdo = connectionBBDD();
-        $stmt = $pdo ->prepare("SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3;");
+        $stmt = $pdo ->prepare("SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL;");
         $stmt->execute();
         $row = $stmt->fetch();
         while($row){
