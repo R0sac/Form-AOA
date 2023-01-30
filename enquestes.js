@@ -89,49 +89,50 @@ function addAcceptButton(){
     else if ($('#formPoll').length){
         $('#pollFormBDD').remove();
 
-        $('#formPoll').append(`
-            <form method="POST" action="./checkForm.php" id="pollFormBDD" hidden  style="display:none;">
-                <input type="text" name="typeOfForm" value="createPoll" />
-                <input type="text" name="pollTitle" value="${$('#inputTitle').val()}" />
-                <input type="text" name="inputStartDate" value="${$('#inputStartDate').val()}" />
-                <input type="text" name="inputEndDate" value="${$('#inputEndDate').val()}" />
-            </form>
-        `);
-        
-        // ADDING TEACHERS TO FORM
-        for (let i = 0; i < $('#selectorSomeTeachers').children().length; i++) {
-            var idTeacher = $($('#selectorSomeTeachers').children()[i]).attr('id').split("-")[1];
-            $('#pollFormBDD').append(`
-                <input type="text" name="inputTeachersId[${i}]" value="${idTeacher}" />
-            `);
-        };
-
-        // ADDING QUESTIONS TO FORM
-        for (let i = 0; i < $('#selectorSomeQuestion').children().length; i++) {
-            var fatherElementOfId = $($('#selectorSomeQuestion').children()[i]);
-            var idQuestion = $(fatherElementOfId.children()[0]).attr('id').split("-")[1];
-
-            $('#pollFormBDD').append(`
-                <input type="text" name="inputQuestionsId[${i}]" value="${idQuestion}" />
-            `);
-        };
-
-        // ADDING STUDENTS TO FORM
-        for (let i = 0; i < $('#selectorSomeStudent').children().length; i++) {
-            var idStudent = $($('#selectorSomeStudent').children()[i]).attr('id').split("-")[1];
-            $('#pollFormBDD').append(`
-                <input type="text" name="inputStudentsId[${i}]" value="${idStudent}" />
-            `);
-        };
-
-        if ($("#idPollEdit").length) {
-            $('#pollFormBDD').append(`
-                <input type="text" name="idPollEdit" id="idQuestionEdit" value="${$("#idPollEdit").val()}" hidden/>
-            `);
-        }
 
         $('#btnAcceptar').click(()=>{
+            $('#formPoll').append(`
+                <form method="POST" action="./checkForm.php" id="pollFormBDD" hidden  style="display:none;">
+                    <input type="text" name="typeOfForm" value="createPoll" />
+                    <input type="text" name="pollTitle" value="${$('#inputTitle').val()}" />
+                    <input type="text" name="inputStartDate" value="${$('#inputStartDate').val()}" />
+                    <input type="text" name="inputEndDate" value="${$('#inputEndDate').val()}" />
+                </form>
+            `);
+        
+            // ADDING TEACHERS TO FORM
+            for (let i = 0; i < $('#selectorSomeTeachers').children().length; i++) {
+                var idTeacher = $($('#selectorSomeTeachers').children()[i]).attr('id').split("-")[1];
+                $('#pollFormBDD').append(`
+                    <input type="text" name="inputTeachersId[${i}]" value="${idTeacher}" />
+                `);
+            };
+
+            // ADDING QUESTIONS TO FORM
+            for (let i = 0; i < $('#selectorSomeQuestion').children().length; i++) {
+                var fatherElementOfId = $($('#selectorSomeQuestion').children()[i]);
+                var idQuestion = $(fatherElementOfId.children()[0]).attr('id').split("-")[1];
+
+                $('#pollFormBDD').append(`
+                    <input type="text" name="inputQuestionsId[${i}]" value="${idQuestion}" />
+                `);
+            };
+
+            // ADDING STUDENTS TO FORM
+            for (let i = 0; i < $('#selectorSomeStudent').children().length; i++) {
+                var idStudent = $($('#selectorSomeStudent').children()[i]).attr('id').split("-")[1];
+                $('#pollFormBDD').append(`
+                    <input type="text" name="inputStudentsId[${i}]" value="${idStudent}" />
+                `);
+            };
+
+            if ($("#idPollEdit").length) {
+                $('#pollFormBDD').append(`
+                    <input type="text" name="idPollEdit" id="idQuestionEdit" value="${$("#idPollEdit").val()}" hidden/>
+                `);
+            }
             $('#pollFormBDD').submit();
+            
         });   
     }
 
@@ -588,7 +589,7 @@ function editPoll(poll){
     checkStudentPollFilled();
 
     $("#formPoll").prepend(`
-        <input type="text" id="idPollEdit" value="${poll.id}" hidden/>
+        <input type="text" name="idPollEdit" id="idPollEdit" value="${poll.id}" hidden/>
     `);
 
 }
