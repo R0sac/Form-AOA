@@ -35,9 +35,11 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 200px;
+    gap: 20%;
 }
+
 .btnLanding{
     font-family: Poppins;
     font-size: 20px;
@@ -60,9 +62,13 @@ footer{
     margin: 10px;
     background-color:  #251659;
     font-family: Poppins;
+    transition: all 0.6s ease;
+
 }
 #bodyLanding a:hover{
     background-color:  #7559D9;
+    transform: scale(1.4);
+
 }
 /* LOGIN.PHP */
 .autocenter{
@@ -106,7 +112,6 @@ footer{
     border: 1PX solid #251659 ;
     background-color:  #251659 ;
     color: white;
-
 }
 #btnLogin:hover{
     cursor: pointer;
@@ -114,6 +119,25 @@ footer{
     background-color:  #7559D9 ;
 }
 
+/* FORGOT_PASSWORD.PHP */
+.formForgotPass{
+    display: flex;
+    flex-direction: column;
+}
+
+.btnSubmit{
+    font-family: Poppins;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+}
+.btnSubmit:hover{
+    cursor: pointer;
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
+}
 /* DASHBOARD.PHP */
 
 #Dashprofe,#DashAdmin{
