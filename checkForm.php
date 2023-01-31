@@ -627,9 +627,13 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
 
                     if (isset($_POST["idQuestionEdit"])) {
                         editNumberQuestion($_POST["questionType"], $_POST["questionTitle"], $_POST["idQuestionEdit"] );
+                        array_push($_SESSION["errors"],["succes","La pregunta ha estat editada correctament"]);
+
                     }
                     else{
                         saveNumberQuestion($_POST["questionType"], $_POST["questionTitle"]);
+                        array_push($_SESSION["errors"],["succes","La pregunta ha estat creada correctament"]);
+
                     }
                     logButtonClick("S","checkForm.php","La pregunta del tipus 'Numeric' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
@@ -638,9 +642,13 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
 
                     if (isset($_POST["idQuestionEdit"])) {
                         editTextQuestion($_POST["questionType"], $_POST["questionTitle"], $_POST["idQuestionEdit"] );
+                        array_push($_SESSION["errors"],["succes","La pregunta ha estat editada correctament"]);
+
                     }
                     else{
                         saveTextQuestion($_POST["questionType"], $_POST["questionTitle"]);
+                        array_push($_SESSION["errors"],["succes","La pregunta ha estat creada correctament"]);
+
                     }      
                     logButtonClick("S","checkForm.php","La pregunta del tipus 'Text' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
@@ -649,14 +657,16 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
 
                     if (isset($_POST["idQuestionEdit"])) {
                         editSimpleOptionQuestion($_POST["questionType"], $_POST["questionTitle"], $_POST['inputOptions'], $_POST["idQuestionEdit"] );
+                        array_push($_SESSION["errors"],["succes","La pregunta ha estat editada correctament"]);
                     }
                     else{
                         saveSimpleOptionQuestion($_POST["questionType"], $_POST["questionTitle"], $_POST['inputOptions']);
+                        array_push($_SESSION["errors"],["succes","La pregunta ha estat creada correctament"]);
+
                     }  
                     logButtonClick("S","checkForm.php","La pregunta del tipus 'Opció Simple' s'ha desat correctament\n",$_SESSION['user'][2]);
                     break;
             }
-            array_push($_SESSION["errors"],["succes","La pregunta ha estat creada"]);
             break;
         
         case 'createPoll':
