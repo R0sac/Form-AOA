@@ -260,6 +260,7 @@ function convertDateToDatetime($dateString) {
 
 function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQuestionsId, $arrayStudentsId){
     try {
+
         $actualDate = date('d-m-y h:i:s');
         $startDate = convertDateToDatetime($startDate);
         $endDate = convertDateToDatetime($endDate);
@@ -330,7 +331,6 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
 
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
-
         $stmn = $pdo->prepare("UPDATE creyentes_poll.poll SET `available`=? WHERE id=?;");
         $stmn->bindParam(1,$notAvailable);
         $stmn->bindParam(2,$idPollToEdit);
@@ -507,6 +507,112 @@ function recoverPassword($idUser, $newPass){
     }
 }
 
+function sendPollsToStudent($emailStudent){
+    echo "SELECT po.title, p.answerDate FROM creyentes_poll.poll_student p 
+    INNER JOIN creyentes_poll.user u ON u.id = p.idStudent 
+    INNER JOIN creyentes_poll.poll po ON po.id = p.idPoll 
+    WHERE u.email=`".$emailStudent."` AND u.role=3 AND po.available=1;";
+    
+    $listOfPolls = getListByQuery(
+        "SELECT po.title, p.answerDate FROM creyentes_poll.poll_student p 
+        INNER JOIN creyentes_poll.user u ON u.id = p.idStudent 
+        INNER JOIN creyentes_poll.poll po ON po.id = p.idPoll 
+        WHERE u.email='".$emailStudent."' AND u.role=3;");
+
+
+
+    if (count($listOfPolls) == 0) {
+        echo "vacio";
+        return;
+    }
+
+    $listOfAnsweredPolls = [];
+    $listOfNotAnsweredPolls = [];
+
+    foreach ($listOfPolls as $key => $poll) {
+        if ($poll["answerDate"]) {
+            array_push($listOfAnsweredPolls, $poll);
+        }
+        else {
+            array_push($listOfNotAnsweredPolls, $poll);
+        }
+    }
+    
+    $message  = 
+        "<html>
+            <body>
+                <table width='600px' bgcolor='#7559D9' cellpadding='0' cellspacing='0' border='0'>
+                    <thead>
+                        <tr>
+                            <th>Enquestes pendents</th>
+                            <th>Enquestes Finalitzades</th>
+                        </tr>
+                    <thead>
+                    <tbody>
+                        <tr>
+                            <td style='display: flex;justify-content: center;'>
+                                <ul>";
+
+    
+    foreach ($listOfNotAnsweredPolls as $key => $value) {
+        $message .= "<li>".$value["title"]."</li>";
+    }
+    $message .= 
+                                "</ul>
+                            </td>
+                            <td style='display: flex;justify-content: center;'>
+                                <ul>";
+
+    foreach ($listOfAnsweredPolls as $key => $value) {
+        $message .= "<li>".$value["title"]."</li>";
+    }
+
+    $message .=
+                    "           </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </body>
+        </html>";
+
+
+        echo $message;
+    try
+    {
+        $mail = new PHPMailer;
+        $mail->IsSMTP(); 
+        $mail->isHTML(true);
+        $mail->Mailer = "smtp";
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->Username = 'asastremoreno.cf@iesesteveterradas.cat';
+        $mail->Password =                                                                                                                                                                                                                      'canasta2000';
+        $mail->Subject    = "Llistat d'enquestes de l'alumne: ".$emailStudent;
+        $mail->Body    = $message;
+        $mail->AltBody    = $message;
+        // Set the sender and recipient
+        $mail->addAddress($emailStudent);
+        
+        // Send the email
+        if ($mail->send()) {
+
+            logButtonClick("S","get_polls.php","Email de llistat d'enquestes a alumnes enviat correctament\n",$emailStudent);
+            array_push($_SESSION["errors"],["succes","Si l\'usuari existeix s\'ha enviat un correu a ".$emailStudent]);
+            // header("Location: login.php");
+        } else {
+            echo 'Error: ' . $mail->ErrorInfo;
+        }
+    }
+    catch(phpmailerException $ex)
+    {
+        $msg = "<div class='alert alert-warning'>".$ex->errorMessage()."</div>";
+    }
+
+}
+
 if(isset($_POST["user"] ) && isset($_POST["pass"])){
     logIn();
 }
@@ -556,12 +662,14 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
         case 'createPoll':
             if (isset($_POST["idPollEdit"])) {
                 editPoll($_POST["pollTitle"], $_POST["inputStartDate"], $_POST["inputEndDate"], $_POST["inputTeachersId"], $_POST["inputQuestionsId"], $_POST["inputStudentsId"], $_POST["idPollEdit"]);
+                logButtonClick("S","checkForm.php","La enquesta s'ha actualitzat correctament\n",$_SESSION['user'][2]);
+                array_push($_SESSION["errors"],["succes","La enquesta ha estat editada correctament"]);
             }
             else{
                 savePoll($_POST["pollTitle"], $_POST["inputStartDate"], $_POST["inputEndDate"], $_POST["inputTeachersId"], $_POST["inputQuestionsId"], $_POST["inputStudentsId"]);
+                logButtonClick("S","checkForm.php","La enquesta s'ha desat correctament\n",$_SESSION['user'][2]);
+                array_push($_SESSION["errors"],["succes","La enquesta ha estat creada correctament"]);
             } 
-            logButtonClick("S","checkForm.php","La enquesta s'ha desat correctament\n",$_SESSION['user'][2]);
-            array_push($_SESSION["errors"],["succes","La enquesta ha estat creada"]);
             break;
     }
     header("Location: poll.php");
@@ -592,5 +700,8 @@ else if (isset($_POST["idRecoverPass"])) {
     recoverPassword($_POST["idRecoverPass"], $_POST["inputRecoverPass"]);
     header("Location: login.php");
 }
-
+else if (isset($_POST["inputSendPollsStudent"])) {
+    sendPollsToStudent($_POST["inputSendPollsStudent"]);
+    header("Location: index.php");
+}
 ?>

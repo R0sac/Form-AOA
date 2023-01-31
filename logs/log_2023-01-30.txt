@@ -1,0 +1,251 @@
+[2023-01-30 16:52:13][S][checkForm.php][Brahian] S'ha iniciat la sessió correctament
+[2023-01-30 16:52:13][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (test,30-01-23 04:52:36,2022-12-14 00:00:00,2023-01-27 00:00:00,1)
+[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (7,11)
+[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (7,20)
+[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (7,7)
+[2023-01-30 16:52:36][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 16:52:36][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (test,30-01-23 04:52:44,2022-12-14 00:00:00,2023-01-27 00:00:00,1)
+[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (8,11)
+[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (8,22)
+[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (8,7)
+[2023-01-30 16:52:44][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 16:52:44][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (hola,30-01-23 05:03:24,2023-01-23 00:00:00,2023-02-01 00:00:00,1)
+[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (9,10)
+[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (9,21)
+[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (9,7)
+[2023-01-30 17:03:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 17:03:24][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (hola,30-01-23 05:03:31,2023-01-23 00:00:00,2023-02-01 00:00:00,1)
+[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (10,10)
+[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (10,21)
+[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (10,7)
+[2023-01-30 17:03:31][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 17:03:31][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:03:34][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=9
+[2023-01-30 17:03:34][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 17:03:34][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:40:30][S][logout.php][Brahian] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-30 18:36:59][S][get_polls.php][] Email de llistat d'enquestes a alumnes enviat correctament
+[2023-01-30 18:41:05][S][get_polls.php][brahianmonsalve412@gmail.com] Email de llistat d'enquestes a alumnes enviat correctament
+[2023-01-30 18:41:36][S][get_polls.php][brahianmonsalve412@gmail.com] Email de llistat d'enquestes a alumnes enviat correctament
+[2023-01-30 18:44:15][S][get_polls.php][brahianmonsalve412@gmail.com] Email de llistat d'enquestes a alumnes enviat correctament
+[2023-01-30 18:47:59][E][checkForm.php][] El usuari o la contrasenya son incorrectes
+[2023-01-30 18:48:04][S][checkForm.php][Brahian] S'ha iniciat la sessió correctament
+[2023-01-30 18:48:08][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:48:41,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (11,10)
+[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (11,21)
+[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (11,5)
+[2023-01-30 18:48:41][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:48:41][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:48:47][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=11
+[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:48:47,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (12,11)
+[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (12,22)
+[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (12,5)
+[2023-01-30 18:48:47][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:48:47][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:48:56,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (13,11)
+[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (13,22)
+[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (13,5)
+[2023-01-30 18:48:56][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:48:56][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:49:02][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=12
+[2023-01-30 18:49:02][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:49:02][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:49:53,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (14,11)
+[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (14,22)
+[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (14,5)
+[2023-01-30 18:49:53][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:50:25,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (15,11)
+[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (15,22)
+[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (15,5)
+[2023-01-30 18:50:25][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:50:25][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:50:29][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=15
+[2023-01-30 18:50:29][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:50:29][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:50:32][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=14
+[2023-01-30 18:50:32][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:50:32][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:52:21,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (16,11)
+[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (16,22)
+[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (16,5)
+[2023-01-30 18:52:21][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:52:47,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (17,11)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (17,22)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (17,5)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:52:47,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (18,11)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (18,22)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (18,5)
+[2023-01-30 18:52:47][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:53:31][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:53:39][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:53:45,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (19,11)
+[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (19,22)
+[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (19,5)
+[2023-01-30 18:53:45][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:53:48][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:53:52][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=13
+[2023-01-30 18:53:52][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:53:52][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:54:37][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:55:23][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:57:11][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:57:15][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=16
+[2023-01-30 18:57:15][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:57:15][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:57:18][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=17
+[2023-01-30 18:57:18][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:57:18][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:57:22][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=19
+[2023-01-30 18:57:22][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:57:22][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:57:26][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:57:30][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:57:52][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:58:27][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:58:33][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:58:35][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:58:35][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:59:47][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:59:51][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 18:59:56][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:00:57][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:01:10][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:02:03][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:02:05][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:02:08][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=18
+[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:02:08,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (20,11)
+[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (20,22)
+[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (20,5)
+[2023-01-30 19:02:08][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:02:08][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:02:18][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=20
+[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:02:18,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (21,11)
+[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (21,22)
+[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (21,5)
+[2023-01-30 19:02:18][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:02:18][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:03:12][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=21
+[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:03:12,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (22,11)
+[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (22,22)
+[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (22,5)
+[2023-01-30 19:03:12][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:03:17][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:03:24][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=22
+[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:03:24,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (23,11)
+[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (23,22)
+[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (23,5)
+[2023-01-30 19:03:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:03:25][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:03:45][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=23
+[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:03:45,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (24,11)
+[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (24,22)
+[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (24,5)
+[2023-01-30 19:03:45][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:03:47][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:10:23][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testEo,30-01-23 07:10:23,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:10:23][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (25,11)
+[2023-01-30 19:10:23][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-30 19:10:23][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:10:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:13:37][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:14:42][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:15:00][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:15:49][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta12,30-01-23 07:15:53,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (26,11)
+[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (26,22)
+[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (26,5)
+[2023-01-30 19:15:53][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:15:55][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:16:02][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=24
+[2023-01-30 19:16:02][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 19:16:02][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:16:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta1,30-01-23 07:16:30,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (27,11)
+[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (27,22)
+[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (27,5)
+[2023-01-30 19:16:31][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:16:31][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:17:12][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=26
+[2023-01-30 19:17:12][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 19:17:12][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta12,30-01-23 07:17:16,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (28,11)
+[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (28,22)
+[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (28,5)
+[2023-01-30 19:17:16][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:17:16][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:17:20][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=27
+[2023-01-30 19:17:20][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 19:17:20][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:18:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta1,30-01-23 07:18:30,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (29,11)
+[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (29,22)
+[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (29,5)
+[2023-01-30 19:18:30][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:21:14][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:21:15][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:21:30][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:22:28][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:23:11][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:23:14][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=28
+[2023-01-30 19:23:14][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 19:23:14][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:23:18][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=29
+[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta13,30-01-23 07:23:18,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (30,11)
+[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (30,22)
+[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (30,5)
+[2023-01-30 19:23:18][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:23:18][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:23:24][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=30
+[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta23,30-01-23 07:23:24,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (31,11)
+[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (31,22)
+[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (31,5)
+[2023-01-30 19:23:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:23:24][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:23:44][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=10
+[2023-01-30 19:23:44][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (holaDeTest,30-01-23 07:23:44,2023-01-23 00:00:00,2023-02-01 00:00:00,1)
+[2023-01-30 19:23:44][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (32,10)
+[2023-01-30 19:23:44][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'actualitzar una enquesta
+[2023-01-30 19:23:44][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:23:44][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:24:00][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:24:03][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=8
+[2023-01-30 19:24:03][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
+[2023-01-30 19:24:03][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:24:10][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=31
+[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta23,30-01-23 07:24:10,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (33,11)
+[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (33,22)
+[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (33,5)
+[2023-01-30 19:24:10][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:24:10][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:24:24][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=33
+[2023-01-30 19:24:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta23Test,30-01-23 07:24:24,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
+[2023-01-30 19:24:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (34,11)
+[2023-01-30 19:24:24][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'actualitzar una enquesta
+[2023-01-30 19:24:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-01-30 19:24:24][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
