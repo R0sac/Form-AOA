@@ -12,6 +12,7 @@ logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSI
 </div>
 
 <script src="./enquestes.js"></script>
+<script src="./utilities.js"></script>
 
 <?php
     if(issetErrors()){
@@ -119,20 +120,25 @@ logButtonClick("S","poll.php","S'ha entrat a 'Enquestes' correctament\n",$_SESSI
 <script>
     $(function() {
         viewListQuestion('#pollContent',arrayQuestions);
-
+        defaultBreadcrumbPoll()
+        
         $('#btnCrearPregunta').click(() => {
+            addBreadcrumb(event);
             createQuestion('#pollContent',arrayTypesOfQuestion);
         });
 
         $('#btnCrearEncuesta').click(() => {
+            addBreadcrumb(event);
             createPoll('#pollContent',arrayQuestions, arrayTeachers, arrayStudents);
         });
 
         $('#btnListarPreguntas').click(() => {
+            addBreadcrumb(event);
             viewListQuestion('#pollContent',arrayQuestions);
         });
 
         $('#btnListarEncuestas').click(() =>{
+            addBreadcrumb(event);
             viewListPoll('#pollContent',arrayPolls);
         });
 

@@ -7,28 +7,8 @@ function NewError(tipoMensaje,Texto) {
     var error = $(`<div class="${tipoMensaje}"><ul><li>${Texto}</li><span class="closebtn" onclick="this.parentElement.parentElement.style.display='none';">&times;</span></ul></div>`);
     $('#mensajes').append(error);
 }
-//CREA ELEMENTOS DOM SIN ID INCLUIDO
-function createElements(parent,elementDOM, classes,cierreForzado,text=''){
-    if (cierreForzado==true){
-        $(parent).append("<"+elementDOM+" class='"+classes+"'>"+text+"</"+elementDOM+">") 
-    }
-    else{
-        $(parent).append("<"+elementDOM+" class="+classes+">") 
-    }
-}
-
-//CREA ELEMENTOS DOM CON ID INCLUIDO
-function createElements2(parent,elementDOM, classes,ids,cierreForzado,text=''){
-    if (cierreForzado==true){
-        $(parent).append("<"+elementDOM+" id='"+ids+"' class='"+classes+"'>"+text+"</"+elementDOM+">") 
-    }
-    else{
-        $(parent).append("<"+elementDOM+" id='"+ids+"' class="+classes+">") 
-    }
-}
 
 //SUBMIT MANUAL
-
 function submitLogin() {
     var user = $("[name=user]").val();
     var pass = $("[name=pass]").val();
@@ -83,5 +63,19 @@ function submitSendPollsToStudent() {
 
     $("#formSendPollStudent").submit();
     return;
+}
+//BREADCRUMB
+function addBreadcrumb(event){
+    let clickButton= event.target;
+    let nameButton= $(clickButton).text();
+    $(".breadcrumb li:last-child").remove();
+    $(".breadcrumb").append("<li>"+ nameButton +"</li>");
+}
 
+//BREADCRUMB PREDETERMINADO POLL.PHP
+function defaultBreadcrumbPoll(){
+    var url= window.location.href;
+    var nameURLPage= $(".breadcrumb li:last-child").text();
+    $(".breadcrumb li:last-child").empty().append("<a href='"+url+"'>"+ nameURLPage +"</a>");
+    $(".breadcrumb").append("<li>Llistat de Preguntes</li>");
 }

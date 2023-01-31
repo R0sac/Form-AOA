@@ -2,8 +2,8 @@
 $_GET['Titulo'] = 'Index';
 $_GET['idBody'] = 'bodyLanding';
 
+include "header.php";
 ?>
-<?php include "header.php"; ?>
 <div id="divLanding">
     <a href="login.php" id="btnLogin">Inici Sessió</a>
     <a href="get_polls.php" id="btnLogin">Alumnat</a>

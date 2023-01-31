@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="./utilities.js"></script>
     <title><?php echo $_GET['Titulo']; ?></title>
-    <?php require('utilities.php'); ?>
+    <?php require('utilities.php');?>
 </head>
 
 <body id='<?php echo $_GET['idBody']; ?>'>
@@ -24,14 +24,34 @@
     <h2>Enquestes Professorat</h2>
     
 </header>
-<?php if(isset($_GET['logout'])){
-        ?>
+<?php
+    breadcrumb($_GET['Titulo']);
+
+    if(isset($_GET['logout'])){
+?>
         <div class="containerLogoutBtn">
-        <a class="buttonLogout" href='./logout.php'>
-            <div class="logout" >SORTIR</div>
-            <i class="fa fa-solid fa-right-from-bracket"></i>
-        </a>
-    </div>
+            <a class="buttonLogout" href='./logout.php'>
+                <div class="logout" >SORTIR</div>
+                <i class="fa fa-solid fa-right-from-bracket"></i>
+            </a>
+            <ul class="breadcrumb">
+                <?php
+                $linkName= ucfirst($_GET['Titulo']);
+                foreach ($_SESSION["arrayNameBreadcrumb"] as $num => $value) {
+                    echo "<li>";
+                    if($linkName== ucfirst($value)){
+                        echo $value;
+                    }
+
+                    else{
+                        echo "<a href='".$_SESSION['arrayLinkBreadcrumb'][$num]."'>".$value."</a>";
+                    }
+
+                    echo "</li>";
+                };
+                ?>
+            </ul>
+        </div>
     <?php
     };
     ?>
