@@ -1,0 +1,29 @@
+[2023-01-31 16:31:54][S][cron.php][] SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll, user.id AS idUser FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL;
+[2023-01-31 16:31:54][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 5a7e069c016be342cf05a8c22777491bdc594eaa9f34cc4437ef887f385446654213070c19bd53cabd9ed0782935aea6fdb10fa76e6316e10bba65cbb0704c9c WHERE idPoll= '14' AND idStudent= '4';
+[2023-01-31 16:31:56][S][cron.php][] S'ha enviat correctament un missatge a detadaf314@brandoza.com
+[2023-01-31 16:31:56][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= f5ba013931a52b47ac1e9a7f6cc4327a7f82b87753d8812f3a8a133fe7b246e409fb7ba643598692b65c2ac2691f7484bbcda8a3609c0c98a6a8210c54fb8a9e WHERE idPoll= '14' AND idStudent= '5';
+[2023-01-31 16:31:57][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com
+[2023-01-31 16:31:57][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 9657b60a8877afea1c052975e559dbf16e2e88346437911fd57ff7e0e76868855c5874bf51ae7cf82c6e699a307afaee517aad176047be1f0e9ee193e1b2dc1f WHERE idPoll= '2' AND idStudent= '6';
+[2023-01-31 16:32:00][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
+[2023-01-31 16:32:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= d9d019cc2a7f99a86ad723280fcd39331ae21ee11f498b0299e38d7e56cb4a754aa2cb69ea187f13af1fe948f054dcbff218ccc33147ca75a89c9ce40b206b0d WHERE idPoll= '14' AND idStudent= '6';
+[2023-01-31 16:32:02][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com
+[2023-01-31 16:32:02][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 6c9833fc73abe3a44aa3015d2f74858dd0ea86d1a6966fdac8a5aeca3b34bd11a160d6fc0c74eb5549067929305c895ea18c8eea3efa981987fbea6a478e3288 WHERE idPoll= '2' AND idStudent= '7';
+[2023-01-31 16:32:04][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com
+[2023-01-31 16:35:55][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
+[2023-01-31 16:35:55][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-31 16:36:14][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-31 16:39:34][S][cron.php][] SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll, user.id AS idUser FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL;
+[2023-01-31 16:39:34][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 396dcfccd44088d7c42363dd41eb4873342cbc4a70c2a8e254fa329c42f3f218b7e212df8e882f776595e6dfc01b8d478ae3b51ab2347e1e2f7ebb34ce406ad0 WHERE idPoll= '14' AND idStudent= '7';
+[2023-01-31 16:39:38][S][cron.php][] S'ha enviat correctament un missatge a testAlumne4@a.com Jose
+[2023-01-31 16:39:38][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 8c76c9c63a9cc2ca1b1a25d9186506e7c00a800b97778ff9c740e8c4cb9ee7462fef05a4546c4133f32205340b9e1f9f53048a6bf72dea8396ec59f77a090b1c WHERE idPoll= '2' AND idStudent= '8';
+[2023-01-31 16:39:41][S][cron.php][] S'ha enviat correctament un missatge a testAlumne5@a.com Laura
+[2023-01-31 16:39:41][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= a51b4ae4c797134ac7fdd63777b700b8e4159ceb0556f250dd5a7b365335c2b3f71dd7c484744249de758115f5d13e5f3f7e683804ac75da2a7eb0b688524a75 WHERE idPoll= '14' AND idStudent= '8';
+[2023-01-31 16:39:45][S][cron.php][] S'ha enviat correctament un missatge a testAlumne5@a.com Laura
+[2023-01-31 16:39:45][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 665b331809e4da8642a96833c8406ff5832255217fef3f944affcaa3c82fb3faf9466ae739a21a9713af0669df2c74394d59e3772ffc7c300213bf1328cc053e WHERE idPoll= '2' AND idStudent= '9';
+[2023-01-31 16:39:47][S][cron.php][] S'ha enviat correctament un missatge a evillcatunari.cf@iesesteveterradas.cat Pepe
+[2023-01-31 16:39:47][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 9831f3d196ef795ccd53a239ab59c754f370c0a4ce50dfcda7ed43116cb5b9a96dd2e75f73a252dc66ebef43b54afa0407067a46cae269597cad6de01841ea6b WHERE idPoll= '14' AND idStudent= '9';
+[2023-01-31 16:39:50][S][cron.php][] S'ha enviat correctament un missatge a evillcatunari.cf@iesesteveterradas.cat Pepe
+[2023-01-31 16:42:37][S][cron.php][] SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll, user.id AS idUser FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL;
+[2023-01-31 16:42:37][E][cron.php][] Ja no hi ha alumnes amb enquestes pendents
+[2023-01-31 17:06:41][S][cron.php][] SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll, user.id AS idUser FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL;
+[2023-01-31 17:09:42][S][cron.php][] SELECT poll.id AS idPoll, user.email AS email, user.username AS username, poll.title AS titlePoll, user.id AS idUser FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL;
