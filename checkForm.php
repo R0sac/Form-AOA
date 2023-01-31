@@ -328,7 +328,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         $endDate = convertDateToDatetime($endDate);
         $available = 1;
         $notAvailable = 0;
-        
+
         $pdo = connectionBBDD();
         $pdo->beginTransaction();
         $stmn = $pdo->prepare("UPDATE creyentes_poll.poll SET `available`=? WHERE id=?;");
@@ -662,12 +662,14 @@ else if (isset($_POST["typeOfForm"])){  //Apartado para los formularios de poll.
         case 'createPoll':
             if (isset($_POST["idPollEdit"])) {
                 editPoll($_POST["pollTitle"], $_POST["inputStartDate"], $_POST["inputEndDate"], $_POST["inputTeachersId"], $_POST["inputQuestionsId"], $_POST["inputStudentsId"], $_POST["idPollEdit"]);
+                logButtonClick("S","checkForm.php","La enquesta s'ha actualitzat correctament\n",$_SESSION['user'][2]);
+                array_push($_SESSION["errors"],["succes","La enquesta ha estat editada correctament"]);
             }
             else{
                 savePoll($_POST["pollTitle"], $_POST["inputStartDate"], $_POST["inputEndDate"], $_POST["inputTeachersId"], $_POST["inputQuestionsId"], $_POST["inputStudentsId"]);
+                logButtonClick("S","checkForm.php","La enquesta s'ha desat correctament\n",$_SESSION['user'][2]);
+                array_push($_SESSION["errors"],["succes","La enquesta ha estat creada correctament"]);
             } 
-            logButtonClick("S","checkForm.php","La enquesta s'ha desat correctament\n",$_SESSION['user'][2]);
-            array_push($_SESSION["errors"],["succes","La enquesta ha estat creada"]);
             break;
     }
     header("Location: poll.php");
