@@ -30,10 +30,6 @@
     if(isset($_GET['logout'])){
 ?>
         <div class="containerLogoutBtn">
-            <a class="buttonLogout" href='./logout.php'>
-                <div class="logout" >SORTIR</div>
-                <i class="fa fa-solid fa-right-from-bracket"></i>
-            </a>
             <ul class="breadcrumb">
                 <?php
                 $linkName= ucfirst($_GET['Titulo']);
@@ -51,6 +47,10 @@
                 };
                 ?>
             </ul>
+            <a class="buttonLogout" href='./logout.php'>
+                <div class="logout" >SORTIR</div>
+                <i class="fa fa-solid fa-right-from-bracket"></i>
+            </a>
         </div>
     <?php
     };
