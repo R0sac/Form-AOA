@@ -1161,3 +1161,62 @@ ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
 }
+
+/* ANIMACION */
+@keyframes animationRigth{
+    0% {transform: translateX(0vw);
+        opacity: 0;}
+    50% {transform: translateX(50vw);
+        opacity: 1;}
+    100% {transform: translateX(90vw);
+        opacity: 0;}
+}
+
+@keyframes animationLeft{
+    0% {transform: translateX(90vw);
+        opacity: 0;}
+    50% {transform: translateX(50vw);
+        opacity: 1;}
+    100% {transform: translateX(0vw);
+        opacity: 0;}
+  }
+  
+  .poll-cloud {
+    animation: animationRigth infinite linear 8s;
+    font-size: 160px;
+    z-index: -1;
+  }
+
+  .email-cloud {
+    animation: animationRigth infinite linear 9s;
+    font-size: 160px;
+    z-index: -1;
+  }
+
+  .email-open {
+    animation: animationRigth infinite linear 10s;
+    font-size: 160px;
+    z-index: -1;
+  }
+
+  .comment {
+    animation: animationLeft infinite linear 7s;
+    font-size: 160px;
+    z-index: -1;
+  }
+  .comment2 {
+    animation: animationLeft infinite linear 9s;
+    font-size: 160px;
+    z-index: -1;
+  }
+
+.animation{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+#btnLogin{
+    z-index: 1;
+    position: relative;
+}
