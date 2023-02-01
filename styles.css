@@ -752,6 +752,7 @@ dialog::backdrop  {
     padding: 10px 30px;
     height: 100px;
     align-self: center;
+    text-align: center;
 }
 
 #bodyViewPoll #formViewPoll .containerSingleRadioButton{

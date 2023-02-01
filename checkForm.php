@@ -651,6 +651,14 @@ function sendAnswerOfPollToBDD(){
             }
         }
 
+        $actualDate = date("Y-m-d H:i:s");
+
+        $stmn = $pdo->prepare("UPDATE creyentes_poll.poll_student SET `answerDate` = ? WHERE idPoll = ? AND idStudent = ?");
+        $stmn->bindParam(1,$actualDate);
+        $stmn->bindParam(2,$idPoll);
+        $stmn->bindParam(3,$idStudent);
+        $stmn->execute();
+
 
         $pdo->commit();
     } 

@@ -120,3 +120,54 @@ function printQuestion(idOption, array) {
     }
 
 }
+
+function printQuestionReadOnly(idOption, array) {
+
+    for (let i=idOption; i < array.length; i++) {
+
+        if(array[i].idTypeQuestion == 2){
+            
+            $(`#formViewPoll`).append(`
+                <h3>${array[i].question}</h3>
+                <textarea id ="textAreaGeneral" class="textAreaGeneral" name="${array[i].idQuestion}" readonly>
+                </textarea>
+            `);
+            $("#textAreaGeneral").val(array[i].answerText);
+
+        }
+        else if(array[i].idTypeQuestion == 3 || array[i].idTypeQuestion == 1){
+
+            $(`#formViewPoll`).append(`
+                <h3>${array[i].question}</h3>
+            `);
+            var idToPrint = array[i].idQuestion;
+            for (i; i < array.length; i++) {
+                if (array[i].idQuestion == idToPrint) {
+
+                    if (array[i].id == array[i].optionChoosed) {
+                        $(`#formViewPoll`).append(`
+                        <div class="containerSingleRadioButton" id="containerSingleRadioButton">
+                            <input type="radio" name="${array[i].idQuestion}" checked value="${array[i].id}">
+                            <label for="radioBtn">${array[i].text}</label>
+                        </div>
+                    `);
+                    }
+                    else{
+                        $(`#formViewPoll`).append(`
+                            <div class="containerSingleRadioButton" id="containerSingleRadioButton">
+                                <input type="radio" name="${array[i].idQuestion}" disabled  value="${array[i].id}">
+                                <label for="radioBtn">${array[i].text}</label>
+                            </div>
+                        `);
+                    }
+
+                }
+                else{
+                    break;
+                }
+            }
+            i -=1;     
+        }
+    }
+
+}
