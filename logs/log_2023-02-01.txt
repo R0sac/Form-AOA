@@ -1,6 +1,47 @@
-[2023-02-01 00:00:28][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 6bc4d125765e734bb51edb10e53643d10e71c7c0634848ab33f9b3c494efc7a8090114103fcca620ccf72d3b30f3c65c416fec7cedbcf4c48dc551f52a4afdb5 WHERE idPoll= '2' AND idStudent= '9';
-[2023-02-01 00:00:28][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= b0d17124879afc1c339ef54a69104538961b3b6a55b809983785ba824cb90f0919f686547f3016d1ced101092fffe928bf534e2283a8787c3d7ffa0a523146bc WHERE idPoll= '14' AND idStudent= '9';
-[2023-02-01 00:00:28][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
-[2023-02-01 00:00:30][S][cron.php][] S'ha enviat correctament un missatge a evillcatunari.cf@iesesteveterradas.cat Pepe
-[2023-02-01 00:00:32][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
-[2023-02-01 00:00:34][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 13:28:47][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'
+[2023-02-01 13:28:52][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'
+[2023-02-01 13:29:09][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 13:29:10][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 13:29:16][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'
+[2023-02-01 13:29:25][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'
+[2023-02-01 13:29:30][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'

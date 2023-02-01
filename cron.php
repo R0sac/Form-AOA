@@ -70,20 +70,12 @@
         logButtonClick("E","cron.php","Ha hagut un error a l'hora de fer el Select\n");
     };
 
-    print_r($arrayIdStudent);
-    echo "<br>";
-    print_r($infoIdPollStudent);
-    echo "<br>";
-    print_r($infoTitlePollStudent);
-    echo "<br>";
-    print_r($arrayEmailStudents);
-
     foreach ($arrayIdStudent as $num => $ids) {
         $textMail= "";
         for($i=0;$i<count($infoIdPollStudent[$ids]);$i++){
             $title= $infoTitlePollStudent[$ids][$i];
             $getToken= $infoTokensStudent[$ids][$i];
-            $textMail= $textMail.$title.": http://localhost/GIT/Form-AOA/prueba.php?token=".$getToken."\n\n";
+            $textMail= $textMail.$title.": http://localhost/GIT/Form-AOA/view_poll.php?token=".$getToken."\n\n";
         };
 
         $mail = new PHPMailer;
