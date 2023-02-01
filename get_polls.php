@@ -1,6 +1,6 @@
 <?php 
 $_GET['Titulo'] = 'Llistar enquestes';
-$_GET['idBody'] = 'bodyRecoverPassword';
+$_GET['idBody'] = 'bodyGetPolls';
 ?>
 <?php include "header.php"; ?>
 
