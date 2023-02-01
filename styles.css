@@ -104,6 +104,22 @@ footer{
     justify-content: center;
     flex-direction: column;
 }
+#btnSubmitAnswers{
+    margin-top: 15px;
+    font-family: Poppins;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+}
+
+#btnSubmitAnswers:hover{
+    cursor: pointer;
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
+}
+
 
 #btnLogin{
     font-family: Poppins;
@@ -374,8 +390,7 @@ footer{
     text-align: left;
     width: 50%; 
 }
-
-.pollContent .formQuestion .containerSingleRadioButtonWithOptions{
+.containerSingleRadioButtonWithOptions{
     align-self: center;
 }
 .containerSingleRadioButtonWithOptions .radioOption{
@@ -723,6 +738,48 @@ dialog::backdrop  {
 #usuerName{
     text-align: center;
 }
+
+/* Answer poll view */
+#bodyViewPoll{
+    text-align: center;
+}
+
+#bodyViewPoll #formViewPoll .textAreaGeneral{
+    resize: none;
+    box-sizing: content-box;
+    border-radius: 12px;
+    width: 60%;
+    padding: 10px 30px;
+    height: 100px;
+    align-self: center;
+}
+
+#bodyViewPoll #formViewPoll .containerSingleRadioButton{
+    display: inline-flex;
+    align-self: center;
+    box-sizing:content-box;
+    width: 60%;
+}
+
+#bodyViewPoll #formViewPoll .containerSingleRadioButton input{
+    margin-left: 40%; 
+
+}
+
+#bodyViewPoll #formViewPoll .containerSingleRadioButton label{
+    text-align: left;
+    width: 50%; 
+}
+
+#bodyViewPoll #formViewPoll h3{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+#bodyViewPoll #formViewPoll label{
+    margin-left: 5px;
+}
+
+
 @media only screen and (max-width: 800px) {
     body{
         max-width: 800px;
@@ -799,10 +856,6 @@ dialog::backdrop  {
         padding: 5px 20px;
         width: 50%;
         margin-bottom: 10px;
-    }
-    
-    .pollContent .formQuestion .containerSingleRadioButton{
-        width: 30%;
     }
     
     .pollContent .formQuestion .containerSingleRadioButton input{
@@ -999,9 +1052,7 @@ dialog::backdrop  {
     .inputDate{
         margin-left: 10px;
     }
-    .pollContent .formQuestion .containerSingleRadioButton{
-        width: 30%;
-    }
+
     
     .pollContent .formQuestion .containerSingleRadioButton input{
         margin-left: 30%; 
