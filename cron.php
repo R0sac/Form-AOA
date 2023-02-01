@@ -75,7 +75,7 @@
         for($i=0;$i<count($infoIdPollStudent[$ids]);$i++){
             $title= $infoTitlePollStudent[$ids][$i];
             $getToken= $infoTokensStudent[$ids][$i];
-            $textMail= $textMail.$title.": http://localhost/GIT/Form-AOA/view_poll.php?token=".$getToken."\n\n";
+            $textMail= $textMail.$title.": https://www.enquestaprofessorat.site/view_poll.php?token=".$getToken."\n\n";
         };
 
         $mail = new PHPMailer;
