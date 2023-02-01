@@ -1,331 +1,287 @@
-[2023-01-30 16:52:13][S][checkForm.php][Brahian] S'ha iniciat la sessió correctament
-[2023-01-30 16:52:13][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (test,30-01-23 04:52:36,2022-12-14 00:00:00,2023-01-27 00:00:00,1)
-[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (7,11)
-[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (7,20)
-[2023-01-30 16:52:36][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (7,7)
-[2023-01-30 16:52:36][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 16:52:36][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (test,30-01-23 04:52:44,2022-12-14 00:00:00,2023-01-27 00:00:00,1)
-[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (8,11)
-[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (8,22)
-[2023-01-30 16:52:44][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (8,7)
-[2023-01-30 16:52:44][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 16:52:44][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (hola,30-01-23 05:03:24,2023-01-23 00:00:00,2023-02-01 00:00:00,1)
-[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (9,10)
-[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (9,21)
-[2023-01-30 17:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (9,7)
-[2023-01-30 17:03:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 17:03:24][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (hola,30-01-23 05:03:31,2023-01-23 00:00:00,2023-02-01 00:00:00,1)
-[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (10,10)
-[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (10,21)
-[2023-01-30 17:03:31][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (10,7)
-[2023-01-30 17:03:31][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 17:03:31][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 17:03:34][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=9
-[2023-01-30 17:03:34][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 17:03:34][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 17:40:30][S][logout.php][Brahian] S'ha sortit de la sessió correctament des de 'poll.php'
-[2023-01-30 18:36:59][S][get_polls.php][] Email de llistat d'enquestes a alumnes enviat correctament
-[2023-01-30 18:41:05][S][get_polls.php][brahianmonsalve412@gmail.com] Email de llistat d'enquestes a alumnes enviat correctament
-[2023-01-30 18:41:36][S][get_polls.php][brahianmonsalve412@gmail.com] Email de llistat d'enquestes a alumnes enviat correctament
-[2023-01-30 18:44:15][S][get_polls.php][brahianmonsalve412@gmail.com] Email de llistat d'enquestes a alumnes enviat correctament
-[2023-01-30 18:47:59][E][checkForm.php][] El usuari o la contrasenya son incorrectes
-[2023-01-30 18:48:04][S][checkForm.php][Brahian] S'ha iniciat la sessió correctament
-[2023-01-30 18:48:08][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:48:41,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (11,10)
-[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (11,21)
-[2023-01-30 18:48:41][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (11,5)
-[2023-01-30 18:48:41][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:48:41][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:48:47][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=11
-[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:48:47,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (12,11)
-[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (12,22)
-[2023-01-30 18:48:47][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (12,5)
-[2023-01-30 18:48:47][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:48:47][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:48:56,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (13,11)
-[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (13,22)
-[2023-01-30 18:48:56][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (13,5)
-[2023-01-30 18:48:56][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:48:56][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:49:02][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=12
-[2023-01-30 18:49:02][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:49:02][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:49:53,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (14,11)
-[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (14,22)
-[2023-01-30 18:49:53][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (14,5)
-[2023-01-30 18:49:53][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:50:25,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (15,11)
-[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (15,22)
-[2023-01-30 18:50:25][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (15,5)
-[2023-01-30 18:50:25][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:50:25][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:50:29][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=15
-[2023-01-30 18:50:29][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:50:29][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:50:32][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=14
-[2023-01-30 18:50:32][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:50:32][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:52:21,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (16,11)
-[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (16,22)
-[2023-01-30 18:52:21][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (16,5)
-[2023-01-30 18:52:21][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:52:47,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (17,11)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (17,22)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (17,5)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:52:47,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (18,11)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (18,22)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (18,5)
-[2023-01-30 18:52:47][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:53:31][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:53:39][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 06:53:45,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (19,11)
-[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (19,22)
-[2023-01-30 18:53:45][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (19,5)
-[2023-01-30 18:53:45][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:53:48][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:53:52][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=13
-[2023-01-30 18:53:52][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:53:52][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:54:37][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:55:23][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:57:11][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:57:15][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=16
-[2023-01-30 18:57:15][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:57:15][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:57:18][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=17
-[2023-01-30 18:57:18][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:57:18][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:57:22][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=19
-[2023-01-30 18:57:22][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 18:57:22][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:57:26][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:57:30][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:57:52][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:58:27][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:58:33][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:58:35][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:58:35][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:59:47][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 18:59:51][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 18:59:56][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:00:57][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:01:10][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:02:03][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:02:05][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:02:08][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=18
-[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:02:08,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (20,11)
-[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (20,22)
-[2023-01-30 19:02:08][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (20,5)
-[2023-01-30 19:02:08][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:02:08][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:02:18][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=20
-[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:02:18,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (21,11)
-[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (21,22)
-[2023-01-30 19:02:18][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (21,5)
-[2023-01-30 19:02:18][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:02:18][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:03:12][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=21
-[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:03:12,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (22,11)
-[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (22,22)
-[2023-01-30 19:03:12][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (22,5)
-[2023-01-30 19:03:12][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:03:17][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:03:24][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=22
-[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:03:24,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (23,11)
-[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (23,22)
-[2023-01-30 19:03:24][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (23,5)
-[2023-01-30 19:03:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:03:25][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:03:45][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=23
-[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,30-01-23 07:03:45,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (24,11)
-[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (24,22)
-[2023-01-30 19:03:45][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (24,5)
-[2023-01-30 19:03:45][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:03:47][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:10:23][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testEo,30-01-23 07:10:23,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:10:23][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (25,11)
-[2023-01-30 19:10:23][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'inserir una enquesta
-[2023-01-30 19:10:23][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:10:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:13:37][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:14:42][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:15:00][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:15:49][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta12,30-01-23 07:15:53,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (26,11)
-[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (26,22)
-[2023-01-30 19:15:53][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (26,5)
-[2023-01-30 19:15:53][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:15:55][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:16:02][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=24
-[2023-01-30 19:16:02][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 19:16:02][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:16:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta1,30-01-23 07:16:30,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (27,11)
-[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (27,22)
-[2023-01-30 19:16:31][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (27,5)
-[2023-01-30 19:16:31][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:16:31][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:17:12][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=26
-[2023-01-30 19:17:12][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 19:17:12][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta12,30-01-23 07:17:16,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (28,11)
-[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (28,22)
-[2023-01-30 19:17:16][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (28,5)
-[2023-01-30 19:17:16][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:17:16][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:17:20][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=27
-[2023-01-30 19:17:20][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 19:17:20][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:18:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta1,30-01-23 07:18:30,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (29,11)
-[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (29,22)
-[2023-01-30 19:18:30][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (29,5)
-[2023-01-30 19:18:30][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:21:14][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:21:15][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:21:30][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:22:28][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:23:11][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:23:14][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=28
-[2023-01-30 19:23:14][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 19:23:14][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:23:18][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=29
-[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta13,30-01-23 07:23:18,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (30,11)
-[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (30,22)
-[2023-01-30 19:23:18][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (30,5)
-[2023-01-30 19:23:18][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:23:18][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:23:24][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=30
-[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta23,30-01-23 07:23:24,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (31,11)
-[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (31,22)
-[2023-01-30 19:23:24][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (31,5)
-[2023-01-30 19:23:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:23:24][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:23:44][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=10
-[2023-01-30 19:23:44][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (holaDeTest,30-01-23 07:23:44,2023-01-23 00:00:00,2023-02-01 00:00:00,1)
-[2023-01-30 19:23:44][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (32,10)
-[2023-01-30 19:23:44][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'actualitzar una enquesta
-[2023-01-30 19:23:44][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:23:44][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:24:00][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:24:03][S][checkForm.php][Brahian] UPDATE `poll` SET `available`= WHERE id=8
-[2023-01-30 19:24:03][S][checkForm.php][Brahian] S'ha esborrat l'enquesta correctament
-[2023-01-30 19:24:03][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:24:10][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=31
-[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta23,30-01-23 07:24:10,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (33,11)
-[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (33,22)
-[2023-01-30 19:24:10][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (33,5)
-[2023-01-30 19:24:10][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:24:10][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 19:24:24][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=33
-[2023-01-30 19:24:24][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta23Test,30-01-23 07:24:24,2023-01-16 00:00:00,2023-02-02 00:00:00,1)
-[2023-01-30 19:24:24][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (34,11)
-[2023-01-30 19:24:24][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'actualitzar una enquesta
-[2023-01-30 19:24:24][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
-[2023-01-30 19:24:24][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 00:00:24][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 00:00:25][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 00:09:53][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 00:09:55][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 00:10:59][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:12:05][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:12:07][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:12:51][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:12:52][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:13:14][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:14:55][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:17:56][S][poll.php][] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:20:51][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:21:20][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:21:36][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:21:44][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:21:53][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:30:32][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:31:04][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:31:15][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:31:23][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:33:32][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:35:59][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:36:03][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:41:13][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:42:40][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:44:23][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:44:26][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:45:57][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:45:59][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:46:00][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:46:00][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:00][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:03][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:04][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:05][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:06][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:09][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:47:10][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:13][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:21][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:27][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
-[2023-01-30 12:47:31][S][poll.php][] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:47:46][S][login.php][] S'ha utilitzat el botó 'Login'
-[2023-01-30 12:47:48][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:47:51][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:49:37][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:49:37][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:54:06][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:54:07][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:54:23][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
-[2023-01-30 12:59:09][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:59:16][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'dashboard.php'
-[2023-01-30 12:59:19][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:59:22][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:59:31][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 12:59:32][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:59:33][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:59:33][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:59:34][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:59:34][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 12:59:35][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:19:48][S][login.php][] S'ha utilitzat el botó 'Login'
-[2023-01-30 15:19:49][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 15:19:52][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:19:56][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 15:19:57][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:20:03][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:20:13][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
-[2023-01-30 15:20:25][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 15:20:26][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:20:36][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:21:11][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:21:21][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:21:30][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 15:21:32][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:21:52][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
-[2023-01-30 15:22:41][S][logout.php][Andrés] S'ha sortit de la sessió correctament des de 'poll.php'
-[2023-01-30 15:22:42][S][checkForm.php][Andrés] S'ha iniciat la sessió correctament
-[2023-01-30 15:23:42][S][poll.php][Andrés] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:08:50][S][login.php][] S'ha utilitzat el botó 'Login'
+[2023-01-30 16:09:05][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-30 16:09:08][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:09:21][S][poll.php][] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:47:13][S][poll.php][] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 16:47:21][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 16:47:43][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 16:48:35][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 16:53:08][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 16:58:05][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 16:58:05][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 16:58:41][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 16:58:41][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 17:01:08][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 17:01:08][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 17:03:16][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 17:03:16][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 17:03:30][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 17:03:30][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 17:42:44][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 17:42:44][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 17:42:58][S][logout.php][] S'ha sortit de la sessió correctament des de 'view_poll.php'
+[2023-01-30 17:43:25][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-30 17:43:27][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:43:52][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Test d'enquesta,30-01-23 05:43:52,2023-01-25 00:00:00,2023-01-28 00:00:00,1)
+[2023-01-30 17:43:52][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (4,11)
+[2023-01-30 17:43:52][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (4,22)
+[2023-01-30 17:43:52][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (4,6)
+[2023-01-30 17:43:52][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 17:43:52][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:44:01][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 17:44:01][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=2;'
+[2023-01-30 17:46:03][S][logout.php][Aleix] S'ha sortit de la sessió correctament des de 'view_poll.php'
+[2023-01-30 17:46:16][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-30 17:46:18][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:46:29][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Test d'enquesta,30-01-23 05:46:29,2023-01-25 00:00:00,2023-01-28 00:00:00,1)
+[2023-01-30 17:46:29][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (5,11)
+[2023-01-30 17:46:29][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (5,22)
+[2023-01-30 17:46:29][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (5,6)
+[2023-01-30 17:46:29][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 17:46:29][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:46:56][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:50:28][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:50:49][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:50:59][S][checkForm.php][Aleix] UPDATE `poll` SET `available`= WHERE id=4
+[2023-01-30 17:50:59][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-30 17:50:59][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:51:03][S][checkForm.php][Aleix] UPDATE `poll` SET `available`= WHERE id=5
+[2023-01-30 17:51:03][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-30 17:51:03][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:51:14][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Test d'enquesta,30-01-23 05:51:14,2023-01-25 00:00:00,2023-01-28 00:00:00,1)
+[2023-01-30 17:51:14][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (6,11)
+[2023-01-30 17:51:14][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (6,22)
+[2023-01-30 17:51:14][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (6,6)
+[2023-01-30 17:51:14][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 17:51:14][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:51:20][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:51:27][S][checkForm.php][Aleix] UPDATE `poll` SET `available`= WHERE id=6
+[2023-01-30 17:51:27][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-30 17:51:27][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 17:51:35][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Test d'enquesta,30-01-23 05:51:35,2023-01-25 00:00:00,2023-01-28 00:00:00,1)
+[2023-01-30 17:51:35][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (7,11)
+[2023-01-30 17:51:35][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (7,22)
+[2023-01-30 17:51:35][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (7,6)
+[2023-01-30 17:51:35][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 17:51:35][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:01:50][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Test d'enquesta,30-01-23 06:01:50,2023-01-25 00:00:00,2023-01-28 00:00:00,1)
+[2023-01-30 18:01:50][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (8,11)
+[2023-01-30 18:01:50][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (8,22)
+[2023-01-30 18:01:50][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (8,6)
+[2023-01-30 18:01:50][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 18:01:50][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:02:03][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Test d'enquesta,30-01-23 06:02:03,2023-01-25 00:00:00,2023-01-28 00:00:00,1)
+[2023-01-30 18:02:03][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (9,11)
+[2023-01-30 18:02:03][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (9,22)
+[2023-01-30 18:02:03][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (9,6)
+[2023-01-30 18:02:03][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 18:02:03][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:02:15][S][checkForm.php][Aleix] UPDATE `poll` SET `available`= WHERE id=9
+[2023-01-30 18:02:15][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:02:15][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:02:22][S][checkForm.php][Aleix] UPDATE `poll` SET `available`= WHERE id=8
+[2023-01-30 18:02:22][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-30 18:02:22][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:02:55][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (ProvaAleix,30-01-23 06:02:55,2023-01-29 00:00:00,2023-02-03 00:00:00,1)
+[2023-01-30 18:02:55][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (10,12)
+[2023-01-30 18:02:55][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-30 18:02:55][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 18:02:55][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:03:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:03:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:03:57][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (PruebaAleix,30-01-23 06:03:57,2023-01-23 00:00:00,2023-02-03 00:00:00,1)
+[2023-01-30 18:03:57][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (11,11)
+[2023-01-30 18:03:57][S][checkForm.php][Aleix] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (11,23)
+[2023-01-30 18:03:57][S][checkForm.php][Aleix] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (11,6)
+[2023-01-30 18:03:57][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 18:03:57][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:04:31][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 18:04:37][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:04:37][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:04:39][S][poll.php][] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:04:39][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:04:42][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:04:42][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:04:44][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:04:44][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:05:52][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:05:52][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:08:26][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:08:26][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:09:09][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:09:09][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:09:23][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:09:23][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:09:39][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:09:39][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:10:03][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:10:03][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:14:17][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:14:17][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:14:20][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:14:20][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:14:35][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:14:35][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:14:36][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:14:36][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:16:20][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:16:20][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:16:21][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:16:21][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:18:04][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:18:04][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:18:05][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:18:05][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:18:42][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:18:42][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:18:44][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:18:44][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:18:50][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:18:50][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:19:35][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:19:35][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:19:36][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:19:36][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:19:46][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:19:46][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:19:57][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:19:57][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:20:02][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:20:02][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:20:27][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:20:27][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:20:43][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:20:43][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:21:05][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:21:05][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:21:13][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:21:13][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:21:13][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:21:13][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:21:24][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:21:24][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:23:24][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:23:24][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:23:36][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:23:36][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:23:37][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:23:37][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:23:37][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:23:37][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:24:33][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:24:33][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:24:53][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:24:53][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:25:16][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:25:16][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:25:33][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:25:33][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:25:49][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:25:49][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:26:19][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:26:19][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:28:37][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:28:37][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:31:32][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:31:32][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:31:33][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:31:33][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:34:06][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:34:06][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:34:08][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:34:08][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:35:12][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:35:12][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 18:35:39][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 18:35:39][S][View_Poll.php][] select p.startDate,p.endDate from poll p where p.id=11;'
+[2023-01-30 19:08:02][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:10:51][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:11:23][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:12:08][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:12:52][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:13:08][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:13:08][S][View_Poll.php][] select p.title,q.id,q.text as Pregunta,q.idTypeQuestion,o.* from creyentes_poll.user u inner join poll_teacher pt on u.id = pt.idPoll inner join poll p on pt.idPoll = p.id inner join poll_question pq on p.id = pq.idPoll inner join question q on pq.idQuestion = q.id inner join question_option qo on q.id = qo.idQuestion inner join creyentes_poll.option o on qo.idOption = o.id where u.role= 3 and u.id= 4 and p.id = 4;'
+[2023-01-30 19:14:18][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:14:18][S][View_Poll.php][] select p.title,q.id,q.text as Pregunta,q.idTypeQuestion,o.* from creyentes_poll.user u inner join poll_teacher pt on u.id = pt.idPoll inner join poll p on pt.idPoll = p.id inner join poll_question pq on p.id = pq.idPoll inner join question q on pq.idQuestion = q.id inner join question_option qo on q.id = qo.idQuestion inner join creyentes_poll.option o on qo.idOption = o.id where u.role= 3 and u.id= 4 and p.id = 4;'
+[2023-01-30 19:16:56][S][poll.php][Aleix] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 19:16:56][S][View_Poll.php][] select p.title,q.id,q.text as Pregunta,q.idTypeQuestion,o.* from creyentes_poll.user u inner join poll_teacher pt on u.id = pt.idPoll inner join poll p on pt.idPoll = p.id inner join poll_question pq on p.id = pq.idPoll inner join question q on pq.idQuestion = q.id inner join question_option qo on q.id = qo.idQuestion inner join creyentes_poll.option o on qo.idOption = o.id where u.role= 3 and u.id= 4 and p.id = 4;'
+[2023-01-30 19:41:40][S][logout.php][Aleix] S'ha sortit de la sessió correctament des de 'view_poll.php'
+[2023-01-30 19:41:51][S][checkForm.php][Aleix] S'ha iniciat la sessió correctament
+[2023-01-30 19:41:53][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:42:04][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:42:11][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:13][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Aleix,30-01-23 07:44:13,2023-01-30 00:00:00,2023-02-16 00:00:00,1)
+[2023-01-30 19:44:13][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (12,12)
+[2023-01-30 19:44:13][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-30 19:44:13][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 19:44:13][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:17][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:25][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:55][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (aleix,30-01-23 07:44:55,2023-01-23 00:00:00,2023-02-08 00:00:00,1)
+[2023-01-30 19:44:55][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (13,12)
+[2023-01-30 19:44:55][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-30 19:44:55][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 19:44:55][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:58][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:59][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:44:59][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:46:03][S][checkForm.php][Aleix] UPDATE `poll` SET `available`= WHERE id=11
+[2023-01-30 19:46:03][S][checkForm.php][Aleix] S'ha esborrat l'enquesta correctament
+[2023-01-30 19:46:03][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:46:05][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:47:15][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Aleix,30-01-23 07:47:15,2023-01-12 00:00:00,2023-02-14 00:00:00,1)
+[2023-01-30 19:47:15][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (14,12)
+[2023-01-30 19:47:15][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-30 19:47:15][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 19:47:15][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:47:18][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:47:24][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:47:59][S][checkForm.php][Aleix] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Aleix,30-01-23 07:47:59,2023-01-09 00:00:00,2023-02-09 00:00:00,1)
+[2023-01-30 19:47:59][S][checkForm.php][Aleix] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (15,12)
+[2023-01-30 19:47:59][E][checkForm.php][Aleix] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-01-30 19:47:59][S][checkForm.php][Aleix] La enquesta s'ha desat correctament
+[2023-01-30 19:47:59][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:48:02][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:48:03][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:53:53][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:53:58][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:54:00][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:54:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 19:54:01][S][poll.php][Aleix] S'ha entrat a 'Enquestes' correctament
+[2023-01-30 20:01:34][S][logout.php][Aleix] S'ha sortit de la sessió correctament des de 'poll.php'
+[2023-01-30 20:01:46][E][checkForm.php][] El usuari o la contrasenya son incorrectes
+[2023-01-30 20:02:36][E][checkForm.php][] El usuari o la contrasenya son incorrectes
+[2023-01-30 20:02:49][S][checkForm.php][Lean] S'ha iniciat la sessió correctament
+[2023-01-30 20:18:59][S][logout.php][Lean] S'ha sortit de la sessió correctament des de 'dashboard.php'
+[2023-01-30 20:19:08][S][checkForm.php][Lean] S'ha iniciat la sessió correctament
+[2023-01-30 20:22:10][S][stats.php][Lean] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 20:22:51][S][stats.php][Lean] S'ha entrat a 'View_Poll' correctament
+[2023-01-30 20:22:51][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:24:44][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:24:44][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:25:04][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:25:04][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:25:51][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:25:51][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:09][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:26:09][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:10][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:26:10][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:48][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:26:48][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:48][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:26:48][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:48][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:26:48][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:48][S][stats.php][Lean] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:26:48][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='leandro@gmail.com';'
+[2023-01-30 20:26:51][S][logout.php][Lean] S'ha sortit de la sessió correctament des de 'stats.php'
+[2023-01-30 20:27:01][S][checkForm.php][Xavi] S'ha iniciat la sessió correctament
+[2023-01-30 20:27:02][S][stats.php][Xavi] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:27:02][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='xavi@gmail.com';'
+[2023-01-30 20:27:13][S][logout.php][Xavi] S'ha sortit de la sessió correctament des de 'stats.php'
+[2023-01-30 20:27:23][S][checkForm.php][Enric] S'ha iniciat la sessió correctament
+[2023-01-30 20:27:24][S][stats.php][Enric] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:27:24][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='enric@gmail.com';'
+[2023-01-30 20:27:44][S][stats.php][Enric] S'ha entrat a 'Stats' correctament
+[2023-01-30 20:27:44][S][View_Poll.php][] select p.id,p.title as TituloEncuesta,pt.idTeacher,u.role,u.username,u.email from poll p inner join poll_teacher pt on p.id = pt.idPoll inner join creyentes_poll.user u on pt.idTeacher = u.id where p.available = 1 and email='enric@gmail.com';'

@@ -12,7 +12,7 @@ $_SESSION["locationLogout"]= "dashboard.php"; ?>
         ?>
         <div id="Dashprofe">
             <a href="" id="dashProfePerfil" class="BtnDash">Perfil</a>
-            <a href="" id="dashProfeEstats" class="BtnDash">Estadistiques</a>
+            <a href="stats.php" id="dashProfeEstats" class="BtnDash">Estadistiques</a>
         </div>
         <?php
     }
