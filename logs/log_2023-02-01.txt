@@ -45,3 +45,398 @@
     LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
     LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
     WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 948237a120c5369b00ddb8a00ceb92282825ebd36e6660392bff1df1d1ac0633ca3aae4339cf0560bfdcd69a016afc77c42b8567993eb95f30c4fdfbd8816c4c WHERE idPoll= '2' AND idStudent= '9';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= cf1522fdcd6d0a2df9eb959c6a652d9f0ac5fd0abacba8e0091147f11c9b40094b0efd486500b4f53ccc857cedb24c39d9be9c6143afccf3d17416bb6b8a4ee0 WHERE idPoll= '14' AND idStudent= '9';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 7f7fa8481a88827aee0fdea6f4b0d6825d4d9cf667942d991fb5fadc6c9eb3645cbb4f039bb6131885ef74658fac7d533de8f0736501e67846dd34124bb6b6da WHERE idPoll= '2' AND idStudent= '7';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= c16571ed54a912d1e0ba2220b5271a2efeb486f236dfbbb663054f53d65d27cf2cd40a854e3aa922c0a5f05ad2d744d20bc1f941e12cdf0fb071b20f991df4c8 WHERE idPoll= '14' AND idStudent= '7';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 8a5c4119c918f505fc590a5283bb40163843463da6baa7bd196ef22a95460711c52a883ca9b8dcdc24dcce06c14b7b312ad6c5eea41c6b0f3b40bbaf6f545b97 WHERE idPoll= '2' AND idStudent= '8';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= f5452e41d201bd4fe1a572b7f0b8679788dadbbcb48f463797727ee98915695088fd1787b7c1abeca157ebe4ada8598cbb80a8ab261db4be0f247c44e10f49e1 WHERE idPoll= '14' AND idStudent= '8';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 16e87be7a509f0d92db1377d22a24f16f58554761748b8509ca769c31897a7c661d05fbd54816883cb675ecb2f4984d5b4b2b8d8f7487ebd53d45128268ece90 WHERE idPoll= '2' AND idStudent= '6';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= b250ce290891db40b36dbf2d98d9475715fcf0d16838fba1fac9e66b7727071de42fb6bb57f3f2085eb1422aa283fef59fa930f95335af47185876eeed292dac WHERE idPoll= '14' AND idStudent= '6';
+[2023-02-01 17:16:00][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5 WHERE idPoll= '14' AND idStudent= '4';
+[2023-02-01 17:16:00][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 17:16:02][S][cron.php][] S'ha enviat correctament un missatge a evillcatunari.cf@iesesteveterradas.cat Pepe
+[2023-02-01 17:16:04][S][cron.php][] S'ha enviat correctament un missatge a detadaf314@brandoza.com Jose
+[2023-02-01 17:16:05][S][cron.php][] S'ha enviat correctament un missatge a testAlumne5@a.com Laura
+[2023-02-01 17:16:06][S][cron.php][] S'ha enviat correctament un missatge a jasehej440@ezgiant.com Juan
+[2023-02-01 17:16:08][S][cron.php][] S'ha enviat correctament un missatge a awoe.dpayu51@nefyp.com Maria
+[2023-02-01 17:17:08][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;'
+[2023-02-01 17:46:59][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 17:48:04][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 17:48:38][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 17:49:02][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 17:49:02][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 17:49:08][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 17:49:08][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:02:24][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:02:24][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:02:28][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:02:28][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:02:42][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:02:42][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:02:43][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:02:43][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:03:16][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:03:16][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:03:55][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:03:55][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:05:52][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:05:52][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:06:48][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 18:06:48][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 18:07:41][E][checkForm.php][] El usuari o la contrasenya son incorrectes
+[2023-02-01 18:08:01][E][checkForm.php][] El usuari o la contrasenya son incorrectes
+[2023-02-01 18:08:09][S][checkForm.php][Brahian] S'ha iniciat la sessió correctament
+[2023-02-01 18:08:10][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:18:45][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:19:39][S][checkForm.php][Brahian] INSERT INTO question (text, idTypeQuestion, available) VALUES (a,3,1)
+[2023-02-01 18:19:39][S][checkForm.php][Brahian] INSERT INTO `option` (`text`) values (Respo4)
+[2023-02-01 18:19:39][S][checkForm.php][Brahian] INSERT INTO question_option (idQuestion,idOption) values (31, 31)
+[2023-02-01 18:19:39][S][checkForm.php][Brahian] La pregunta del tipus 'Opció Simple' s'ha desat correctament
+[2023-02-01 18:19:39][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:20:08][S][checkForm.php][Brahian] UPDATE `question` SET `available`=0 WHERE id=31
+[2023-02-01 18:20:08][S][checkForm.php][Brahian] INSERT INTO question (text, idTypeQuestion, available) VALUES (Pregunta de Opt. Simple,3,1)
+[2023-02-01 18:20:08][S][checkForm.php][Brahian] INSERT INTO `option` (`text`) values (Respo4)
+[2023-02-01 18:20:08][S][checkForm.php][Brahian] INSERT INTO question_option (idQuestion,idOption) values (32, 35)
+[2023-02-01 18:20:08][S][checkForm.php][Brahian] La pregunta del tipus 'Opció Simple' s'ha desat correctament
+[2023-02-01 18:20:08][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:20:26][S][checkForm.php][Brahian] INSERT INTO question (text, idTypeQuestion, available) VALUES (Numerica Test,1,1)
+[2023-02-01 18:20:26][S][checkForm.php][Brahian] INSERT INTO question_option (idQuestion,idOption) values (33, 5)
+[2023-02-01 18:20:26][S][checkForm.php][Brahian] La pregunta del tipus 'Numeric' s'ha desat correctament
+[2023-02-01 18:20:26][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:20:42][S][checkForm.php][Brahian] INSERT INTO question (text, idTypeQuestion, available) VALUES (OptSimple2,3,1)
+[2023-02-01 18:20:42][S][checkForm.php][Brahian] INSERT INTO `option` (`text`) values (4)
+[2023-02-01 18:20:42][S][checkForm.php][Brahian] INSERT INTO question_option (idQuestion,idOption) values (34, 39)
+[2023-02-01 18:20:42][S][checkForm.php][Brahian] La pregunta del tipus 'Opció Simple' s'ha desat correctament
+[2023-02-01 18:20:42][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:21:32][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (Enquesta de Tst,01-02-23 06:21:32,2023-01-31 00:00:00,2023-02-05 00:00:00,1)
+[2023-02-01 18:21:32][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (15,10)
+[2023-02-01 18:21:32][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-02-01 18:21:32][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-02-01 18:21:32][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:21:43][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 01416dfb228be05abcffdd28b190149ccb87f6e7be2b14f3eae00a70e12bbe888a56afe1fb1973e195c75b17f87cf756a2c6820698a4316ed16739cb86351f55 WHERE idPoll= '14' AND idStudent= '5';
+[2023-02-01 18:21:43][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 18:21:45][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com Mario
+[2023-02-01 18:22:12][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 18:35:06][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 18:35:13][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 18:36:02][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:36:34][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (test enquesta,01-02-23 06:36:34,2023-01-30 00:00:00,2023-02-04 00:00:00,1)
+[2023-02-01 18:36:34][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (16,10)
+[2023-02-01 18:36:34][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'inserir una enquesta
+[2023-02-01 18:36:34][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-02-01 18:36:34][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:36:38][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:37:37][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:38:12][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (testenquesta,01-02-23 06:38:12,2023-01-30 00:00:00,2023-02-24 00:00:00,1)
+[2023-02-01 18:38:12][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (17,10)
+[2023-02-01 18:38:12][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'inserir una enquesta:PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '17-32' for key 'poll_question.PRIMARY' in D:\xampp\htdocs\aoa_forms\checkForm.php:299
+Stack trace:
+#0 D:\xampp\htdocs\aoa_forms\checkForm.php(299): PDOStatement->execute()
+#1 D:\xampp\htdocs\aoa_forms\checkForm.php(679): savePoll('testenquesta', '2023-01-30 00:0...', '2023-02-24 00:0...', Array, Array, Array)
+#2 {main}.
+[2023-02-01 18:38:12][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-02-01 18:38:12][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:56:59][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (EnquestaTest,01-02-23 06:56:59,2023-01-30 00:00:00,2023-02-10 00:00:00,1)
+[2023-02-01 18:56:59][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (18,10)
+[2023-02-01 18:56:59][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (18,32)
+[2023-02-01 18:56:59][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (18,5)
+[2023-02-01 18:56:59][S][checkForm.php][Brahian] La enquesta s'ha desat correctament
+[2023-02-01 18:56:59][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 18:57:30][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 97129b9f3b4e8f6d2dd5a6c9068529a962aba16c07f992527f17cedf38ee2d5c2f7acc6fc909c36f317bf6ad5df6c6ccb05b1404297e79a0c9f19e56d0b172a5 WHERE idPoll= '18' AND idStudent= '4';
+[2023-02-01 18:57:30][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 61cdf02fa1e9b4cfb930e5bc186babd3f542ca8f8743a929033836b54211b896d0ceb5452acb20292f15ce5e685f334deb9d08bfbdce5e51e817ae85ed845921 WHERE idPoll= '18' AND idStudent= '5';
+[2023-02-01 18:57:30][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 18:57:32][S][cron.php][] S'ha enviat correctament un missatge a awoe.dpayu51@nefyp.com Maria
+[2023-02-01 18:57:33][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com Mario
+[2023-02-01 19:13:19][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '97129b9f3b4e8f6d2dd5a6c9068529a962aba16c07f992527f';
+[2023-02-01 19:15:20][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '75a4270224d587150c6bd65b721560aecd2582b5910514b6a715d1288b7d5ad549c81dd3cf498e931f18c4121fc43d19542189bd7da1218359decc54ce312cb5';
+[2023-02-01 19:15:21][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 14;'
+[2023-02-01 19:15:26][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '97129b9f3b4e8f6d2dd5a6c9068529a962aba16c07f992527f17cedf38ee2d5c2f7acc6fc909c36f317bf6ad5df6c6ccb05b1404297e79a0c9f19e56d0b172a5';
+[2023-02-01 19:15:26][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 18;'
+[2023-02-01 19:15:39][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '97129b9f3b4e8f6d2dd5a6c9068529a962aba16c07f992527f17cedf38ee2d5c2f7acc6fc909c36f317bf6ad5df6c6ccb05b1404297e79a0c9f19e56d0b172a5';
+[2023-02-01 19:15:39][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 18;'
+[2023-02-01 19:16:13][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '97129b9f3b4e8f6d2dd5a6c9068529a962aba16c07f992527f17cedf38ee2d5c2f7acc6fc909c36f317bf6ad5df6c6ccb05b1404297e79a0c9f19e56d0b172a5';
+[2023-02-01 19:16:13][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 18;'
+[2023-02-01 19:34:08][S][checkForm.php][Brahian] UPDATE `poll` SET `available`=0 WHERE id=18
+[2023-02-01 19:34:08][S][checkForm.php][Brahian] INSERT INTO `poll` (`title`, `createdAt`,`startDate`,`endDate`,`available`) VALUES (EnquestaTest,01-02-23 07:34:07,2023-01-30 00:00:00,2023-02-10 00:00:00,1)
+[2023-02-01 19:34:08][S][checkForm.php][Brahian] INSERT INTO `poll_teacher` (`idPoll`, `idTeacher`) values (19,10)
+[2023-02-01 19:34:08][S][checkForm.php][Brahian] INSERT INTO `poll_question` (`idPoll`, `idQuestion`) values (19,34)
+[2023-02-01 19:34:08][S][checkForm.php][Brahian] INSERT INTO `poll_student` (`idPoll`, `idStudent`) values (19,5)
+[2023-02-01 19:34:08][S][checkForm.php][Brahian] La enquesta s'ha actualitzat correctament
+[2023-02-01 19:34:08][S][poll.php][Brahian] S'ha entrat a 'Enquestes' correctament
+[2023-02-01 19:34:17][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= 1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8 WHERE idPoll= '19' AND idStudent= '4';
+[2023-02-01 19:34:17][S][cron.php][] UPDATE creyentes_poll.poll_student SET `studentNotificated`= e4797db2cd1631cf26743b2b05e80ac11cb00d8a1826107d3c0e50150c347ce14115075937f97c837bf533a650b83d7d9f5f48b75b1faf45ea121e84962a6479 WHERE idPoll= '19' AND idStudent= '5';
+[2023-02-01 19:34:17][S][cron.php][] SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;
+[2023-02-01 19:34:18][S][cron.php][] S'ha enviat correctament un missatge a awoe.dpayu51@nefyp.com Maria
+[2023-02-01 19:34:19][S][cron.php][] S'ha enviat correctament un missatge a testAlumne2@a.com Mario
+[2023-02-01 19:34:57][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:34:57][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:37:15][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:37:15][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:37:32][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:37:32][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:39:32][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:39:32][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:42:07][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:42:07][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:45:25][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:45:25][S][View_Poll.php][] SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:46:03][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:46:03][S][View_Poll.php][] SELECT p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:46:19][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:46:19][S][View_Poll.php][] SELECT p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:47:09][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:47:09][S][View_Poll.php][] SELECT p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:47:41][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:47:41][S][View_Poll.php][] SELECT p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:47:57][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 19:47:57][S][View_Poll.php][] SELECT p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 19:48:03][S][checkForm.php][Brahian] INSERT INTO question (text, idTypeQuestion, available) VALUES (,,1)
+[2023-02-01 21:36:41][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 21:36:41][S][View_Poll.php][] SELECT p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 21:37:45][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 21:37:45][S][View_Poll.php][] SELECT u.id as userId,p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 21:38:39][S][cron.php][] SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '1f874f461a53e4be214d411a29ec9d00ae61534599a4a9203252f567ebeafd614e358e7d7f04602b4bdee8930026175ffe68dd6061b5cb13b7a9bbd3a6ea3ab8';
+[2023-02-01 21:38:39][S][View_Poll.php][] SELECT u.id as userId,p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    FROM creyentes_poll.user u 
+    INNER JOIN poll_student ps ON u.id = ps.idStudent 
+    INNER JOIN poll p ON ps.idPoll = p.id 
+    INNER JOIN poll_question pq ON p.id = pq.idPoll 
+    INNER JOIN question q ON pq.idQuestion = q.id 
+    LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
+    LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
+    WHERE u.id= 4 AND p.id = 19;'
+[2023-02-01 21:38:46][E][checkForm.php][Brahian] Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Text', error:PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in D:\xampp\htdocs\aoa_forms\checkForm.php:745
+Stack trace:
+#0 D:\xampp\htdocs\aoa_forms\checkForm.php(745): PDOStatement->execute()
+#1 D:\xampp\htdocs\aoa_forms\checkForm.php(718): sendAnswerOfPollToBDD()
+#2 {main}
+[2023-02-01 21:44:18][S][checkForm.php][Brahian] INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `idOption`) VALUES (19,20,4,1);
+[2023-02-01 21:44:18][S][checkForm.php][Brahian] INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `textAnswer`) VALUES (19,21,4,d);
+[2023-02-01 21:44:18][S][checkForm.php][Brahian] INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `idOption`) VALUES (19,32,4,32);
+[2023-02-01 21:44:18][S][checkForm.php][Brahian] INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `idOption`) VALUES (19,33,4,2);
+[2023-02-01 21:44:18][S][checkForm.php][Brahian] INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `idOption`) VALUES (19,34,4,37);

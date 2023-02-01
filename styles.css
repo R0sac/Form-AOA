@@ -104,6 +104,22 @@ footer{
     justify-content: center;
     flex-direction: column;
 }
+#btnSubmitAnswers{
+    margin-top: 15px;
+    font-family: Poppins;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1PX solid #251659 ;
+    background-color:  #251659 ;
+    color: white;
+}
+
+#btnSubmitAnswers:hover{
+    cursor: pointer;
+    border: 1px solid #7559D9 ;
+    background-color:  #7559D9 ;
+}
+
 
 #btnLogin{
     font-family: Poppins;
@@ -374,7 +390,9 @@ footer{
     text-align: left;
     width: 50%; 
 }
-
+.containerSingleRadioButtonWithOptions{
+    align-self: center;
+}
 .containerSingleRadioButtonWithOptions .radioOption{
     padding-top: 2px;
 }
@@ -746,7 +764,12 @@ dialog::backdrop  {
 
 #bodyViewPoll #formViewPoll h3{
     margin-top: 15px;
+    margin-bottom: 10px;
 }
+#bodyViewPoll #formViewPoll label{
+    margin-left: 5px;
+}
+
 
 @media only screen and (max-width: 800px) {
     body{

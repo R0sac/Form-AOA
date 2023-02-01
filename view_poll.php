@@ -17,39 +17,16 @@ include "log.php";
 <script src="./view_poll.js"></script>
 
 <?php
-    try{
-        $accesToPoll= 0;
-        $pdo = connectionBBDD();
-        $stmt = $pdo ->prepare("SELECT studentNotificated AS token FROM poll_student WHERE studentNotificated IS NOT NULL;");
-        $stmt->execute();
-        $row = $stmt->fetch();
-        while($row){
-            if($row['token']== $token){
-                $accesToPoll= 1;//AÑADIR LA ENCUESTA
-                echo "SUCCES";
-                break;
-            }
-
-            else{
-                $accesToPoll= 0;
-            }
-            $row = $stmt->fetch();
-        };
-        //logButtonClick("S","cron.php","SELECT poll_student.idStudent AS idStudent FROM ((poll_student INNER JOIN poll ON poll_student.idPoll = poll.id)INNER JOIN creyentes_poll.user ON poll_student.idStudent= user.id) WHERE poll.available= 1 AND user.role=3 AND poll_student.studentNotificated IS NULL GROUP BY poll_student.idStudent LIMIT 5;"."\n");
-    }
-    catch (PDOException $e) {
-        if ($pdo->inTransaction())
-        {
-        $pdo->rollBack();
-        }
-        //logButtonClick("E","cron.php","Ha hagut un error a l'hora de fer el Select\n");
-    };
-
-    if($accesToPoll==0){
+        
+    $pollOfUser = getListByQuery("SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '".htmlspecialchars($token)."';");
+    logButtonClick("S","cron.php", "SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '".htmlspecialchars($token)."';\n");
+    if (!$pollOfUser) {
         header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-    };
+    }
+    $userId = $pollOfUser[0]["idStudent"];
+    $pollId = $pollOfUser[0]["idPoll"];
 
-    $query = "SELECT p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
+    $query = "SELECT u.id as userId,p.id as idPoll,p.title,q.id AS idQuestion,q.text AS question,q.idTypeQuestion,o.*
     FROM creyentes_poll.user u 
     INNER JOIN poll_student ps ON u.id = ps.idStudent 
     INNER JOIN poll p ON ps.idPoll = p.id 
@@ -57,7 +34,7 @@ include "log.php";
     INNER JOIN question q ON pq.idQuestion = q.id 
     LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
     LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id 
-    WHERE u.role= 3 AND u.id= 4 AND p.id = 28;"; 
+    WHERE u.id= ".$userId." AND p.id = ".$pollId.";"; 
 
     $results = getListByQuery($query);
     logButtonClick("S","View_Poll.php","$query'\n");
@@ -65,6 +42,7 @@ include "log.php";
     echo 
     "<script>
         var arrayPoll = ".json_encode($results).";
+        console.log('array:',arrayPoll);
     </script>";
 ?>
 <h1 id="titlePoll"></h1>

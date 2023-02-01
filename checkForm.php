@@ -50,7 +50,7 @@ function saveTextQuestion($typeQuestion, $questionTitle){
         {
            $pdo->rollBack();
         }
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Text'\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Text', error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -81,7 +81,7 @@ function editTextQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         {
            $pdo->rollBack();
         } 
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Text'\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Text', error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -116,7 +116,7 @@ function saveNumberQuestion($typeQuestion, $questionTitle){
         {
            $pdo->rollBack();
         } 
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Numeric'\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Numeric', error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -159,7 +159,7 @@ function editNumberQuestion($typeQuestion, $questionTitle, $idQuestionToEdit){
         {
            $pdo->rollBack();
         }
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Numeric'\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Numeric',error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -200,7 +200,7 @@ function saveSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions){
         {
            $pdo->rollBack();
         }
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Opció Simple'\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Opció Simple', error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -250,7 +250,7 @@ function editSimpleOptionQuestion($typeQuestion, $questionTitle, $arrayOptions, 
         {
            $pdo->rollBack();
         }
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Opció Simple'\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una Pregunta del tipus 'Opció Simple', error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -316,7 +316,7 @@ function savePoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         {
            $pdo->rollBack();
         } 
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una enquesta\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una enquesta, error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -384,7 +384,7 @@ function editPoll($pollTitle, $startDate, $endDate, $arrayTeachersId, $arrayQues
         {
            $pdo->rollBack();
         }
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una enquesta\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'actualitzar una enquesta, error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -407,7 +407,7 @@ function removeAvailabilityOfQuestion($idQuestion){
         {
            $pdo->rollBack();
         } 
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'esborrar una pregunta\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'esborrar una pregunta, error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -430,7 +430,7 @@ function removeAvailabilityOfPoll($idPoll){
         {
            $pdo->rollBack();
         } 
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'esborrar una enquesta\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'esborrar una enquesta, error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -503,7 +503,7 @@ function recoverPassword($idUser, $newPass){
         {
            $pdo->rollBack();
         } 
-        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora de canviar la contrasenya\n",$_SESSION['user'][2]);
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora de canviar la contrasenya, error:".$e."\n",$_SESSION['user'][2]);
     }
 }
 
@@ -613,6 +613,57 @@ function sendPollsToStudent($emailStudent){
 
 }
 
+function sendAnswerOfPollToBDD(){
+    try {
+        $available = 1;
+
+        $pdo = connectionBBDD();
+        $pdo->beginTransaction();
+
+        $idPoll = $_POST["pollAnswer"];
+
+        $idStudent = $_POST["idStudent"];
+
+        foreach ($_POST as $idQuestion => $idOption) {
+
+            if ($idQuestion != "pollAnswer" && $idQuestion != "idStudent") {
+
+                if (is_numeric($idOption)) {
+                    $stmn = $pdo->prepare("INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `idOption`) VALUES (?,?,?,?);");
+                    $stmn->bindParam(1,$idPoll);
+                    $stmn->bindParam(2,$idQuestion);
+                    $stmn->bindParam(3,$idStudent);
+                    $stmn->bindParam(4,$idOption);
+                    $stmn->execute();
+                    logButtonClick("S","checkForm.php","INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `idOption`) VALUES ($idPoll,$idQuestion,$idStudent,$idOption);\n",$_SESSION['user'][2]);
+
+                }
+                else{ //OPTIONS OF TYPE TEXT
+                    $stmn = $pdo->prepare("INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `textAnswer`) VALUES (?,?,?,?);");
+                    $stmn->bindParam(1,$idPoll);
+                    $stmn->bindParam(2,$idQuestion);
+                    $stmn->bindParam(3,$idStudent);
+                    $stmn->bindParam(4,$idOption);
+                    $stmn->execute();
+                    logButtonClick("S","checkForm.php","INSERT INTO creyentes_poll.answer (`idPoll`, `idQuestion`,`idStudent`, `textAnswer`) VALUES ($idPoll,$idQuestion,$idStudent,$idOption);\n",$_SESSION['user'][2]);
+                }
+
+            }
+        }
+
+
+        $pdo->commit();
+    } 
+    catch (PDOException $e) {
+        if ($pdo->inTransaction())
+        {
+           $pdo->rollBack();
+        }
+        logButtonClick("E","checkForm.php","Hi ha hagut un error a l'hora d'inserir una Pregunta del tipus 'Text', error:".$e."\n",$_SESSION['user'][2]);
+    }
+
+}
+
 if(isset($_POST["user"] ) && isset($_POST["pass"])){
     logIn();
 }
@@ -714,4 +765,12 @@ else if (isset($_POST["inputSendPollsStudent"])) {
     sendPollsToStudent($_POST["inputSendPollsStudent"]);
     header("Location: index.php");
 }
+else if (isset($_POST["pollAnswer"])) {
+    sendAnswerOfPollToBDD();
+    header("Location: index.php");
+    
+}
+
+
+
 ?>

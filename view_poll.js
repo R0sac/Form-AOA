@@ -6,23 +6,23 @@ function printQuestion(idOption, array) {
             $(`#formViewPoll`).append(`
                 <h3>${array[i].question}</h3>
                 <div class="containerSingleRadioButton" id="containerSingleRadioButton">
-                    <input type="radio" name="${array[i].idQuestion}" ">
+                    <input type="radio" name="${array[i].idQuestion}" value="${array[i].id}">
                     <label for="radioBtn">${array[i].text}</label>
                 </div>
                 <div class="containerSingleRadioButton" id="containerSingleRadioButton">
-                    <input type="radio" name="${array[i+1].idQuestion}" ">
+                    <input type="radio" name="${array[i+1].idQuestion}"  value="${array[i+1].id}">
                     <label for="radioBtn">${array[i+1].text}</label>
                 </div>
                 <div class="containerSingleRadioButton" id="containerSingleRadioButton">
-                    <input type="radio" name="${array[i+2].idQuestion}" ">
+                    <input type="radio" name="${array[i+2].idQuestion}"  value="${array[i+2].id}">
                     <label for="radioBtn">${array[i+2].text}</label>
                 </div>
                 <div class="containerSingleRadioButton" id="containerSingleRadioButton">
-                    <input type="radio" name="${array[i+3].idQuestion}" ">
+                    <input type="radio" name="${array[i+3].idQuestion}"  value="${array[i+3].id}">
                     <label for="radioBtn">${array[i+3].text}</label>
                 </div>
                 <div class="containerSingleRadioButton" id="containerSingleRadioButton">
-                    <input type="radio" name="${array[i+4].idQuestion}" ">
+                    <input type="radio" name="${array[i+4].idQuestion}"  value="${array[i+4].id}">
                     <label for="radioBtn">${array[i+4].text}</label>
                 </div>
             `);
@@ -34,7 +34,8 @@ function printQuestion(idOption, array) {
 
                     $(`#formViewPoll`).append(`
                     <br>
-                    <input type="text" value="pollAnswer" hidden/>
+                    <input name="pollAnswer" type="text" value="${array[i-1].idPoll}" hidden/>
+                    <input name="idStudent" type="text" value="${array[i-1].userId}" hidden/>
                     <button id="btnSubmitAnswers" type="submit">Enviar enquesta</button>
                     `);
                 });
@@ -62,7 +63,8 @@ function printQuestion(idOption, array) {
                     
                     $(`#formViewPoll`).append(`
                         <br>
-                        <input type="text" value="pollAnswer" hidden/>
+                        <input name="pollAnswer" type="text" value="${array[i-1].idPoll}" hidden/>
+                        <input name="idStudent" type="text" value="${array[i-1].userId}" hidden/>
                         <button id="btnSubmitAnswers" type="submit">Enviar enquesta</button>
                     `);
                 });
@@ -85,7 +87,7 @@ function printQuestion(idOption, array) {
                 if (array[i].idQuestion == idToPrint) {
                     $(`#formViewPoll`).append(`
                         <div class="containerSingleRadioButton" id="containerSingleRadioButton">
-                            <input type="radio" name="${array[i].idQuestion}" ">
+                            <input type="radio" name="${array[i].idQuestion}"  value="${array[i].id}">
                             <label for="radioBtn">${array[i].text}</label>
                         </div>
                     `);
@@ -100,7 +102,8 @@ function printQuestion(idOption, array) {
                     if ($("#btnSubmitAnswers").length) return
                     $(`#formViewPoll`).append(`
                     <br>
-                    <input type="text" value="pollAnswer" hidden/>
+                    <input name="pollAnswer" type="text" value="${array[i-1].idPoll}" hidden/>
+                    <input name="idStudent" type="text" value="${array[i-1].userId}" hidden/>
                     <button id="btnSubmitAnswers" type="submit">Enviar enquesta</button>
                 `);
                 });
