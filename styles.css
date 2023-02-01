@@ -714,7 +714,15 @@ dialog::backdrop  {
 #modalDelete h3{
     text-align: center;
 }
-
+#bodyStats .autocenter .pollContent ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#usuerName{
+    text-align: center;
+}
 @media only screen and (max-width: 800px) {
     body{
         max-width: 800px;
