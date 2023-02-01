@@ -73,3 +73,15 @@ function submitRecoverPass(){
     return;
 
 }
+
+function submitSendPollsToStudent() {
+    var email = $("[name=inputSendPollsStudent]").val();
+    if (!email) {
+        NewError("warning","Has d\'omplir l\'email");
+        return;
+    }
+
+    $("#formSendPollStudent").submit();
+    return;
+
+}
