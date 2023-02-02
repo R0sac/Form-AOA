@@ -48,7 +48,7 @@ include "log.php";
         INNER JOIN answer a ON a.idPoll = p.id AND a.idStudent = u.id AND a.idQuestion = q.id
         LEFT OUTER JOIN question_option qo ON q.id = qo.idQuestion 
         LEFT OUTER JOIN creyentes_poll.option o ON qo.idOption = o.id
-        WHERE u.id = ".$userId." AND p.id = ".$pollId.";";
+        WHERE u.id = ".$userId." AND p.id = ".$pollId." ORDER BY q.id ASC;";
         $results = getListByQuery($query);
         logButtonClick("S","View_Poll.php","$query'\n");
         echo 
