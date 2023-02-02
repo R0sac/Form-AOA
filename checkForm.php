@@ -508,13 +508,9 @@ function recoverPassword($idUser, $newPass){
 }
 
 function sendPollsToStudent($emailStudent){
-    echo "SELECT po.title, p.answerDate FROM creyentes_poll.poll_student p 
-    INNER JOIN creyentes_poll.user u ON u.id = p.idStudent 
-    INNER JOIN creyentes_poll.poll po ON po.id = p.idPoll 
-    WHERE u.email=`".$emailStudent."` AND u.role=3 AND po.available=1;";
     
     $listOfPolls = getListByQuery(
-        "SELECT po.title, p.answerDate FROM creyentes_poll.poll_student p 
+        "SELECT po.title, p.answerDate, p.studentNotificated FROM creyentes_poll.poll_student p 
         INNER JOIN creyentes_poll.user u ON u.id = p.idStudent 
         INNER JOIN creyentes_poll.poll po ON po.id = p.idPoll 
         WHERE u.email='".$emailStudent."' AND u.role=3;");
@@ -550,21 +546,31 @@ function sendPollsToStudent($emailStudent){
                     <thead>
                     <tbody>
                         <tr>
-                            <td style='display: flex;justify-content: center;'>
+                            <td>
                                 <ul>";
 
     
     foreach ($listOfNotAnsweredPolls as $key => $value) {
-        $message .= "<li>".$value["title"]."</li>";
+        if ($value["studentNotificated"]) {
+            $message .= "<li><a href= https://www.enquestaprofessorat.site/view_poll.php?token=".$value["studentNotificated"].">".$value["title"]."</a></li>";
+        }
+        else{
+            $message .= "<li>".$value["title"]."</li>";
+        }
     }
     $message .= 
                                 "</ul>
                             </td>
-                            <td style='display: flex;justify-content: center;'>
+                            <td>
                                 <ul>";
 
     foreach ($listOfAnsweredPolls as $key => $value) {
-        $message .= "<li>".$value["title"]."</li>";
+        if ($value["studentNotificated"]) {
+            $message .= "<li><a href= https://www.enquestaprofessorat.site/view_poll.php?token=".$value["studentNotificated"].">".$value["title"]."</a></li>";
+        }
+        else{
+            $message .= "<li>".$value["title"]."</li>";
+        }
     }
 
     $message .=
@@ -601,14 +607,16 @@ function sendPollsToStudent($emailStudent){
 
             logButtonClick("S","get_polls.php","Email de llistat d'enquestes a alumnes enviat correctament\n",$emailStudent);
             array_push($_SESSION["errors"],["succes","Si l\'usuari existeix s\'ha enviat un correu a ".$emailStudent]);
-            // header("Location: login.php");
-        } else {
+        } 
+        else {
             echo 'Error: ' . $mail->ErrorInfo;
         }
     }
     catch(phpmailerException $ex)
     {
         $msg = "<div class='alert alert-warning'>".$ex->errorMessage()."</div>";
+        logButtonClick("E","get_polls.php","Error enviant l'email: ".$ex."\n",$emailStudent);
+
     }
 
 }
