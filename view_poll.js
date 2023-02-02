@@ -129,10 +129,10 @@ function printQuestionReadOnly(idOption, array) {
             
             $(`#formViewPoll`).append(`
                 <h3>${array[i].question}</h3>
-                <textarea id ="textAreaGeneral" class="textAreaGeneral" name="${array[i].idQuestion}" readonly>
+                <textarea id ="textAreaGeneral${array[i].idQuestion}" class="textAreaGeneral" name="${array[i].idQuestion}" readonly>
                 </textarea>
             `);
-            $("#textAreaGeneral").val(array[i].answerText);
+            $(`#textAreaGeneral${array[i].idQuestion}`).val(array[i].answerText);
 
         }
         else if(array[i].idTypeQuestion == 3 || array[i].idTypeQuestion == 1){
