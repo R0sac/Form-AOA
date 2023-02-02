@@ -7,7 +7,7 @@ if(isset($_GET['token'])){
 }
 
 else{
-    header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    header('Location: https://www.enquestaprofessorat.site/404.php');
 };
 
 include "header.php";
@@ -21,7 +21,7 @@ include "log.php";
     $pollOfUser = getListByQuery("SELECT idPoll, idStudent, answerDate FROM poll_student WHERE studentNotificated = '".htmlspecialchars($token)."';");
     logButtonClick("S","cron.php", "SELECT idPoll, idStudent FROM poll_student WHERE studentNotificated = '".htmlspecialchars($token)."';\n");
     if (!$pollOfUser) {
-        header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+        header('Location: https://www.enquestaprofessorat.site/404.php');
     }
 
     $userId = $pollOfUser[0]["idStudent"];
